@@ -1,0 +1,22 @@
+Type                    Contextual
+Name                    Cursive Connection
+Namecode                2
+Setting                 Isolated Forms
+SettingCode             1
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+MNGLetter
+
+                        EOT    OOB    DEL    EOL    MNGLetter
+StartText                1      1      1      1         2
+StartLine                1      1      1      1         2
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+1                       StartText                no      yes       none         toIsol
+
+toIsol
+                        a     a
