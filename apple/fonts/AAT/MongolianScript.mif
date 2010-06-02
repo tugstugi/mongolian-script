@@ -8,162 +8,435 @@ Orientation             HV
 Forward                 yes
 Exclusive               no
 
-MNGLetter                 u1820 u1821 u1822 u1823 u1824 u1825 u1826 u1827
-                        + u1828 u1829 u182A u182B u182C u182D u182E u182F
-                        + u1830 u1831 u1832 u1833 u1834 u1835 u1836 u1837
-                        + u1838 u1839 u183A u183B u183C u183D u183E u183F
-                        + u1840 u1841 u1842 u1843 u1844 u1845 u1846 u1847
-                        + u1848 u1849 u184A u184B u184C u184D u184E u184F
-                        + u1850 u1851 u1852 u1853 u1854 u1855 u1856 u1857
-                        + u1858 u1859 u185A u185B u185C u185D u185E u185F
-                        + u1860 u1861 u1862 u1863 u1864 u1865 u1866 u1867
-                        + u1868 u1869 u186A u186B u186C u186D u186E u186F
-                        + u1870 u1871 u1872 u1873 u1874 u1875 u1876 u1877
-                        + u1880 u1881 u1882 u1883 u1884 u1885 u1886 u1887
-                        + u1888 u1889 u188A u188B u188C u188D u188E u188F
-                        + u1890 u1891 u1892 u1893 u1894 u1895 u1896 u1897
-                        + u1898 u1899 u189A u189B u189C u189D u189E u189F
-                        + u18A0 u18A1 u18A2 u18A3 u18A4 u18A5 u18A6 u18A7
-                        + u18A8 u18A9 u18AA
+Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
 
 
-                        EOT    OOB    DEL    EOL    MNGLetter
+                        EOT    OOB    DEL    EOL    Letter
 StartText                1      1      1      1         2
 StartLine                1      1      1      1         2
+SawLetter                3      3      3      3         2
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
-2                       StartText                no      yes       none         toFina
+2                       SawLetter                yes     yes       none         none
+3                       SawLetter                no      yes       toFina       none
 
 toFina
-                        u1820    u1820
-                        u1821    u1821
-                        u1822    u1822
-                        u1823    u1823
-                        u1824    u1824
-                        u1825    u1825
-                        u1826    u1826
-                        u1827    u1827
-                        u1828    u1828
-                        u1829    u1829
-                        u182A    u182A
-                        u182B    u182B
-                        u182C    u182C
-                        u182D    u182D
-                        u182E    u182E
-                        u182F    u182F
-                        u1830    u1830
-                        u1831    u1831
-                        u1832    u1832
-                        u1833    u1833
-                        u1834    u1834
-                        u1835    u1835
-                        u1836    u1836
-                        u1837    u1837
-                        u1838    u1838
-                        u1839    u1839
-                        u183A    u183A
-                        u183B    u183B
-                        u183C    u183C
-                        u183D    u183D
-                        u183E    u183E
-                        u183F    u183F
-                        u1840    u1840
-                        u1841    u1841
-                        u1842    u1842
-                        u1843    u1843
-                        u1844    u1844
-                        u1845    u1845
-                        u1846    u1846
-                        u1847    u1847
-                        u1848    u1848
-                        u1849    u1849
-                        u184A    u184A
-                        u184B    u184B
-                        u184C    u184C
-                        u184D    u184D
-                        u184E    u184E
-                        u184F    u184F
-                        u1850    u1850
-                        u1851    u1851
-                        u1852    u1852
-                        u1853    u1853
-                        u1854    u1854
-                        u1855    u1855
-                        u1856    u1856
-                        u1857    u1857
-                        u1858    u1858
-                        u1859    u1859
-                        u185A    u185A
-                        u185B    u185B
-                        u185C    u185C
-                        u185D    u185D
-                        u185E    u185E
-                        u185F    u185F
-                        u1860    u1860
-                        u1861    u1861
-                        u1862    u1862
-                        u1863    u1863
-                        u1864    u1864
-                        u1865    u1865
-                        u1866    u1866
-                        u1867    u1867
-                        u1868    u1868
-                        u1869    u1869
-                        u186A    u186A
-                        u186B    u186B
-                        u186C    u186C
-                        u186D    u186D
-                        u186E    u186E
-                        u186F    u186F
-                        u1870    u1870
-                        u1871    u1871
-                        u1872    u1872
-                        u1873    u1873
-                        u1874    u1874
-                        u1875    u1875
-                        u1876    u1876
-                        u1877    u1877
-                        u1880    u1880
-                        u1881    u1881
-                        u1882    u1882
-                        u1883    u1883
-                        u1884    u1884
-                        u1885    u1885
-                        u1886    u1886
-                        u1887    u1887
-                        u1888    u1888
-                        u1889    u1889
-                        u188A    u188A
-                        u188B    u188B
-                        u188C    u188C
-                        u188D    u188D
-                        u188E    u188E
-                        u188F    u188F
-                        u1890    u1890
-                        u1891    u1891
-                        u1892    u1892
-                        u1893    u1893
-                        u1894    u1894
-                        u1895    u1895
-                        u1896    u1896
-                        u1897    u1897
-                        u1898    u1898
-                        u1899    u1899
-                        u189A    u189A
-                        u189B    u189B
-                        u189C    u189C
-                        u189D    u189D
-                        u189E    u189E
-                        u189F    u189F
-                        u18A0    u18A0
-                        u18A1    u18A1
-                        u18A2    u18A2
-                        u18A3    u18A3
-                        u18A4    u18A4
-                        u18A5    u18A5
-                        u18A6    u18A6
-                        u18A7    u18A7
-                        u18A8    u18A8
-                        u18A9    u18A9
-                        u18AA    u18AA
+                        uni1820    uni1820.fina
+                        uni1821    uni1821.fina
+                        uni1822    uni1822.fina
+                        uni1823    uni1823.fina
+                        uni1824    uni1824.fina
+                        uni1825    uni1825.fina
+                        uni1826    uni1826.fina
+                        uni1827    uni1827.fina
+                        uni1828    uni1828.fina
+                        uni1829    uni1829.fina
+                        uni182A    uni182A.fina
+                        uni182B    uni182B.fina
+                        uni182C    uni182C.fina
+                        uni182D    uni182D.fina
+                        uni182E    uni182E.fina
+                        uni182F    uni182F.fina
+                        uni1830    uni1830.fina
+                        uni1831    uni1831.fina
+                        uni1832    uni1832.fina
+                        uni1833    uni1833.fina
+                        uni1834    uni1834.fina
+                        uni1835    uni1835.fina
+                        uni1836    uni1836.fina
+                        uni1837    uni1837.fina
+                        uni1838    uni1838.fina
+                        uni1839    uni1839.fina
+                        uni183A    uni183A.fina
+                        uni183B    uni183B.fina
+                        uni183C    uni183C.fina
+                        uni183D    uni183D.fina
+                        uni183E    uni183E.fina
+                        uni183F    uni183F.fina
+                        uni1840    uni1840.fina
+                        uni1841    uni1841.fina
+                        uni1842    uni1842.fina
+                        uni1843    uni1843.fina
+                        uni1844    uni1844.fina
+                        uni1845    uni1845.fina
+                        uni1846    uni1846.fina
+                        uni1847    uni1847.fina
+                        uni1848    uni1848.fina
+                        uni1849    uni1849.fina
+                        uni184A    uni184A.fina
+                        uni184B    uni184B.fina
+                        uni184C    uni184C.fina
+                        uni184D    uni184D.finafem
+                        uni184E    uni184E.fina
+                        uni184F    uni184F.fina
+                        uni1850    uni1850.fina
+                        uni1851    uni1851.fina
+                        uni1852    uni1852.fina
+                        uni1853    uni1853.fina
+                        uni1854    uni1854.fina
+                        uni1855    uni1855.fina
+                        uni1856    uni1856.fina
+                        uni1857    uni1857.fina
+                        uni1858    uni1858.fina
+                        uni1859    uni1859.fina
+                        uni185A    uni185A.fina
+                        uni185B    uni185B.fina
+                        uni185C    uni185C.fina
+                        uni185D    uni185D.fina
+                        uni185E    uni185E.fina
+                        uni185F    uni185F.fina
+                        uni1860    uni1860.fina
+                        uni1861    uni1861.fina
+                        uni1862    uni1862.fina
+                        uni1863    uni1863.fina
+                        uni1864    uni1864.fina
+                        uni1865    uni1865.fina
+                        uni1866    uni1866.fina
+                        uni1867    uni1867.fina
+                        uni1868    uni1868.fina
+                        uni1869    uni1869.fina
+                        uni186A    uni186A.fina
+                        uni186B    uni186B.fina
+                        uni186C    uni186C.fina
+                        uni186D    uni186D.fina
+                        uni186E    uni186E.fina
+                        uni186F    uni186F.fina
+                        uni1870    uni1870.fina
+                        uni1871    uni1871.fina
+                        uni1872    uni1872.fina
+                        uni1873    uni1873.fina
+                        uni1874    uni1874.fina
+                        uni1875    uni1875.fina
+                        uni1876    uni1876.fina
+                        uni1877    uni1877.fina
+                        uni1887    uni1887.fina
+                        uni1888    uni1888.fina
+                        uni1889    uni1889.fina
+                        uni188A    uni188A.fina
+                        uni188B    uni188B.fina
+                        uni188C    uni188C.fina
+                        uni188D    uni188D.fina
+                        uni188E    uni188E.fina
+                        uni188F    uni188F.fina
+                        uni1890    uni1890.fina
+                        uni1891    uni1891.fina
+                        uni1892    uni1892.fina
+                        uni1893    uni1893.fina
+                        uni1894    uni1894.fina
+                        uni1895    uni1895.fina
+                        uni1896    uni1896.fina
+                        uni1897    uni1897.fina
+                        uni1898    uni1898.fina
+                        uni1899    uni1899.fina
+                        uni189A    uni189A.fina
+                        uni189B    uni189B.fina
+                        uni189C    uni189C.fina
+                        uni189D    uni189D.fina
+                        uni189E    uni189E.fina
+                        uni189F    uni189F.fina
+                        uni18A0    uni18A0.fina
+                        uni18A1    uni18A1.fina
+                        uni18A2    uni18A2.fina
+                        uni18A3    uni18A3.fina
+                        uni18A4    uni18A4.fina
+                        uni18A5    uni18A5.fina
+                        uni18A6    uni18A6.fina
+                        uni18A7    uni18A7.fina
+                        uni18A8    uni18A8.fina
+
+Type                    Contextual
+Name                    Cursive Connection
+Namecode                2
+Setting                 Medial Forms
+SettingCode             3
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
+
+
+                        EOT    OOB    DEL    EOL    Letter
+StartText                1      1      1      1         2
+StartLine                1      1      1      1         2
+SawFirstLetter           1      1      1      1         3
+SawLetter                5      5      5      5         4
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawFirstLetter           no      yes       none         none
+3                       SawLetter                no      yes       none         toMedi
+4                       SawLetter                no      yes       none         toMedi
+5                       StartText                no      yes       none         none
+
+toMedi
+                        uni1807    uni1807.medi
+                        uni1820    uni1820.medi
+                        uni1821    uni1821.medi
+                        uni1822    uni1822.medi
+                        uni1823    uni1823.medi
+                        uni1824    uni1824.medi
+                        uni1825    uni1825.medivar1
+                        uni1826    uni1826.medivar1
+                        uni1827    uni1827.medi
+                        uni1828    uni1828.medi
+                        uni1829    uni1829.medi
+                        uni182A    uni182A.medi
+                        uni182B    uni182B.medi
+                        uni182C    uni182C.medi
+                        uni182D    uni182D.medi
+                        uni182E    uni182E.medi
+                        uni182F    uni182F.medi
+                        uni1830    uni1830.medi
+                        uni1831    uni1831.medi
+                        uni1832    uni1832.medi
+                        uni1833    uni1833.medi
+                        uni1834    uni1834.medi
+                        uni1835    uni1835.medi
+                        uni1836    uni1836.medi
+                        uni1837    uni1837.medi
+                        uni1838    uni1838.medi
+                        uni1839    uni1839.medi
+                        uni183A    uni183A.medi
+                        uni183B    uni183B.medi
+                        uni183C    uni183C.medi
+                        uni183D    uni183D.medi
+                        uni183E    uni183E.medi
+                        uni183F    uni183F.medi
+                        uni1840    uni1840.medi
+                        uni1841    uni1841.medi
+                        uni1842    uni1842.medi
+                        uni1843    uni1843.medi
+                        uni1844    uni1844.medi
+                        uni1845    uni1845.medi
+                        uni1846    uni1846.medi
+                        uni1847    uni1847.medi
+                        uni1848    uni1848.medi
+                        uni1849    uni1849.medi
+                        uni184A    uni184A.medi
+                        uni184B    uni184B.medi
+                        uni184C    uni184C.medi
+                        uni184D    uni184D.medi
+                        uni184E    uni184E.medi
+                        uni184F    uni184F.medi
+                        uni1850    uni1850.medi
+                        uni1851    uni1851.medi
+                        uni1852    uni1852.medi
+                        uni1853    uni1853.medi
+                        uni1854    uni1854.medi
+                        uni1855    uni1855.medi
+                        uni1856    uni1856.medi
+                        uni1857    uni1857.medi
+                        uni1858    uni1858.medi
+                        uni1859    uni1859.medi
+                        uni185A    uni185A.medi
+                        uni185B    uni185B.medi
+                        uni185C    uni185C.medi
+                        uni185D    uni185D.medi
+                        uni185E    uni185E.medi
+                        uni185F    uni185F.medi
+                        uni1860    uni1860.medi
+                        uni1861    uni1861.medi
+                        uni1862    uni1862.medi
+                        uni1863    uni1863.medi
+                        uni1864    uni1864.medi
+                        uni1865    uni1865.medi
+                        uni1866    uni1866.medi
+                        uni1867    uni1867.medi
+                        uni1868    uni1868.medi
+                        uni1869    uni1869.medi
+                        uni186A    uni186A.medi
+                        uni186B    uni186B.medi
+                        uni186C    uni186C.medi
+                        uni186D    uni186D.medi
+                        uni186E    uni186E.medi
+                        uni186F    uni186F.medi
+                        uni1870    uni1870.medi
+                        uni1871    uni1871.medi
+                        uni1872    uni1872.medi
+                        uni1873    uni1873.medi
+                        uni1874    uni1874.medi
+                        uni1875    uni1875.medi
+                        uni1876    uni1876.medi
+                        uni1877    uni1877.medi
+                        uni1888    uni1888.medi
+                        uni1889    uni1889.medi
+                        uni188A    uni188A.medi
+                        uni188B    uni188B.medi
+                        uni188C    uni188C.medi
+                        uni188D    uni188D.medi
+                        uni188E    uni188E.medi
+                        uni188F    uni188F.medi
+                        uni1890    uni1890.medi
+                        uni1891    uni1891.medi
+                        uni1892    uni1892.medi
+                        uni1893    uni1893.medi
+                        uni1894    uni1894.medi
+                        uni1895    uni1895.medi
+                        uni1896    uni1896.medi
+                        uni1897    uni1897.medi
+                        uni1898    uni1898.medi
+                        uni1899    uni1899.medi
+                        uni189A    uni189A.medi
+                        uni189B    uni189B.medi
+                        uni189C    uni189C.medi
+                        uni189D    uni189D.medi
+                        uni189E    uni189E.medi
+                        uni189F    uni189F.medi
+                        uni18A0    uni18A0.medi
+                        uni18A1    uni18A1.medi
+                        uni18A2    uni18A2.medi
+                        uni18A3    uni18A3.medi
+                        uni18A4    uni18A4.medi
+                        uni18A5    uni18A5.medi
+                        uni18A6    uni18A6.medi
+                        uni18A7    uni18A7.medi
+                        uni18A8    uni18A8.medi
+
+                        
+Type                    Contextual
+Name                    Cursive Connection
+Namecode                2
+Setting                 Initial Forms
+SettingCode             4
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
+
+
+                        EOT    OOB    DEL    EOL    Letter
+StartText                1      1      1      1         2
+StartLine                1      1      1      1         2
+SawFirstLetter           1      1      1      1         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawFirstLetter           no      yes       none         toInit
+
+toInit
+                        uni1820    uni1820.init
+                        uni1821    uni1821.init
+                        uni1822    uni1822.init
+                        uni1823    uni1823.init
+                        uni1824    uni1824.init
+                        uni1825    uni1825.init
+                        uni1826    uni1826.init
+                        uni1827    uni1827.init
+                        uni1828    uni1828.init
+                        uni1829    uni1829.init
+                        uni182A    uni182A.init
+                        uni182B    uni182B.init
+                        uni182C    uni182C.initfem
+                        uni182D    uni182D.initfem
+                        uni182E    uni182E.init
+                        uni182F    uni182F.init
+                        uni1830    uni1830.init
+                        uni1831    uni1831.init
+                        uni1832    uni1832.init
+                        uni1833    uni1833.init
+                        uni1834    uni1834.init
+                        uni1835    uni1835.init
+                        uni1836    uni1836.init
+                        uni1837    uni1837.init
+                        uni1838    uni1838.init
+                        uni1839    uni1839.init
+                        uni183A    uni183A.init
+                        uni183B    uni183B.init
+                        uni183C    uni183C.init
+                        uni183D    uni183D.init
+                        uni183E    uni183E.init
+                        uni183F    uni183F.init
+                        uni1840    uni1840.init
+                        uni1841    uni1841.init
+                        uni1842    uni1842.init
+                        uni1843    uni1843.init
+                        uni1844    uni1844.init
+                        uni1845    uni1845.init
+                        uni1846    uni1846.init
+                        uni1847    uni1847.init
+                        uni1848    uni1848.init
+                        uni1849    uni1849.init
+                        uni184A    uni184A.init
+                        uni184B    uni184B.init
+                        uni184C    uni184C.init
+                        uni184D    uni184D.init
+                        uni184E    uni184E.init
+                        uni184F    uni184F.init
+                        uni1850    uni1850.init
+                        uni1851    uni1851.init
+                        uni1852    uni1852.init
+                        uni1853    uni1853.init
+                        uni1854    uni1854.init
+                        uni1855    uni1855.init
+                        uni1856    uni1856.init
+                        uni1857    uni1857.init
+                        uni1858    uni1858.init
+                        uni1859    uni1859.init
+                        uni185A    uni185A.init
+                        uni185B    uni185B.init
+                        uni185C    uni185C.init
+                        uni185D    uni185D.init
+                        uni185E    uni185E.init
+                        uni185F    uni185F.init
+                        uni1860    uni1860.init
+                        uni1861    uni1861.init
+                        uni1862    uni1862.init
+                        uni1863    uni1863.init
+                        uni1864    uni1864.init
+                        uni1865    uni1865.init
+                        uni1866    uni1866.init
+                        uni1867    uni1867.init
+                        uni1868    uni1868.init
+                        uni1869    uni1869.init
+                        uni186A    uni186A.init
+                        uni186B    uni186B.init
+                        uni186C    uni186C.init
+                        uni186D    uni186D.init
+                        uni186E    uni186E.init
+                        uni186F    uni186F.init
+                        uni1870    uni1870.init
+                        uni1871    uni1871.init
+                        uni1872    uni1872.init
+                        uni1873    uni1873.init
+                        uni1874    uni1874.init
+                        uni1875    uni1875.init
+                        uni1876    uni1876.init
+                        uni1877    uni1877.init
+                        uni1888    uni1888.init
+                        uni1889    uni1889.init
+                        uni188A    uni188A.init
+                        uni188B    uni188B.init
+                        uni188C    uni188C.init
+                        uni188D    uni188D.init
+                        uni188E    uni188E.init
+                        uni188F    uni188F.init
+                        uni1890    uni1890.init
+                        uni1891    uni1891.init
+                        uni1892    uni1892.init
+                        uni1893    uni1893.init
+                        uni1894    uni1894.init
+                        uni1895    uni1895.init
+                        uni1896    uni1896.init
+                        uni1897    uni1897.init
+                        uni1898    uni1898.init
+                        uni1899    uni1899.init
+                        uni189A    uni189A.init
+                        uni189B    uni189B.init
+                        uni189C    uni189C.init
+                        uni189D    uni189D.init
+                        uni189E    uni189E.init
+                        uni189F    uni189F.init
+                        uni18A0    uni18A0.init
+                        uni18A1    uni18A1.init
+                        uni18A2    uni18A2.init
+                        uni18A3    uni18A3.init
+                        uni18A4    uni18A4.init
+                        uni18A5    uni18A5.init
+                        uni18A6    uni18A6.init
+                        uni18A7    uni18A7.init
+                        uni18A8    uni18A8.init
