@@ -12,14 +12,14 @@ Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 
 
 
                         EOT    OOB    DEL    EOL    Letter
-StartText                1      1      1      1         1
-StartLine                1      1      1      1         1
-SawLetter                1      1      1      1         1
+StartText                1      1      1      1         2
+StartLine                1      1      1      1         2
+SawLetter                3      3      3      3         1
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
 2                       SawLetter                yes     yes       none         none
-3                       SawLetter                no      yes       toIsol       none
+3                       StartText                no      yes       toIsol       none
 
 toIsol
                         uni1824    uni1824.isol
