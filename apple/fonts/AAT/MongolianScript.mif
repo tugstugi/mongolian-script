@@ -1,6 +1,42 @@
 Type                    Contextual
 Name                    Cursive Connection
 Namecode                2
+Setting                 Isolated Forms
+SettingCode             1
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
+
+
+                        EOT    OOB    DEL    EOL    Letter
+StartText                1      1      1      1         1
+StartLine                1      1      1      1         1
+SawLetter                1      1      1      1         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawLetter                yes     yes       none         none
+3                       SawLetter                no      yes       toIsol       none
+
+toIsol
+                        uni1824    uni1824.isol
+                        uni1826    uni1826.isol
+                        uni185D    uni185D.isol
+                        uni185E    uni185E.isol
+                        uni1861    uni1861.isol
+                        uni1863    uni1863.initfem
+                        uni1864    uni1864.initfem
+                        uni1865    uni1865.initfem
+                        uni1873    uni1873.isol
+                        uni1874    uni1874.isolfem
+
+
+Type                    Contextual
+Name                    Cursive Connection
+Namecode                2
 Setting                 Final Forms
 SettingCode             2
 Default                 yes
