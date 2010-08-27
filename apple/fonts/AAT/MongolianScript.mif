@@ -440,3 +440,922 @@ toInit
                         uni18A6    uni18A6.init
                         uni18A7    uni18A7.init
                         uni18A8    uni18A8.init
+                        
+                        
+                        
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 11
+SettingCode             11
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni182A1820.init          uni182A.init uni1820.medi
+                        uni182A1821.init          uni182A.init uni1821.medi
+                        uni182A1822.init          uni182A.init uni1822.medi
+                        uni182A1823.init          uni182A.init uni1823.medi
+                        uni182A1824.init          uni182A.init uni1824.medi
+                        uni182A1827.init          uni182A.init uni1827.medi
+                        uni182A1888.init          uni182A.init uni1888.medi
+                        uni182A1825.init          uni182A.init uni1825.medivar1
+                        uni182A1826.init          uni182A.init uni1826.medivar1
+                        uni182A1820               uni182A.init uni1820.fina
+                        uni182A1821               uni182A.init uni1821.fina
+                        uni182A1822               uni182A.init uni1822.fina
+                        uni182A1823               uni182A.init uni1823.fina
+                        uni182A1824               uni182A.init uni1824.fina
+                        uni182A1825               uni182A.init uni1825.fina
+                        uni182A1825.var1          uni182A.init uni1825.finavar1
+                        uni182A1826               uni182A.init uni1826.fina
+                        uni182A1826.var1          uni182A.init uni1826.finavar1
+                        uni182A1827               uni182A.init uni1827.fina
+                        uni182A1888               uni182A.init uni1888.fina
+                        uni182A185D.init          uni182A.init uni185D.medi
+                        uni182A185D               uni182A.init uni185D.fina
+                        uni182A1860.init          uni182A.init uni1860.medi
+                        uni182A1860               uni182A.init uni1860.fina
+                        uni182A1861.init          uni182A.init uni1861.medi
+                        uni182A1861               uni182A.init uni1861.fina
+                        uni182A1873.init          uni182A.init uni1873.medi
+                        uni182A1873               uni182A.init uni1873.fina
+                        uni182A185E.init          uni182A.init uni185E.medi
+                        uni182A185E               uni182A.init uni185E.fina
+                        uni182A1820.medi          uni182A.medi uni1820.medi
+                        uni182A1821.medi          uni182A.medi uni1821.medi
+                        uni182A1822.medi          uni182A.medi uni1822.medi
+                        uni182A1823.medi          uni182A.medi uni1823.medi
+                        uni182A1824.medi          uni182A.medi uni1824.medi
+                        uni182A1827.medi          uni182A.medi uni1827.medi
+                        uni182A1888.medi          uni182A.medi uni1888.medi
+                        uni182A1825.medi          uni182A.medi uni1825.medivar1
+                        uni182A1826.medi          uni182A.medi uni1826.medivar1
+                        uni182A1825.medivar1      uni182A.medi uni1825.medi
+                        uni182A1826.medivar1      uni182A.medi uni1826.medi
+                        uni182A1820.fina          uni182A.medi uni1820.fina
+                        uni182A1821.fina          uni182A.medi uni1821.fina
+                        uni182A1822.fina          uni182A.medi uni1822.fina
+                        uni182A1823.fina          uni182A.medi uni1823.fina
+                        uni182A1824.fina          uni182A.medi uni1824.fina
+                        uni182A1825.fina          uni182A.medi uni1825.fina
+                        uni182A1825.finavar1      uni182A.medi uni1825.finavar1
+                        uni182A1826.fina          uni182A.medi uni1826.fina
+                        uni182A1826.finavar1      uni182A.medi uni1826.finavar1
+                        uni182A1827.fina          uni182A.medi uni1827.fina
+                        uni182A1888.fina          uni182A.medi uni1888.fina
+                        uni182A185D.medi          uni182A.medi uni185D.medi
+                        uni182A185D.fina          uni182A.medi uni185D.fina
+                        uni182A1860.medi          uni182A.medi uni1860.medi
+                        uni182A1860.fina          uni182A.medi uni1860.fina
+                        uni182A1861.medi          uni182A.medi uni1861.medi
+                        uni182A1861.fina          uni182A.medi uni1861.fina
+                        uni182A1873.medi          uni182A.medi uni1873.medi
+                        uni182A1873.fina          uni182A.medi uni1873.fina
+                        uni182A185E.medi          uni182A.medi uni185E.medi
+                        uni182A185E.fina          uni182A.medi uni185E.fina
+                        uni182B1820.init          uni182B.init uni1820.medi
+                        uni182B1821.init          uni182B.init uni1821.medi
+                        uni182B1822.init          uni182B.init uni1822.medi
+                        uni182B1823.init          uni182B.init uni1823.medi
+                        uni182B1824.init          uni182B.init uni1824.medi
+                        uni182B1827.init          uni182B.init uni1827.medi
+                        uni182B1888.init          uni182B.init uni1888.medi
+                        uni182B1825.init          uni182B.init uni1825.medivar1
+                        uni182B1826.init          uni182B.init uni1826.medivar1
+                        uni182B1820               uni182B.init uni1820.fina
+                        uni182B1821               uni182B.init uni1821.fina
+                        uni182B1822               uni182B.init uni1822.fina
+                        uni182B1823               uni182B.init uni1823.fina
+                        uni182B1824               uni182B.init uni1824.fina
+                        uni182B1825               uni182B.init uni1825.fina
+                        uni182B1825.var1          uni182B.init uni1825.finavar1
+                        uni182B1826               uni182B.init uni1826.fina
+                        uni182B1826.var1          uni182B.init uni1826.finavar1
+                        uni182B1827               uni182B.init uni1827.fina
+                        uni182B1888               uni182B.init uni1888.fina
+                        uni182B1820.medi          uni182B.medi uni1820.medi
+                        uni182B1821.medi          uni182B.medi uni1821.medi
+                        uni182B1822.medi          uni182B.medi uni1822.medi
+                        uni182B1823.medi          uni182B.medi uni1823.medi
+                        uni182B1824.medi          uni182B.medi uni1824.medi
+                        uni182B1827.medi          uni182B.medi uni1827.medi
+                        uni182B1888.medi          uni182B.medi uni1888.medi
+                        uni182B1825.medi          uni182B.medi uni1825.medivar1
+                        uni182B1826.medi          uni182B.medi uni1826.medivar1
+                        uni182B1825.medivar1      uni182B.medi uni1825.medi
+                        uni182B1826.medivar1      uni182B.medi uni1826.medi
+                        uni182B1820.fina          uni182B.medi uni1820.fina
+                        uni182B1821.fina          uni182B.medi uni1821.fina
+                        uni182B1822.fina          uni182B.medi uni1822.fina
+                        uni182B1823.fina          uni182B.medi uni1823.fina
+                        uni182B1824.fina          uni182B.medi uni1824.fina
+                        uni182B1825.fina          uni182B.medi uni1825.fina
+                        uni182B1825.finavar1      uni182B.medi uni1825.finavar1
+                        uni182B1826.fina          uni182B.medi uni1826.fina
+                        uni182B1826.finavar1      uni182B.medi uni1826.finavar1
+                        uni182B1827.fina          uni182B.medi uni1827.fina
+                        uni182B1888.fina          uni182B.medi uni1888.fina
+                        uni182C1821.medi          uni182C.medi uni1821.medi
+                        uni182C1822.medi          uni182C.medi uni1822.medi
+                        uni182C1827.medi          uni182C.medi uni1827.medi
+                        uni182C1888.medi          uni182C.medi uni1888.medi
+                        uni182C1825.finavar2      uni182C.medi uni1825.finavar1
+                        uni182C1826.finavar2      uni182C.medi uni1826.finavar1
+                        uni182C1825.medi          uni182C.medi uni1825.medivar1
+                        uni182C1826.medi          uni182C.medi uni1826.medivar1
+                        uni182C1825.medivar2      uni182C.medi uni1825.medi
+                        uni182C1826.medivar2      uni182C.medi uni1826.medi
+                        uni182C1821.fina          uni182C.medi uni1821.fina
+                        uni182C1822.fina          uni182C.medi uni1822.fina
+                        uni182C1827.fina          uni182C.medi uni1827.fina
+                        uni182C1888.fina          uni182C.medi uni1888.fina
+                        uni182C1825.fina          uni182C.medi uni1825.fina
+                        uni182C1826.fina          uni182C.medi uni1826.fina
+                        uni182C1825.initvar1      uni182C.initvar1 uni1825.medi
+                        uni182C1825.initvar3      uni182C.initvar1 uni1825.medivar1
+                        uni182C1826.initvar1      uni182C.initvar1 uni1826.medi
+                        uni182C1826.initvar3      uni182C.initvar1 uni1826.medivar1
+                        uni182C1821.initvar1      uni182C.initvar1 uni1821.medi
+                        uni182C1822.initvar1      uni182C.initvar1 uni1822.medi
+                        uni182C1827.initvar1      uni182C.initvar1 uni1827.medi
+                        uni182C1888.initvar1      uni182C.initvar1 uni1888.medi
+                        uni182C1825.var1          uni182C.initvar1 uni1825.fina
+                        uni182C1826.var1          uni182C.initvar1 uni1826.fina
+                        uni182C1825.var3          uni182C.initvar1 uni1825.finavar1
+                        uni182C1826.var3          uni182C.initvar1 uni1826.finavar1
+                        uni182C1821.var1          uni182C.initvar1 uni1821.fina
+                        uni182C1822.var1          uni182C.initvar1 uni1822.fina
+                        uni182C1827.var1          uni182C.initvar1 uni1827.fina
+                        uni182C1888.var1          uni182C.initvar1 uni1888.fina
+                        uni182C1821.medivar1      uni182C.medivar1 uni1821.medi
+                        uni182C1822.medivar1      uni182C.medivar1 uni1822.medi
+                        uni182C1827.medivar1      uni182C.medivar1 uni1827.medi
+                        uni182C1888.medivar1      uni182C.medivar1 uni1888.medi
+                        uni182C1825.finavar1      uni182C.medivar1 uni1825.fina
+                        uni182C1826.finavar1      uni182C.medivar1 uni1826.fina
+                        uni182C1825.finavar3      uni182C.medivar1 uni1825.finavar1
+                        uni182C1826.finavar3      uni182C.medivar1 uni1826.finavar1
+                        uni182C1821.finavar1      uni182C.medivar1 uni1821.fina
+                        uni182C1822.finavar1      uni182C.medivar1 uni1822.fina
+                        uni182C1827.finavar1      uni182C.medivar1 uni1827.fina
+                        uni182C1888.finavar1      uni182C.medivar1 uni1888.fina
+                        uni182C1825.medivar1      uni182C.medivar1 uni1825.medivar1
+                        uni182C1826.medivar1      uni182C.medivar1 uni1826.medivar1
+                        uni182C1825.medivar3      uni182C.medivar1 uni1825.medi
+                        uni182C1826.medivar3      uni182C.medivar1 uni1826.medi
+                        uni182C1821.init          uni182C.initfem uni1821.medi
+                        uni182C1822.init          uni182C.initfem uni1822.medi
+                        uni182C1825.initvar2      uni182C.initfem uni1825.medi
+                        uni182C1826.initvar2      uni182C.initfem uni1826.medi
+                        uni182C1827.init          uni182C.initfem uni1827.medi
+                        uni182C1888.init          uni182C.initfem uni1888.medi
+                        uni182C1825.init          uni182C.initfem uni1825.medivar1
+                        uni182C1826.init          uni182C.initfem uni1826.medivar1
+                        uni182C1825.var2          uni182C.initfem uni1825.finavar1
+                        uni182C1826.var2          uni182C.initfem uni1826.finavar1
+                        uni182C1821               uni182C.initfem uni1821.fina
+                        uni182C1822               uni182C.initfem uni1822.fina
+                        uni182C1827               uni182C.initfem uni1827.fina
+                        uni182C1888               uni182C.initfem uni1888.fina
+                        uni182C1825               uni182C.initfem uni1825.fina
+                        uni182C1826               uni182C.initfem uni1826.fina
+                        uni182D1825.medivar2      uni182D.medi uni1825.medi
+                        uni182D1826.medivar2      uni182D.medi uni1826.medi
+                        uni182D1821.medi          uni182D.medi uni1821.medi
+                        uni182D1822.medi          uni182D.medi uni1822.medi
+                        uni182D1827.medi          uni182D.medi uni1827.medi
+                        uni182D1888.medi          uni182D.medi uni1888.medi
+                        uni182D1825.medi          uni182D.medi uni1825.medivar1
+                        uni182D1826.medi          uni182D.medi uni1826.medivar1
+                        uni182D1821.fina          uni182D.medi uni1821.fina
+                        uni182D1822.fina          uni182D.medi uni1822.fina
+                        uni182D1825.fina          uni182D.medi uni1825.fina
+                        uni182D1826.fina          uni182D.medi uni1826.fina
+                        uni182D1827.fina          uni182D.medi uni1827.fina
+                        uni182D1888.fina          uni182D.medi uni1888.fina
+                        uni182D1825.finavar2      uni182D.medi uni1825.finavar1
+                        uni182D1826.finavar2      uni182D.medi uni1826.finavar1
+                        uni182D1821.initvar1      uni182D.initvar1 uni1821.medi
+                        uni182D1822.initvar1      uni182D.initvar1 uni1822.medi
+                        uni182D1827.initvar1      uni182D.initvar1 uni1827.medi
+                        uni182D1888.initvar1      uni182D.initvar1 uni1888.medi
+                        uni182D1825.initvar1      uni182D.initvar1 uni1825.medi
+                        uni182D1826.initvar1      uni182D.initvar1 uni1826.medi
+                        uni182D1821.var1          uni182D.initvar1 uni1821.fina
+                        uni182D1822.var1          uni182D.initvar1 uni1822.fina
+                        uni182D1825.var1          uni182D.initvar1 uni1825.fina
+                        uni182D1826.var1          uni182D.initvar1 uni1826.fina
+                        uni182D1827.var1          uni182D.initvar1 uni1827.fina
+                        uni182D1888.var1          uni182D.initvar1 uni1888.fina
+                        uni182D1825.var3          uni182D.initvar1 uni1825.finavar1
+                        uni182D1826.var3          uni182D.initvar1 uni1826.finavar1
+                        uni182D1825.medivar3      uni182D.medivar1 uni1825.medi
+                        uni182D1826.medivar3      uni182D.medivar1 uni1826.medi
+                        uni182D1821.medivar1      uni182D.medivar1 uni1821.medi
+                        uni182D1822.medivar1      uni182D.medivar1 uni1822.medi
+                        uni182D1827.medivar1      uni182D.medivar1 uni1827.medi
+                        uni182D1888.medivar1      uni182D.medivar1 uni1888.medi
+                        uni182D1825.medivar1      uni182D.medivar1 uni1825.medivar1
+                        uni182D1826.medivar1      uni182D.medivar1 uni1826.medivar1
+                        uni182D1821.finavar1      uni182D.medivar1 uni1821.fina
+                        uni182D1822.finavar1      uni182D.medivar1 uni1822.fina
+                        uni182D1825.finavar1      uni182D.medivar1 uni1825.fina
+                        uni182D1826.finavar1      uni182D.medivar1 uni1826.fina
+                        uni182D1827.finavar1      uni182D.medivar1 uni1827.fina
+                        uni182D1888.finavar1      uni182D.medivar1 uni1888.fina
+                        uni182D1825.finavar3      uni182D.medivar1 uni1825.finavar1
+                        uni182D1826.finavar3      uni182D.medivar1 uni1826.finavar1
+                        uni182D1821.init          uni182D.initfem uni1821.medi
+                        uni182D1822.init          uni182D.initfem uni1822.medi
+                        uni182D1827.init          uni182D.initfem uni1827.medi
+                        uni182D1888.init          uni182D.initfem uni1888.medi
+                        uni182D1825.init          uni182D.initfem uni1825.medivar1
+                        uni182D1826.init          uni182D.initfem uni1826.medivar1
+                        uni182D1821               uni182D.initfem uni1821.fina
+                        uni182D1822               uni182D.initfem uni1822.fina
+                        uni182D1825               uni182D.initfem uni1825.fina
+                        uni182D1826               uni182D.initfem uni1826.fina
+                        uni182D1827               uni182D.initfem uni1827.fina
+                        uni182D1888               uni182D.initfem uni1888.fina
+                        uni182D1825.var2          uni182D.initfem uni1825.finavar1
+                        uni182D1826.var2          uni182D.initfem uni1826.finavar1
+                        uni18391820.init          uni1839.init uni1820.medi
+                        uni18391821.init          uni1839.init uni1821.medi
+                        uni18391822.init          uni1839.init uni1822.medi
+                        uni18391823.init          uni1839.init uni1823.medi
+                        uni18391824.init          uni1839.init uni1824.medi
+                        uni18391827.init          uni1839.init uni1827.medi
+                        uni18391888.init          uni1839.init uni1888.medi
+                        uni18391825.init          uni1839.init uni1825.medivar1
+                        uni18391826.init          uni1839.init uni1826.medivar1
+                        uni18391820               uni1839.init uni1820.fina
+                        uni18391821               uni1839.init uni1821.fina
+                        uni18391822               uni1839.init uni1822.fina
+                        uni18391823               uni1839.init uni1823.fina
+                        uni18391824               uni1839.init uni1824.fina
+                        uni18391825               uni1839.init uni1825.fina
+                        uni18391825.var1          uni1839.init uni1825.finavar1
+                        uni18391826               uni1839.init uni1826.fina
+                        uni18391826.var1          uni1839.init uni1826.finavar1
+                        uni18391827               uni1839.init uni1827.fina
+                        uni18391888               uni1839.init uni1888.fina
+                        uni18391820.medi          uni1839.medi uni1820.medi
+                        uni18391821.medi          uni1839.medi uni1821.medi
+                        uni18391822.medi          uni1839.medi uni1822.medi
+                        uni18391823.medi          uni1839.medi uni1823.medi
+                        uni18391824.medi          uni1839.medi uni1824.medi
+                        uni18391827.medi          uni1839.medi uni1827.medi
+                        uni18391888.medi          uni1839.medi uni1888.medi
+                        uni18391825.medi          uni1839.medi uni1825.medivar1
+                        uni18391826.medi          uni1839.medi uni1826.medivar1
+                        uni18391825.medivar1      uni1839.medi uni1825.medi
+                        uni18391826.medivar1      uni1839.medi uni1826.medi
+                        uni18391820.fina          uni1839.medi uni1820.fina
+                        uni18391821.fina          uni1839.medi uni1821.fina
+                        uni18391822.fina          uni1839.medi uni1822.fina
+                        uni18391823.fina          uni1839.medi uni1823.fina
+                        uni18391824.fina          uni1839.medi uni1824.fina
+                        uni18391825.fina          uni1839.medi uni1825.fina
+                        uni18391825.finavar1      uni1839.medi uni1825.finavar1
+                        uni18391826.fina          uni1839.medi uni1826.fina
+                        uni18391826.finavar1      uni1839.medi uni1826.finavar1
+                        uni18391827.fina          uni1839.medi uni1827.fina
+                        uni18391888.fina          uni1839.medi uni1888.fina
+                        uni183A1820.init          uni183A.init uni1820.medi
+                        uni183A1821.init          uni183A.init uni1821.medi
+                        uni183A1822.init          uni183A.init uni1822.medi
+                        uni183A1823.init          uni183A.init uni1823.medi
+                        uni183A1824.init          uni183A.init uni1824.medi
+                        uni183A1827.init          uni183A.init uni1827.medi
+                        uni183A1888.init          uni183A.init uni1888.medi
+                        uni183A1825.init          uni183A.init uni1825.medivar1
+                        uni183A1826.init          uni183A.init uni1826.medivar1
+                        uni183A1820               uni183A.init uni1820.fina
+                        uni183A1821               uni183A.init uni1821.fina
+                        uni183A1822               uni183A.init uni1822.fina
+                        uni183A1823               uni183A.init uni1823.fina
+                        uni183A1824               uni183A.init uni1824.fina
+                        uni183A1825               uni183A.init uni1825.fina
+                        uni183A1825.var1          uni183A.init uni1825.finavar1
+                        uni183A1826               uni183A.init uni1826.fina
+                        uni183A1826.var1          uni183A.init uni1826.finavar1
+                        uni183A1827               uni183A.init uni1827.fina
+                        uni183A1888               uni183A.init uni1888.fina
+                        uni183A1873.init          uni183A.init uni1873.medi
+                        uni183A1873               uni183A.init uni1873.fina
+                        uni183A185D.init          uni183A.init uni185D.medi
+                        uni183A185D               uni183A.init uni185D.fina
+                        uni183A1860.init          uni183A.init uni1860.medi
+                        uni183A1860               uni183A.init uni1860.fina
+                        uni183A1820.medi          uni183A.medi uni1820.medi
+                        uni183A1821.medi          uni183A.medi uni1821.medi
+                        uni183A1822.medi          uni183A.medi uni1822.medi
+                        uni183A1823.medi          uni183A.medi uni1823.medi
+                        uni183A1824.medi          uni183A.medi uni1824.medi
+                        uni183A1827.medi          uni183A.medi uni1827.medi
+                        uni183A1888.medi          uni183A.medi uni1888.medi
+                        uni183A1825.medi          uni183A.medi uni1825.medivar1
+                        uni183A1826.medi          uni183A.medi uni1826.medivar1
+                        uni183A1825.medivar1      uni183A.medi uni1825.medi
+                        uni183A1826.medivar1      uni183A.medi uni1826.medi
+                        uni183A1820.fina          uni183A.medi uni1820.fina
+                        uni183A1821.fina          uni183A.medi uni1821.fina
+                        uni183A1822.fina          uni183A.medi uni1822.fina
+                        uni183A1823.fina          uni183A.medi uni1823.fina
+                        uni183A1824.fina          uni183A.medi uni1824.fina
+                        uni183A1825.fina          uni183A.medi uni1825.fina
+                        uni183A1825.finavar1      uni183A.medi uni1825.finavar1
+                        uni183A1826.fina          uni183A.medi uni1826.fina
+                        uni183A1826.finavar1      uni183A.medi uni1826.finavar1
+                        uni183A1827.fina          uni183A.medi uni1827.fina
+                        uni183A1888.fina          uni183A.medi uni1888.fina
+                        uni183A1873.medi          uni183A.medi uni1873.medi
+                        uni183A1873.fina          uni183A.medi uni1873.fina
+                        uni183A185D.medi          uni183A.medi uni185D.medi
+                        uni183A185D.fina          uni183A.medi uni185D.fina
+                        uni183A1860.medi          uni183A.medi uni1860.medi
+                        uni183A1860.fina          uni183A.medi uni1860.fina
+                        uni183B1820.init          uni183B.init uni1820.medi
+                        uni183B1821.init          uni183B.init uni1821.medi
+                        uni183B1822.init          uni183B.init uni1822.medi
+                        uni183B1823.init          uni183B.init uni1823.medi
+                        uni183B1824.init          uni183B.init uni1824.medi
+                        uni183B1827.init          uni183B.init uni1827.medi
+                        uni183B1888.init          uni183B.init uni1888.medi
+                        uni183B1825.init          uni183B.init uni1825.medivar1
+                        uni183B1826.init          uni183B.init uni1826.medivar1
+                        uni183B1820               uni183B.init uni1820.fina
+                        uni183B1821               uni183B.init uni1821.fina
+                        uni183B1822               uni183B.init uni1822.fina
+                        uni183B1823               uni183B.init uni1823.fina
+                        uni183B1824               uni183B.init uni1824.fina
+                        uni183B1825               uni183B.init uni1825.fina
+                        uni183B1825.var1          uni183B.init uni1825.finavar1
+                        uni183B1826               uni183B.init uni1826.fina
+                        uni183B1826.var1          uni183B.init uni1826.finavar1
+                        uni183B1827               uni183B.init uni1827.fina
+                        uni183B1888               uni183B.init uni1888.fina
+                        uni183B1820.medi          uni183B.medi uni1820.medi
+                        uni183B1821.medi          uni183B.medi uni1821.medi
+                        uni183B1822.medi          uni183B.medi uni1822.medi
+                        uni183B1823.medi          uni183B.medi uni1823.medi
+                        uni183B1824.medi          uni183B.medi uni1824.medi
+                        uni183B1827.medi          uni183B.medi uni1827.medi
+                        uni183B1888.medi          uni183B.medi uni1888.medi
+                        uni183B1825.medi          uni183B.medi uni1825.medivar1
+                        uni183B1826.medi          uni183B.medi uni1826.medivar1
+                        uni183B1825.medivar1      uni183B.medi uni1825.medi
+                        uni183B1826.medivar1      uni183B.medi uni1826.medi
+                        uni183B1820.fina          uni183B.medi uni1820.fina
+                        uni183B1821.fina          uni183B.medi uni1821.fina
+                        uni183B1822.fina          uni183B.medi uni1822.fina
+                        uni183B1823.fina          uni183B.medi uni1823.fina
+                        uni183B1824.fina          uni183B.medi uni1824.fina
+                        uni183B1825.fina          uni183B.medi uni1825.fina
+                        uni183B1825.finavar1      uni183B.medi uni1825.finavar1
+                        uni183B1826.fina          uni183B.medi uni1826.fina
+                        uni183B1826.finavar1      uni183B.medi uni1826.finavar1
+                        uni183B1827.fina          uni183B.medi uni1827.fina
+                        uni183B1888.fina          uni183B.medi uni1888.fina
+                        uni184B1820.init          uni184B.init uni1820.medi
+                        uni184B1844.init          uni184B.init uni1844.medi
+                        uni184B1845.init          uni184B.init uni1845.medi
+                        uni184B1846.init          uni184B.init uni1846.medi
+                        uni184B1847.init          uni184B.init uni1847.medi
+                        uni184B1848.init          uni184B.init uni1848.medi
+                        uni184B1849.init          uni184B.init uni1849.medi
+                        uni184B1820               uni184B.init uni1820.fina
+                        uni184B1844               uni184B.init uni1844.fina
+                        uni184B1845               uni184B.init uni1845.fina
+                        uni184B1846               uni184B.init uni1846.fina
+                        uni184B1847               uni184B.init uni1847.fina
+                        uni184B1848               uni184B.init uni1848.fina
+                        uni184B1849               uni184B.init uni1849.fina
+                        uni184B1820.medi          uni184B.medi uni1820.medi
+                        uni184B1844.medi          uni184B.medi uni1844.medi
+                        uni184B1845.medi          uni184B.medi uni1845.medi
+                        uni184B1846.medi          uni184B.medi uni1846.medi
+                        uni184B1847.medi          uni184B.medi uni1847.medi
+                        uni184B1848.medi          uni184B.medi uni1848.medi
+                        uni184B1849.medi          uni184B.medi uni1849.medi
+                        uni184B1820.fina          uni184B.medi uni1820.fina
+                        uni184B1844.fina          uni184B.medi uni1844.fina
+                        uni184B1845.fina          uni184B.medi uni1845.fina
+                        uni184B1846.fina          uni184B.medi uni1846.fina
+                        uni184B1847.fina          uni184B.medi uni1847.fina
+                        uni184B1848.fina          uni184B.medi uni1848.fina
+                        uni184B1849.fina          uni184B.medi uni1849.fina
+                        uni184C1820.init          uni184C.init uni1820.medi
+                        uni184C1844.init          uni184C.init uni1844.medi
+                        uni184C1845.init          uni184C.init uni1845.medi
+                        uni184C1846.init          uni184C.init uni1846.medi
+                        uni184C1847.init          uni184C.init uni1847.medi
+                        uni184C1848.init          uni184C.init uni1848.medi
+                        uni184C1849.init          uni184C.init uni1849.medi
+                        uni184C1820               uni184C.init uni1820.fina
+                        uni184C1844               uni184C.init uni1844.fina
+                        uni184C1845               uni184C.init uni1845.fina
+                        uni184C1846               uni184C.init uni1846.fina
+                        uni184C1847               uni184C.init uni1847.fina
+                        uni184C1848               uni184C.init uni1848.fina
+                        uni184C1849               uni184C.init uni1849.fina
+                        uni184C1820.medi          uni184C.medi uni1820.medi
+                        uni184C1844.medi          uni184C.medi uni1844.medi
+                        uni184C1845.medi          uni184C.medi uni1845.medi
+                        uni184C1846.medi          uni184C.medi uni1846.medi
+                        uni184C1847.medi          uni184C.medi uni1847.medi
+                        uni184C1848.medi          uni184C.medi uni1848.medi
+                        uni184C1849.medi          uni184C.medi uni1849.medi
+                        uni184C1820.fina          uni184C.medi uni1820.fina
+                        uni184C1844.fina          uni184C.medi uni1844.fina
+                        uni184C1845.fina          uni184C.medi uni1845.fina
+                        uni184C1846.fina          uni184C.medi uni1846.fina
+                        uni184C1847.fina          uni184C.medi uni1847.fina
+                        uni184C1848.fina          uni184C.medi uni1848.fina
+                        uni184C1849.fina          uni184C.medi uni1849.fina
+                        uni184D1844.init          uni184D.init uni1844.medi
+                        uni184D1845.init          uni184D.init uni1845.medi
+                        uni184D1848.init          uni184D.init uni1848.medi
+                        uni184D1849.init          uni184D.init uni1849.medi
+                        uni184D1844               uni184D.init uni1844.fina
+                        uni184D1845               uni184D.init uni1845.fina
+                        uni184D1848               uni184D.init uni1848.fina
+                        uni184D1849               uni184D.init uni1849.fina
+                        uni184D1844.medi          uni184D.medi uni1844.medi
+                        uni184D1845.medi          uni184D.medi uni1845.medi
+                        uni184D1848.medi          uni184D.medi uni1848.medi
+                        uni184D1849.medi          uni184D.medi uni1849.medi
+                        uni184D1844.fina          uni184D.medi uni1844.fina
+                        uni184D1845.fina          uni184D.medi uni1845.fina
+                        uni184D1848.fina          uni184D.medi uni1848.fina
+                        uni184D1849.fina          uni184D.medi uni1849.fina
+                        uni184E1844.init          uni184E.init uni1844.medi
+                        uni184E1845.init          uni184E.init uni1845.medi
+                        uni184E1848.init          uni184E.init uni1848.medi
+                        uni184E1849.init          uni184E.init uni1849.medi
+                        uni184E1844               uni184E.init uni1844.fina
+                        uni184E1845               uni184E.init uni1845.fina
+                        uni184E1848               uni184E.init uni1848.fina
+                        uni184E1849               uni184E.init uni1849.fina
+                        uni184E1844.medi          uni184E.medi uni1844.medi
+                        uni184E1845.medi          uni184E.medi uni1845.medi
+                        uni184E1848.medi          uni184E.medi uni1848.medi
+                        uni184E1849.medi          uni184E.medi uni1849.medi
+                        uni184E1844.fina          uni184E.medi uni1844.fina
+                        uni184E1845.fina          uni184E.medi uni1845.fina
+                        uni184E1848.fina          uni184E.medi uni1848.fina
+                        uni184E1849.fina          uni184E.medi uni1849.fina
+                        uni18571820.init          uni1857.init uni1820.medi
+                        uni18571846.init          uni1857.init uni1846.medi
+                        uni18571847.init          uni1857.init uni1847.medi
+                        uni18571820               uni1857.init uni1820.fina
+                        uni18571846               uni1857.init uni1846.fina
+                        uni18571847               uni1857.init uni1847.fina
+                        uni18571820.medi          uni1857.medi uni1820.medi
+                        uni18571846.medi          uni1857.medi uni1846.medi
+                        uni18571847.medi          uni1857.medi uni1847.medi
+                        uni18571820.fina          uni1857.medi uni1820.fina
+                        uni18571846.fina          uni1857.medi uni1846.fina
+                        uni18571847.fina          uni1857.medi uni1847.fina
+                        uni18581820.init          uni1858.init uni1820.medi
+                        uni18581846.init          uni1858.init uni1846.medi
+                        uni18581847.init          uni1858.init uni1847.medi
+                        uni18581820               uni1858.init uni1820.fina
+                        uni18581846               uni1858.init uni1846.fina
+                        uni18581847               uni1858.init uni1847.fina
+                        uni18581820.medi          uni1858.medi uni1820.medi
+                        uni18581846.medi          uni1858.medi uni1846.medi
+                        uni18581847.medi          uni1858.medi uni1847.medi
+                        uni18581820.fina          uni1858.medi uni1820.fina
+                        uni18581846.fina          uni1858.medi uni1846.fina
+                        uni18581847.fina          uni1858.medi uni1847.fina
+                        uni1863185D.init          uni1863.init uni185D.medi
+                        uni1863185D               uni1863.init uni185D.fina
+                        uni18631860.init          uni1863.init uni1860.medi
+                        uni18631860               uni1863.init uni1860.fina
+                        uni1863185E.init          uni1863.init uni185E.medi
+                        uni1863185E               uni1863.init uni185E.fina
+                        uni1863185D.medi          uni1863.medi uni185D.medi
+                        uni1863185D.fina          uni1863.medi uni185D.fina
+                        uni18631860.medi          uni1863.medi uni1860.medi
+                        uni18631860.fina          uni1863.medi uni1860.fina
+                        uni1863185E.medi          uni1863.medi uni185E.medi
+                        uni1863185E.fina          uni1863.medi uni185E.fina
+                        uni1864185D.init          uni1864.init uni185D.medi
+                        uni18641860.init          uni1864.init uni1860.medi
+                        uni18641873.init          uni1864.init uni1873.medi
+                        uni1864185D               uni1864.init uni185D.fina
+                        uni18641860               uni1864.init uni1860.fina
+                        uni18641873               uni1864.init uni1873.fina
+                        uni1864185E.init          uni1864.init uni185E.medi
+                        uni1864185E               uni1864.init uni185E.fina
+                        uni1864185D.medi          uni1864.medi uni185D.medi
+                        uni18641860.medi          uni1864.medi uni1860.medi
+                        uni18641873.medi          uni1864.medi uni1873.medi
+                        uni1864185D.fina          uni1864.medi uni185D.fina
+                        uni18641860.fina          uni1864.medi uni1860.fina
+                        uni18641873.fina          uni1864.medi uni1873.fina
+                        uni1864185E.medi          uni1864.medi uni185E.medi
+                        uni1864185E.fina          uni1864.medi uni185E.fina
+                        uni1865185D.init          uni1865.init uni185D.medi
+                        uni18651860.init          uni1865.init uni1860.medi
+                        uni18651873.init          uni1865.init uni1873.medi
+                        uni1865185D               uni1865.init uni185D.fina
+                        uni18651860               uni1865.init uni1860.fina
+                        uni18651873               uni1865.init uni1873.fina
+                        uni1865185E.init          uni1865.init uni185E.medi
+                        uni1865185E               uni1865.init uni185E.fina
+                        uni1865185D.medi          uni1865.medi uni185D.medi
+                        uni18651860.medi          uni1865.medi uni1860.medi
+                        uni18651873.medi          uni1865.medi uni1873.medi
+                        uni1865185D.fina          uni1865.medi uni185D.fina
+                        uni18651860.fina          uni1865.medi uni1860.fina
+                        uni18651873.fina          uni1865.medi uni1873.fina
+                        uni1865185E.medi          uni1865.medi uni185E.medi
+                        uni1865185E.fina          uni1865.medi uni185E.fina
+                        uni18651861.medivar1      uni1865.medivar1 uni1861.medi
+                        uni18651861.finavar1      uni1865.medivar1 uni1861.fina
+                        uni18661820.init          uni1866.init uni1820.medi
+                        uni18661820               uni1866.init uni1820.fina
+                        uni18661823.init          uni1866.init uni1823.medi
+                        uni18661823               uni1866.init uni1823.fina
+                        uni1866185D.init          uni1866.init uni185D.medi
+                        uni1866185D               uni1866.init uni185D.fina
+                        uni18661860.init          uni1866.init uni1860.medi
+                        uni18661860               uni1866.init uni1860.fina
+                        uni18661861.init          uni1866.init uni1861.medi
+                        uni18661861               uni1866.init uni1861.fina
+                        uni18661873.init          uni1866.init uni1873.medi
+                        uni18661873               uni1866.init uni1873.fina
+                        uni18661888.init          uni1866.init uni1888.medi
+                        uni18661888               uni1866.init uni1888.fina
+                        uni1866185E.init          uni1866.init uni185E.medi
+                        uni1866185E               uni1866.init uni185E.fina
+                        uni18661820.medi          uni1866.medi uni1820.medi
+                        uni18661820.fina          uni1866.medi uni1820.fina
+                        uni18661823.medi          uni1866.medi uni1823.medi
+                        uni18661823.fina          uni1866.medi uni1823.fina
+                        uni1866185D.medi          uni1866.medi uni185D.medi
+                        uni1866185D.fina          uni1866.medi uni185D.fina
+                        uni18661860.medi          uni1866.medi uni1860.medi
+                        uni18661860.fina          uni1866.medi uni1860.fina
+                        uni18661861.medi          uni1866.medi uni1861.medi
+                        uni18661861.fina          uni1866.medi uni1861.fina
+                        uni18661873.medi          uni1866.medi uni1873.medi
+                        uni18661873.fina          uni1866.medi uni1873.fina
+                        uni18661888.medi          uni1866.medi uni1888.medi
+                        uni18661888.fina          uni1866.medi uni1888.fina
+                        uni1866185E.medi          uni1866.medi uni185E.medi
+                        uni1866185E.fina          uni1866.medi uni185E.fina
+                        uni186C1820.init          uni186C.init uni1820.medi
+                        uni186C1820               uni186C.init uni1820.fina
+                        uni186C1823.init          uni186C.init uni1823.medi
+                        uni186C1823               uni186C.init uni1823.fina
+                        uni186C185D.init          uni186C.init uni185D.medi
+                        uni186C185D               uni186C.init uni185D.fina
+                        uni186C1860.init          uni186C.init uni1860.medi
+                        uni186C1860               uni186C.init uni1860.fina
+                        uni186C1888.init          uni186C.init uni1888.medi
+                        uni186C1888               uni186C.init uni1888.fina
+                        uni186C1820.medi          uni186C.medi uni1820.medi
+                        uni186C1820.fina          uni186C.medi uni1820.fina
+                        uni186C1823.medi          uni186C.medi uni1823.medi
+                        uni186C1823.fina          uni186C.medi uni1823.fina
+                        uni186C185D.medi          uni186C.medi uni185D.medi
+                        uni186C185D.fina          uni186C.medi uni185D.fina
+                        uni186C1860.medi          uni186C.medi uni1860.medi
+                        uni186C1860.fina          uni186C.medi uni1860.fina
+                        uni186C1888.medi          uni186C.medi uni1888.medi
+                        uni186C1888.fina          uni186C.medi uni1888.fina
+                        uni186D1820.init          uni186D.init uni1820.medi
+                        uni186D1820               uni186D.init uni1820.fina
+                        uni186D1823.init          uni186D.init uni1823.medi
+                        uni186D1823               uni186D.init uni1823.fina
+                        uni186D1820.medi          uni186D.medi uni1820.medi
+                        uni186D1820.fina          uni186D.medi uni1820.fina
+                        uni186D1823.medi          uni186D.medi uni1823.medi
+                        uni186D1823.fina          uni186D.medi uni1823.fina
+                        uni1874185D.init          uni1874.init uni185D.medi
+                        uni18741860.init          uni1874.init uni1860.medi
+                        uni18741873.init          uni1874.init uni1873.medi
+                        uni1874185D               uni1874.init uni185D.fina
+                        uni18741860               uni1874.init uni1860.fina
+                        uni18741873               uni1874.init uni1873.fina
+                        uni1874185D.medi          uni1874.medi uni185D.medi
+                        uni18741860.medi          uni1874.medi uni1860.medi
+                        uni18741873.medi          uni1874.medi uni1873.medi
+                        uni1874185D.fina          uni1874.medi uni185D.fina
+                        uni18741860.fina          uni1874.medi uni1860.fina
+                        uni18741873.fina          uni1874.medi uni1873.fina
+                        uni18741861.medivar1      uni1874.medivar1 uni1861.medi
+                        uni18741861.initvar1      uni1874.isolfem uni1861.medi
+                        uni18891820.init          uni1889.init uni1820.medi
+                        uni18891822.init          uni1889.init uni1822.medi
+                        uni18891823.init          uni1889.init uni1823.medi
+                        uni18891826.init          uni1889.init uni1826.medivar1
+                        uni18891826.initvar1      uni1889.init uni1826.medi
+                        uni18891827.init          uni1889.init uni1827.medi
+                        uni18891888.init          uni1889.init uni1888.medi
+                        uni18891820               uni1889.init uni1820.fina
+                        uni18891822               uni1889.init uni1822.fina
+                        uni18891823               uni1889.init uni1823.fina
+                        uni18891826               uni1889.init uni1826.fina
+                        uni18891826.var1          uni1889.init uni1826.finavar1
+                        uni18891827               uni1889.init uni1827.fina
+                        uni18891888               uni1889.init uni1888.fina
+                        uni18891844.init          uni1889.init uni1844.medi
+                        uni18891845.init          uni1889.init uni1845.medi
+                        uni18891846.init          uni1889.init uni1846.medi
+                        uni18891847.init          uni1889.init uni1847.medi
+                        uni18891844               uni1889.init uni1844.fina
+                        uni18891845               uni1889.init uni1845.fina
+                        uni18891846               uni1889.init uni1846.fina
+                        uni18891847               uni1889.init uni1847.fina
+                        uni18891820.medi          uni1889.medi uni1820.medi
+                        uni18891822.medi          uni1889.medi uni1822.medi
+                        uni18891823.medi          uni1889.medi uni1823.medi
+                        uni18891826.medi          uni1889.medi uni1826.medivar1
+                        uni18891826.medivar1      uni1889.medi uni1826.medi
+                        uni18891827.medi          uni1889.medi uni1827.medi
+                        uni18891888.medi          uni1889.medi uni1888.medi
+                        uni18891820.fina          uni1889.medi uni1820.fina
+                        uni18891822.fina          uni1889.medi uni1822.fina
+                        uni18891823.fina          uni1889.medi uni1823.fina
+                        uni18891826.fina          uni1889.medi uni1826.fina
+                        uni18891826.finavar1      uni1889.medi uni1826.finavar1
+                        uni18891827.fina          uni1889.medi uni1827.fina
+                        uni18891888.fina          uni1889.medi uni1888.fina
+                        uni18891844.medi          uni1889.medi uni1844.medi
+                        uni18891845.medi          uni1889.medi uni1845.medi
+                        uni18891846.medi          uni1889.medi uni1846.medi
+                        uni18891847.medi          uni1889.medi uni1847.medi
+                        uni18891844.fina          uni1889.medi uni1844.fina
+                        uni18891845.fina          uni1889.medi uni1845.fina
+                        uni18891846.fina          uni1889.medi uni1846.fina
+                        uni18891847.fina          uni1889.medi uni1847.fina
+                        uni18921820.init          uni1892.init uni1820.medi
+                        uni18921822.init          uni1892.init uni1822.medi
+                        uni18921823.init          uni1892.init uni1823.medi
+                        uni18921826.init          uni1892.init uni1826.medivar1
+                        uni18921826.initvar1      uni1892.init uni1826.medi
+                        uni18921827.init          uni1892.init uni1827.medi
+                        uni18921888.init          uni1892.init uni1888.medi
+                        uni18921820               uni1892.init uni1820.fina
+                        uni18921822               uni1892.init uni1822.fina
+                        uni18921823               uni1892.init uni1823.fina
+                        uni18921826               uni1892.init uni1826.fina
+                        uni18921826.var1          uni1892.init uni1826.finavar1
+                        uni18921827               uni1892.init uni1827.fina
+                        uni18921888               uni1892.init uni1888.fina
+                        uni1892185D.init          uni1892.init uni185D.medi
+                        uni1892185D               uni1892.init uni185D.fina
+                        uni18921860.init          uni1892.init uni1860.medi
+                        uni18921860               uni1892.init uni1860.fina
+                        uni18921820.medi          uni1892.medi uni1820.medi
+                        uni18921822.medi          uni1892.medi uni1822.medi
+                        uni18921823.medi          uni1892.medi uni1823.medi
+                        uni18921826.medi          uni1892.medi uni1826.medivar1
+                        uni18921826.medivar1      uni1892.medi uni1826.medi
+                        uni18921827.medi          uni1892.medi uni1827.medi
+                        uni18921888.medi          uni1892.medi uni1888.medi
+                        uni18921820.fina          uni1892.medi uni1820.fina
+                        uni18921822.fina          uni1892.medi uni1822.fina
+                        uni18921823.fina          uni1892.medi uni1823.fina
+                        uni18921826.fina          uni1892.medi uni1826.fina
+                        uni18921826.finavar1      uni1892.medi uni1826.finavar1
+                        uni18921827.fina          uni1892.medi uni1827.fina
+                        uni18921888.fina          uni1892.medi uni1888.fina
+                        uni1892185D.medi          uni1892.medi uni185D.medi
+                        uni1892185D.fina          uni1892.medi uni185D.fina
+                        uni18921860.medi          uni1892.medi uni1860.medi
+                        uni18921860.fina          uni1892.medi uni1860.fina
+                        uni18931820.init          uni1893.init uni1820.init
+                        uni18931822.init          uni1893.init uni1822.medi
+                        uni18931823.init          uni1893.init uni1823.medi
+                        uni18931826.init          uni1893.init uni1826.medivar1
+                        uni18931826.initvar1      uni1893.init uni1826.medi
+                        uni18931827.init          uni1893.init uni1827.medi
+                        uni18931888.init          uni1893.init uni1888.medi
+                        uni18931820               uni1893.init uni1820.fina
+                        uni18931822               uni1893.init uni1822.fina
+                        uni18931823               uni1893.init uni1823.fina
+                        uni18931826               uni1893.init uni1826.fina
+                        uni18931826.var1          uni1893.init uni1826.finavar1
+                        uni18931827               uni1893.init uni1827.fina
+                        uni18931888               uni1893.init uni1888.fina
+                        uni18931820.medi          uni1893.medi uni1820.medi
+                        uni18931822.medi          uni1893.medi uni1822.medi
+                        uni18931823.medi          uni1893.medi uni1823.medi
+                        uni18931826.medi          uni1893.medi uni1826.medivar1
+                        uni18931826.medivar1      uni1893.medi uni1826.medi
+                        uni18931827.medi          uni1893.medi uni1827.medi
+                        uni18931888.medi          uni1893.medi uni1888.medi
+                        uni18931820.fina          uni1893.medi uni1820.fina
+                        uni18931822.fina          uni1893.medi uni1822.fina
+                        uni18931823.fina          uni1893.medi uni1823.fina
+                        uni18931826.fina          uni1893.medi uni1826.fina
+                        uni18931826.finavar1      uni1893.medi uni1826.finavar1
+                        uni18931827.fina          uni1893.medi uni1827.fina
+                        uni18931888.fina          uni1893.medi uni1888.fina
+                        uni18A81820.init          uni18A8.init uni1820.medi
+                        uni18A81820               uni18A8.init uni1820.fina
+                        uni18A81823.init          uni18A8.init uni1823.medi
+                        uni18A81823               uni18A8.init uni1823.fina
+                        uni18A8185D.init          uni18A8.init uni185D.medi
+                        uni18A8185D               uni18A8.init uni185D.fina
+                        uni18A81860.init          uni18A8.init uni1860.medi
+                        uni18A81860               uni18A8.init uni1860.fina
+                        uni18A81888.init          uni18A8.init uni1888.medi
+                        uni18A81888               uni18A8.init uni1888.fina
+                        uni18A81820.medi          uni18A8.medi uni1820.medi
+                        uni18A81820.fina          uni18A8.medi uni1820.fina
+                        uni18A81823.medi          uni18A8.medi uni1823.medi
+                        uni18A81823.fina          uni18A8.medi uni1823.fina
+                        uni18A8185D.medi          uni18A8.medi uni185D.medi
+                        uni18A8185D.fina          uni18A8.medi uni185D.fina
+                        uni18A81860.medi          uni18A8.medi uni1860.medi
+                        uni18A81860.fina          uni18A8.medi uni1860.fina
+                        uni18A81888.medi          uni18A8.medi uni1888.medi
+                        uni18A81888.fina          uni18A8.medi uni1888.fina
+                        
+
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 12
+SettingCode             12
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni18201843               uni1820.init uni1843.fina
+                        uni18201843               uni1820.init uni1843.fina
+                        uni18201843.init          uni1820.init uni1843.medi
+                        uni18201843.medi          uni1820.medi uni1843.medi
+                        uni18201843.fina          uni1820.medi uni1843.fina
+                        uni18441843.init          uni1844.init uni1843.medi
+                        uni18441843               uni1844.init uni1843.finavar1
+                        uni18441843.medi          uni1844.medi uni1843.medi
+                        uni18441843.fina          uni1844.medi uni1843.fina
+                        uni18451843.init          uni1845.init uni1843.medi
+                        uni18451843               uni1845.init uni1843.finavar1
+                        uni18451843.medi          uni1845.medi uni1843.medi
+                        uni18451843.fina          uni1845.medi uni1843.fina
+                        uni18461843.init          uni1846.init uni1843.medi
+                        uni18461843               uni1846.init uni1843.fina
+                        uni18461843.medi          uni1846.medi uni1843.medi
+                        uni18461843.fina          uni1846.medi uni1843.finavar1
+                        uni18481843.init          uni1848.init uni1843.medi
+                        uni18481843               uni1848.init uni1843.fina
+                        uni18481843.medi          uni1848.medi uni1843.medi
+                        uni18481843.fina          uni1848.medi uni1843.finavar1
+
+                        
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 13
+SettingCode             13
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni18241824               uni1824.init uni1824.fina
+                        uni18261826               uni1826.init uni1826.fina
+                        uni182A1826.var2          uni182A1826.init uni1826.fina
+                        
+                        
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 14
+SettingCode             14
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni18291828.medivar1      uni1829.medi uni1828.medivar1
+                        uni1829182C.medi          uni1829.medi uni182C.medi
+                        uni1829182D.medi          uni1829.medi uni182D.medi
+                        uni1829182D.medi          uni1829.medi uni182D.medivar3
+                        uni1829182C.fina          uni1829.medi uni182C.medivar3
+                        uni1829182C.fina          uni1829.medi uni182C.finavar2
+                        uni1829182D.fina          uni1829.medi uni182D.fina
+                        uni1829182C.medivar1      uni1829.medi uni182C.medivar1
+                        uni1829182D.medivar1      uni1829.medi uni182D.medivar1
+                        uni1829182C.finavar1      uni1829.medi uni182C.medivar2
+                        uni1829182C.finavar1      uni1829.medi uni182C.finavar1
+                        uni1829182D.finavar1      uni1829.medi uni182D.medivar2
+                        uni1829182D.finavar1      uni1829.medi uni182D.finavar1
+                        uni1829182F.medi          uni1829.medi uni182F.medi
+                        uni182A182F.init          uni182A.init uni182F.medi
+                        uni182A182F.medi          uni182A.medi uni182F.medi
+                        uni182D182F.medi          uni182D.medifem uni182F.medi
+                        uni182E182E.medi          uni182E.medi uni182E.medi
+                        uni182E182F.medi          uni182E.medi uni182F.medi
+                        uni182F182F.medi          uni182F.medi uni182F.medi
+                        uni1889182F.init          uni1889.init uni182F.medi
+                        uni1889182F.medi          uni1889.medi uni182F.medi
+
+
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 15
+SettingCode             15
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni182F182F.medi          uni182F.medi uni182F.medi
+                        uni184A1828.medivar1      uni184A.medi uni1828.medivar1
+                        uni184A182F.medi          uni184A.medi uni182F.medi
+                        uni184A184D.medi          uni184A.medi uni184D.medi
+                        uni184A184E.medi          uni184A.medi uni184E.medi
+                        uni184B182F.init          uni184B.init uni182F.init
+                        uni184B182F.medi          uni184B.medi uni182F.medi
+                        uni184E182F.medi          uni184E.initfem uni182F.medi
+                        uni184F184F.medi          uni184F.medi uni184F.medi
+                        uni184F182F.medi          uni184F.medi uni182F.medi
+                        uni1889182F.init          uni1889.init uni182F.medi
+                        uni1889182F.medi          uni1889.medi uni182F.medi
+
+
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 16
+SettingCode             16
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni182A182F.init          uni182A.init uni182F.medi
+                        uni182A182F.medi          uni182A.medi uni182F.medi
+                        uni182E182E.medi          uni182E.medi uni182E.medi
+                        uni182E182F.medi          uni182E.medi uni182F.medi
+                        uni182F182F.medi          uni182F.medi uni182F.medi
+                        uni18621828.medivar1      uni1862.medi uni1828.medivar1
+                        uni18621863.medi          uni1862.medi uni1863.medi
+                        uni1862182F.medi          uni1862.medi uni182F.medi
+                        uni18621864.medi          uni1862.medi uni1864.medi
+                        uni18621865.medi          uni1862.medi uni1865.medi
+                        uni18621863.medivar1      uni1862.medi uni1863.medivar1
+
+
+
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 17
+SettingCode             17
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni18291828.medivar1      uni1829.medi uni1828.medivar1
+                        uni18291874.medi          uni1829.medi uni1874.medi
+                        uni18291874.medivar1      uni1829.medi uni1874.medivar1
+                        uni18291874.fina          uni1829.medi uni1874.fina
+                        uni1829182F.medi          uni1829.medi uni182F.medi
+                        uni18291864.medi          uni1829.medi uni1864.medi
+                        uni18291865.medi          uni1829.medi uni1865.medi
+                        uni182A182F.init          uni182A.init uni182F.medi
+                        uni182A182F.medi          uni182A.medi uni182F.medi
+                        uni182E182E.medi          uni182E.medi uni182E.medi
+                        uni182E182F.medi          uni182E.medi uni182F.medi
+                        uni182F182F.medi          uni182F.medi uni182F.medi
+
+
+
+Type                    LigatureList
+Name                    Ligatures
+Namecode                1
+Setting                 Required Ligatures 18
+SettingCode             18
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        glyph1788                 exclam question
+                        glyph1787                 question exclam
+
+
+
