@@ -1,8 +1,46 @@
+// isol3
+// Isolated Forms Ignored
+Type                    LigatureList
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni1820.var1              uni1820 uni180B
+                        uni1820.var2              uni1820 uni180C
+                        uni1821.var1              uni1821 uni180B
+                        uni1822.var1              uni1822 uni180B
+                        uni1824.var1              uni1824 uni180B
+                        uni1826.var1              uni1826 uni180B
+                        uni1826.var2              uni1826 uni180C
+                        uni1828.initvar1          uni1828 uni180B
+                        uni182C.isolfem           uni182C uni180B
+                        uni182C.isolfem           uni182D uni180B
+                        uni1835.var1              uni1835 uni180B
+                        maaglha                   uni1840 uni180B
+                        uni1847.var1              uni1847 uni180B
+                        uni1849.var1              uni1849 uni180B
+                        uni184E.initfem           uni184E uni180B
+                        uni185D.isol              uni185D uni180B
+                        uni185E.isol              uni185E uni180B
+                        uni1861.isol              uni1861 uni180B
+                        uni1873.isol              uni1873 uni180B
+                        uni1874.isolfem           uni1874 uni180B
+                        uni1887.var1              uni1887 uni180B
+
+
+// isol4
+// Isolated Forms
 Type                    Contextual
-Name                    Cursive Connection
-Namecode                2
-Setting                 Isolated Forms
-SettingCode             1
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -34,11 +72,65 @@ toIsol
                         uni1874    uni1874.isolfem
 
 
+// fina5
+// Final Forms Ignored
+Type                    LigatureList
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni1820.finavar1          uni1820 uni180B
+                        uni1821.finavar1          uni1821 uni180B
+                        uni1823.finavar1          uni1823 uni180B
+                        uni1824.finavar1          uni1824 uni180B
+                        uni1825.finavar1          uni1825 uni180B
+                        uni1826.finavar1          uni1826 uni180B
+                        uni1828.finavar1          uni1828 uni180C
+                        uni182A.finavar1          uni182A uni180B
+                        uni182C.finavar1          uni182C uni180B
+                        uni182D.finavar1          uni182D uni180B
+                        uni182D.finafem           uni182D uni180C
+                        uni1830.finavar1          uni1830 uni180B
+                        uni1830.finavar2          uni1830 uni180C
+                        uni1833.finavar1          uni1833 uni180B
+                        uni1836.finavar1          uni1836 uni180B
+                        uni1838.finavar1          uni1838 uni180B
+                        uni1843.finavar1          uni1843 uni180B
+                        uni1847.finavar1          uni1847 uni180B
+                        uni185D.finavar1          uni185D uni180B
+                        uni185D.finavar2          uni185D uni180C
+                        uni185D.finavar3          uni185D uni180D
+                        uni185E.finavar1          uni185E uni180B
+                        uni185E.finavar2          uni185E uni180C
+                        uni185E.finavar3          uni185E uni180D
+                        uni1860.finavar1          uni1860 uni180B
+                        uni1860.finavar2          uni1860 uni180C
+                        uni1860.finavar3          uni1860 uni180D
+                        uni1873.finavar1          uni1873 uni180B
+                        uni1873.finavar2          uni1873 uni180C
+                        uni1873.finavar3          uni1873 uni180D
+                        uni1874.finafem           uni1874 uni180B
+                        uni1874.finafemvar1       uni1874 uni180C
+                        uni1887.finavar1          uni1887 uni180B
+                        uni1887.finavar2          uni1887 uni180C
+                        uni1887.finavar3          uni1887 uni180D
+                        uni1888.finavar1          uni1888 uni180B
+                        uni1888.finavar2          uni1888 uni180C
+                        
+                        
+// fina6
+// Final Forms
 Type                    Contextual
-Name                    Cursive Connection
-Namecode                2
-Setting                 Final Forms
-SettingCode             2
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -181,11 +273,88 @@ toFina
                         uni18A7    uni18A7.fina
                         uni18A8    uni18A8.fina
 
+
+
+// medi7
+// Medial Forms Ignored
+Type                    LigatureList
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni1820.medivar1          uni1820 uni180B
+                        uni1820.medivar2          uni1820 uni180C
+                        uni1822.medivar1          uni1822 uni180B
+                        uni1822.medivar2          uni1822 uni180C
+                        uni1822.medivar3          uni1822 uni180D
+                        uni1823.medivar1          uni1823 uni180B
+                        uni1824.medivar1          uni1824 uni180B
+                        uni1825.medi              uni1825 uni180B
+                        uni1825.medivar2          uni1825 uni180C
+                        uni1826.medi              uni1826 uni180B
+                        uni1826.medivar2          uni1826 uni180C
+                        uni1828.medivar1          uni1828 uni180B
+                        uni1828.medivar2          uni1828 uni180C
+                        uni182C.medivar1          uni182C uni180B
+                        uni182C.medivar2          uni182C uni180C
+                        uni182C.medivar3          uni182C uni180D
+                        uni182D.medivar1          uni182D uni180B
+                        uni182D.medivar2          uni182D uni180C
+                        uni182D.medifem           uni182D uni180D
+                        uni1832.medivar1          uni1832 uni180B
+                        uni1832.medivar2          uni1832 uni180C
+                        uni1833.medivar1          uni1833 uni180B
+                        uni1835.medivar1          uni1835 uni180B
+                        uni1836.medivar1          uni1836 uni180B
+                        uni1836.medivar2          uni1836 uni180C
+                        uni1836.medivar3          uni1836 uni180D
+                        uni183A.medivar1          uni183A uni180B
+                        maaglha.medi              uni1840 uni180B
+                        uni1844.medivar1          uni1844 uni180B
+                        uni1845.medivar1          uni1845 uni180B
+                        uni1846.medivar1          uni1846 uni180B
+                        uni1847.medivar1          uni1847 uni180B
+                        uni1847.medivar2          uni1847 uni180C
+                        uni1848.medivar1          uni1848 uni180B
+                        uni1849.medivar1          uni1849 uni180B
+                        uni184D.medifem           uni184D uni180B
+                        uni184E.medivar1          uni184E uni180B
+                        uni185D.medivar1          uni185D uni180B
+                        uni185E.medivar1          uni185E uni180B
+                        uni185E.medivar2          uni185E uni180C
+                        uni1860.medivar1          uni1860 uni180B
+                        uni1860.medivar2          uni1860 uni180C
+                        uni1863.medivar1          uni1863 uni180B
+                        uni1865.medivar1          uni1865 uni180B
+                        uni1868.medivar1          uni1868 uni180B
+                        uni1868.medivar2          uni1868 uni180C
+                        uni1869.medivar1          uni1869 uni180B
+                        uni186F.medivar1          uni186F uni180B
+                        uni1873.medivar1          uni1873 uni180B
+                        uni1873.medivar2          uni1873 uni180C
+                        uni1873.medivar3          uni1873 uni180D
+                        uni1874.medivar1          uni1874 uni180B
+                        uni1874.medifem           uni1874 uni180C
+                        uni1874.medifemvar1       uni1874 uni180D
+                        uni1876.medivar1          uni1876 uni180B
+                        uni1888.medivar1          uni1888 uni180B
+                        uni188A.medivar1          uni188A uni180B
+                        uni18A1.medivar1          uni18A1 uni180B
+
+
+// medi8
+// Medial Forms
 Type                    Contextual
-Name                    Cursive Connection
-Namecode                2
-Setting                 Medial Forms
-SettingCode             3
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -331,12 +500,53 @@ toMedi
                         uni18A7    uni18A7.medi
                         uni18A8    uni18A8.medi
 
-                        
+
+// init9
+// Initial Forms Ignored
+Type                    LigatureList
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+List
+                        uni1820.initvar1          uni1820 uni180B
+                        uni1821.initvar1          uni1821 uni180B
+                        uni1826.initvar1          uni1826 uni180B
+                        uni1828.initvar1          uni1828 uni180B
+                        uni1828.medivar3          uni1828 uni180C
+                        uni182C.initvar1          uni182C uni180B
+                        uni182D.initvar1          uni182D uni180B
+                        uni182D.initvar2          uni182D uni180C
+                        uni1833.initvar1          uni1833 uni180B
+                        uni1836.initvar1          uni1836 uni180B
+                        uni1836.initvar2          uni1836 uni180C
+                        uni183A.initvar1          uni183A uni180B
+                        maaglha.init              uni1840 uni180B
+                        uni184D.initfem           uni184D uni180B
+                        uni184E.initfem           uni184E uni180B
+                        uni1863.initfem           uni1863 uni180B
+                        uni1864.initvar1          uni1864 uni180B
+                        uni1868.initvar1          uni1868 uni180B
+                        uni1869.initvar1          uni1869 uni180B
+                        uni186F.initvar1          uni186F uni180B
+                        uni1874.isolfem           uni1874 uni180B
+                        uni1876.initvar1          uni1876 uni180B
+                        uni188A.initvar1          uni188A uni180B
+                        uni18A1.initvar1          uni18A1 uni180B
+
+
+// init10
+// Initial Forms         
 Type                    Contextual
-Name                    Cursive Connection
-Namecode                2
-Setting                 Initial Forms
-SettingCode             4
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -478,12 +688,13 @@ toInit
                         uni18A8    uni18A8.init
                         
                         
-                        
+// rlig11
+// Required Ligatures 11              
 Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 11
-SettingCode             11
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -1218,45 +1429,49 @@ List
                         uni18A81888.fina          uni18A8.medi uni1888.fina
                         
 
-Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 12
-SettingCode             12
-Default                 yes
-Orientation             HV
-Forward                 yes
-Exclusive               no
+// rlig12
+// Required Ligatures 12
+//Type                    LigatureList
+//Name                    NULL
+//Namecode                16000
+//Setting                 NULL
+//SettingCode             0
+//Default                 yes
+//Orientation             HV
+//Forward                 yes
+//Exclusive               no
+//
+//List
+//                        uni18201843               uni1820.init uni1843.fina
+//                        uni18201843               uni1820.init uni1843.fina
+//                        uni18201843.init          uni1820.init uni1843.medi
+//                        uni18201843.medi          uni1820.medi uni1843.medi
+//                        uni18201843.fina          uni1820.medi uni1843.fina
+//                        uni18441843.init          uni1844.init uni1843.medi
+//                        uni18441843               uni1844.init uni1843.finavar1
+//                        uni18441843.medi          uni1844.medi uni1843.medi
+//                        uni18441843.fina          uni1844.medi uni1843.fina
+//                        uni18451843.init          uni1845.init uni1843.medi
+//                        uni18451843               uni1845.init uni1843.finavar1
+//                        uni18451843.medi          uni1845.medi uni1843.medi
+//                        uni18451843.fina          uni1845.medi uni1843.fina
+//                        uni18461843.init          uni1846.init uni1843.medi
+//                        uni18461843               uni1846.init uni1843.fina
+//                        uni18461843.medi          uni1846.medi uni1843.medi
+//                        uni18461843.fina          uni1846.medi uni1843.finavar1
+//                        uni18481843.init          uni1848.init uni1843.medi
+//                        uni18481843               uni1848.init uni1843.fina
+//                        uni18481843.medi          uni1848.medi uni1843.medi
+//                        uni18481843.fina          uni1848.medi uni1843.finavar1
 
-List
-                        uni18201843               uni1820.init uni1843.fina
-                        uni18201843               uni1820.init uni1843.fina
-                        uni18201843.init          uni1820.init uni1843.medi
-                        uni18201843.medi          uni1820.medi uni1843.medi
-                        uni18201843.fina          uni1820.medi uni1843.fina
-                        uni18441843.init          uni1844.init uni1843.medi
-                        uni18441843               uni1844.init uni1843.finavar1
-                        uni18441843.medi          uni1844.medi uni1843.medi
-                        uni18441843.fina          uni1844.medi uni1843.fina
-                        uni18451843.init          uni1845.init uni1843.medi
-                        uni18451843               uni1845.init uni1843.finavar1
-                        uni18451843.medi          uni1845.medi uni1843.medi
-                        uni18451843.fina          uni1845.medi uni1843.fina
-                        uni18461843.init          uni1846.init uni1843.medi
-                        uni18461843               uni1846.init uni1843.fina
-                        uni18461843.medi          uni1846.medi uni1843.medi
-                        uni18461843.fina          uni1846.medi uni1843.finavar1
-                        uni18481843.init          uni1848.init uni1843.medi
-                        uni18481843               uni1848.init uni1843.fina
-                        uni18481843.medi          uni1848.medi uni1843.medi
-                        uni18481843.fina          uni1848.medi uni1843.finavar1
 
-                        
+// rlig13
+// Required Ligatures 13            
 Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 13
-SettingCode             13
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -1267,12 +1482,14 @@ List
                         uni18261826               uni1826.init uni1826.fina
                         uni182A1826.var2          uni182A1826.init uni1826.fina
                         
-                        
+
+// rlig14
+// Required Ligatures 14      
 Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 14
-SettingCode             14
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -1303,87 +1520,94 @@ List
                         uni1889182F.medi          uni1889.medi uni182F.medi
 
 
+
+// rlig15
+// Required Ligatures 15
+//Type                    LigatureList
+//Name                    NULL
+//Namecode                16000
+//Setting                 NULL
+//SettingCode             0
+//Default                 yes
+//Orientation             HV
+//Forward                 yes
+//Exclusive               no
+//
+//List
+//                        uni182F182F.medi          uni182F.medi uni182F.medi
+//                        uni184A1828.medivar1      uni184A.medi uni1828.medivar1
+//                        uni184A182F.medi          uni184A.medi uni182F.medi
+//                        uni184A184D.medi          uni184A.medi uni184D.medi
+//                        uni184A184E.medi          uni184A.medi uni184E.medi
+//                        uni184B182F.init          uni184B.init uni182F.init
+//                        uni184B182F.medi          uni184B.medi uni182F.medi
+//                        uni184E182F.medi          uni184E.initfem uni182F.medi
+//                        uni184F184F.medi          uni184F.medi uni184F.medi
+//                        uni184F182F.medi          uni184F.medi uni182F.medi
+//                        uni1889182F.init          uni1889.init uni182F.medi
+//                        uni1889182F.medi          uni1889.medi uni182F.medi
+
+
+// rlig16
+// Required Ligatures 16
+//Type                    LigatureList
+//Name                    NULL
+//Namecode                16000
+//Setting                 NULL
+//SettingCode             0
+//Default                 yes
+//Orientation             HV
+//Forward                 yes
+//Exclusive               no
+//
+//List
+//                        uni182A182F.init          uni182A.init uni182F.medi
+//                        uni182A182F.medi          uni182A.medi uni182F.medi
+//                        uni182E182E.medi          uni182E.medi uni182E.medi
+//                        uni182E182F.medi          uni182E.medi uni182F.medi
+//                        uni182F182F.medi          uni182F.medi uni182F.medi
+//                        uni18621828.medivar1      uni1862.medi uni1828.medivar1
+//                        uni18621863.medi          uni1862.medi uni1863.medi
+//                        uni1862182F.medi          uni1862.medi uni182F.medi
+//                        uni18621864.medi          uni1862.medi uni1864.medi
+//                        uni18621865.medi          uni1862.medi uni1865.medi
+//                        uni18621863.medivar1      uni1862.medi uni1863.medivar1
+
+
+// rlig17
+// Required Ligatures 17
+//Type                    LigatureList
+//Name                    NULL
+//Namecode                16000
+//Setting                 NULL
+//SettingCode             0
+//Default                 yes
+//Orientation             HV
+//Forward                 yes
+//Exclusive               no
+//
+//List
+//                        uni18291828.medivar1      uni1829.medi uni1828.medivar1
+//                        uni18291874.medi          uni1829.medi uni1874.medi
+//                        uni18291874.medivar1      uni1829.medi uni1874.medivar1
+//                        uni18291874.fina          uni1829.medi uni1874.fina
+//                        uni1829182F.medi          uni1829.medi uni182F.medi
+//                        uni18291864.medi          uni1829.medi uni1864.medi
+//                        uni18291865.medi          uni1829.medi uni1865.medi
+//                        uni182A182F.init          uni182A.init uni182F.medi
+//                        uni182A182F.medi          uni182A.medi uni182F.medi
+//                        uni182E182E.medi          uni182E.medi uni182E.medi
+//                        uni182E182F.medi          uni182E.medi uni182F.medi
+//                        uni182F182F.medi          uni182F.medi uni182F.medi
+
+
+// rlig18
+// Required Ligatures 18
 Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 15
-SettingCode             15
-Default                 yes
-Orientation             HV
-Forward                 yes
-Exclusive               no
-
-List
-                        uni182F182F.medi          uni182F.medi uni182F.medi
-                        uni184A1828.medivar1      uni184A.medi uni1828.medivar1
-                        uni184A182F.medi          uni184A.medi uni182F.medi
-                        uni184A184D.medi          uni184A.medi uni184D.medi
-                        uni184A184E.medi          uni184A.medi uni184E.medi
-                        uni184B182F.init          uni184B.init uni182F.init
-                        uni184B182F.medi          uni184B.medi uni182F.medi
-                        uni184E182F.medi          uni184E.initfem uni182F.medi
-                        uni184F184F.medi          uni184F.medi uni184F.medi
-                        uni184F182F.medi          uni184F.medi uni182F.medi
-                        uni1889182F.init          uni1889.init uni182F.medi
-                        uni1889182F.medi          uni1889.medi uni182F.medi
-
-
-Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 16
-SettingCode             16
-Default                 yes
-Orientation             HV
-Forward                 yes
-Exclusive               no
-
-List
-                        uni182A182F.init          uni182A.init uni182F.medi
-                        uni182A182F.medi          uni182A.medi uni182F.medi
-                        uni182E182E.medi          uni182E.medi uni182E.medi
-                        uni182E182F.medi          uni182E.medi uni182F.medi
-                        uni182F182F.medi          uni182F.medi uni182F.medi
-                        uni18621828.medivar1      uni1862.medi uni1828.medivar1
-                        uni18621863.medi          uni1862.medi uni1863.medi
-                        uni1862182F.medi          uni1862.medi uni182F.medi
-                        uni18621864.medi          uni1862.medi uni1864.medi
-                        uni18621865.medi          uni1862.medi uni1865.medi
-                        uni18621863.medivar1      uni1862.medi uni1863.medivar1
-
-
-
-Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 17
-SettingCode             17
-Default                 yes
-Orientation             HV
-Forward                 yes
-Exclusive               no
-
-List
-                        uni18291828.medivar1      uni1829.medi uni1828.medivar1
-                        uni18291874.medi          uni1829.medi uni1874.medi
-                        uni18291874.medivar1      uni1829.medi uni1874.medivar1
-                        uni18291874.fina          uni1829.medi uni1874.fina
-                        uni1829182F.medi          uni1829.medi uni182F.medi
-                        uni18291864.medi          uni1829.medi uni1864.medi
-                        uni18291865.medi          uni1829.medi uni1865.medi
-                        uni182A182F.init          uni182A.init uni182F.medi
-                        uni182A182F.medi          uni182A.medi uni182F.medi
-                        uni182E182E.medi          uni182E.medi uni182E.medi
-                        uni182E182F.medi          uni182E.medi uni182F.medi
-                        uni182F182F.medi          uni182F.medi uni182F.medi
-
-
-
-Type                    LigatureList
-Name                    Ligatures
-Namecode                1
-Setting                 Required Ligatures 18
-SettingCode             18
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
 Default                 yes
 Orientation             HV
 Forward                 yes
@@ -1394,4 +1618,18 @@ List
                         glyph1787                 question exclam
 
 
+// rlig76
+// Required Ligatures 76
+Type                    LigatureList
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
 
+List
+                        uni182C1825.var3          uni182C uni180B uni1825 uni202F
+                        uni182C1825.var3          uni182C uni180B uni1826 uni202F
