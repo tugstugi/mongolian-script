@@ -2600,3 +2600,372 @@ change
                         uni182D.fina              uni182D.finafem
 
 
+// calt59
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+U1833M                  uni1833.medi
+CALT22                  uni1820.medi uni1820.medivar1 uni1820.medivar2 uni1820.fina uni1820.finavar1 uni1820.mvsvar1 uni1821.medi uni1821.fina uni1821.finavar1 uni1821.mvsvar1 uni1822.medi uni1822.medivar1 uni1822.fina uni1822.medivar2 uni1822.medivar3 uni1823.medi uni1823.fina uni1823.finavar1 uni1824.medi uni1824.medivar1 uni1824.fina uni1824.finavar1 uni1825.medi uni1825.medivar1 uni1825.medivar2 uni1825.fina uni1825.finavar1 uni1826.medi uni1826.medivar1 uni1826.medivar2 uni1826.fina uni1826.finavar1 uni1827.medi uni1827.fina uni1887.fina uni1887.finavar1 uni1887.finavar2 uni1887.finavar3 uni1888.fina uni1888.medi uni1888.medivar1 uni1888.finavar1 uni1888.finavar2
+
+                        EOT    OOB    DEL    EOL    U1833M    CALT22
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+SawU1833M                1      1      1      1         2         3
+SawCALT22                1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawU1833M                yes     yes       none         none
+3                       SawCALT22                no      yes       change       none
+
+change
+                        uni1833.medi              uni1833.medivar1
+
+// calt60
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+U1822C                  uni1822.init uni1822.medi uni1822.medivar1 uni1822.medivar2 uni1822.medivar3
+U182DF                  uni182D.finavar1
+
+                        EOT    OOB    DEL    EOL    U1822C    U182DF
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+SawU1822C                1      1      1      1         2         3
+SawU182DF                1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawU1822C                no      yes       none         none
+3                       SawU182DF                no      yes       none         change
+
+change
+                        uni182D.finavar1          uni182D.fina
+
+
+// calt63
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+U18A6C                  uni18A6.init uni18A6.medi
+U1887F                  uni1887.fina
+
+                        EOT    OOB    DEL    EOL    U18A6C    U1887F
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+SawU18A6C                1      1      1      1         2         3
+SawU1887F                1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawU18A6C                no      yes       none         none
+3                       SawU1887F                no      yes       none         change
+
+change
+                        uni1887.fina              uni1887.finavar1
+
+
+// calt64
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+U188AC                  uni188A.init uni188A.medi
+U1887F                  uni1887.fina
+
+                        EOT    OOB    DEL    EOL    U188AC    U1887F
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+SawU188AC                1      1      1      1         2         3
+SawU1887F                1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawU188AC                no      yes       none         none
+3                       SawU1887F                no      yes       none         change
+
+change
+                        uni1887.fina              uni1887.finavar2
+
+
+// calt65
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+CALT44                  uni1807.medi uni1828.init uni1828.initvar1 uni1828.medi uni1828.medivar1 uni1828.medivar2 uni1828.medivar3 uni1829.init uni1829.medi uni182C.init uni182C.medi uni182C.initvar1 uni182C.medivar1 uni182C.medivar2 uni182C.medivar3 uni182D.init uni182D.medi uni182D.initvar1 uni182D.initvar2 uni182D.medivar1 uni182D.medivar2 uni182D.medivar3 uni182D.medifem uni182E.init uni182E.medi uni182F.init uni182F.medi uni1830.init uni1830.medi uni1831.init uni1831.medi uni1832.init uni1832.medi uni1832.medivar1 uni1832.medivar2 uni1833.init uni1833.medi uni1833.initvar1 uni1833.medivar1 uni1834.init uni1834.medi uni1835.init uni1835.medi uni1835.medivar1 uni1836.init uni1836.medi uni1836.initvar1 uni1836.initvar2 uni1836.medivar1 uni1836.medivar2 uni1836.medivar3 uni1837.init uni1837.medi uni1838.init uni1838.medi uni183A.init uni183A.medi uni183C.init uni183C.medi uni183D.init uni183D.medi uni183E.init uni183E.medi uni183F.init uni183F.medi uni1840.init uni1840.medi uni1841.init uni1841.medi uni1842.init uni1842.medi uni1854.init uni1854.medi uni185B.init uni185B.medi uni185C.init uni185C.medi uni1864.init uni1864.medi uni1864.initvar1 uni1865.init uni1865.medi uni1867.init uni1867.medi uni1868.init uni1868.initvar1 uni1868.medi uni1868.medivar1 uni1868.medivar2 uni1869.init uni1869.initvar1 uni1869.medi uni1869.medivar1 uni186C.init uni186C.medi uni186D.init uni186D.medi uni186E.init uni186E.medi uni186F.init uni186F.initvar1 uni186F.medi uni186F.medivar1 uni1870.init uni1870.medi uni1871.init uni1871.medi uni1874.init uni1874.medi uni1874.medivar1 uni1874.medifem uni1874.medifemvar1 uni1875.init uni1875.medi uni1876.init uni1876.initvar1 uni1876.medi uni1876.medivar1 uni1877.init uni1877.medi uni188A.init uni188A.initvar1 uni188A.medi uni188A.medivar1 uni188B.init uni188B.medi uni188C.init uni188C.medi uni188D.init uni188D.medi uni188E.init uni188E.medi uni188F.init uni188F.medi uni1890.init uni1890.medi uni1891.init uni1891.medi uni1894.init uni1894.medi uni1895.init uni1895.medi uni1896.init uni1896.medi uni1897.init uni1897.medi uni189A.init uni189A.medi uni189B.init uni189B.medi uni189C.init uni189C.medi uni189D.init uni189D.medi uni189E.init uni189E.medi uni189F.init uni189F.medi uni18A0.init uni18A0.medi uni18A1.init uni18A1.medi uni18A2.init uni18A2.medi uni18A3.init uni18A3.medi uni18A4.init uni18A4.medi uni18A5.init uni18A5.medi uni18A6.init uni18A6.medi uni18A7.init uni18A7.medi uni18A9.init uni18A9.medi
+U1887F                  uni1887.fina
+
+                        EOT    OOB    DEL    EOL    CALT44    U1887F
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+SawCALT44                1      1      1      1         2         3
+SawU1887F                1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawCALT44                no      yes       none         none
+3                       SawU1887F                no      yes       none         change
+
+change
+                        uni1887.fina              uni1887.finavar3
+
+
+// calt66
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+U188AC                  uni188A.init uni188A.medi
+U1887F                  uni1887.finavar2
+
+                        EOT    OOB    DEL    EOL    U188AC    U1887F
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+SawU188AC                1      1      1      1         2         3
+SawU1887F                1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawU188AC                yes     yes       none         none
+3                       SawU1887F                no      yes       change       none
+
+change
+                        uni188A.init              uni188A.initvar1
+                        uni188A.medi              uni188A.medivar1
+
+
+// calt71
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+U180AM                  uni180A.mark
+
+                        EOT    OOB    DEL    EOL    U180AM
+StartText                1      1      1      1         2
+StartLine                1      1      1      1         2
+SawU180AM                1      1      1      1         2
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawU180AM                no      yes       none         change
+
+change
+                        uni180A.mark              uni180A
+
+
+// calt73
+// Ignored Marks
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+NBNS                    uni202F
+CALT00                  uni1828.init uni182F.init uni1832.init uni1833.initvar1 uni1836.initvar2 uni1836.init
+U1826C                  uni1826.medi uni1826.fina
+
+                        EOT    OOB    DEL    EOL      NBNS    CALT00    U1826C
+StartText                1      1      1      1         2         1        1
+StartLine                1      1      1      1         2         1        1
+SawNBNS                  1      1      1      1         2         3        1
+SawCALT00                1      1      1      1         2         1        4
+SawU1826C                1      1      1      1         2         1        1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawNBNS                  no      yes       none         none
+3                       SawCALT00                no      yes       none         none
+4                       SawU1826C                no      yes       none         change
+
+change
+                        uni1826.medi              uni1826.medivar1
+                        uni1826.fina              uni1826.medivar1
+
+
+// calt74
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+ZWJ                     uni200D
+U1836M                  uni1836.medi
+
+                        EOT    OOB    DEL    EOL       ZWJ    U1836M
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+Saw1ZWJ                  1      1      1      1         2         3
+SawU1836M                1      1      1      1         4         1
+Saw2ZWJ                  1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       Saw1ZWJ                  no      yes       none         none
+3                       SawU1836M                yes     yes       none         none
+4                       Saw2ZWJ                  no      yes       change       none
+
+change
+                        uni1836.medi              uni1836.medivar1
+
+
+// calt75
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+ZWJ                     uni200D
+U1838M                  uni1838.medi
+
+                        EOT    OOB    DEL    EOL       ZWJ    U1838M
+StartText                1      1      1      1         2         1
+StartLine                1      1      1      1         2         1
+Saw1ZWJ                  1      1      1      1         2         3
+SawU1838M                1      1      1      1         4         1
+Saw2ZWJ                  1      1      1      1         2         1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       Saw1ZWJ                  no      yes       none         none
+3                       SawU1838M                yes     yes       none         none
+4                       Saw2ZWJ                  no      yes       change       none
+
+change
+                        uni1838.medi              uni1838.finavar1
+
+
+// calt77
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+CALT38                  uni1828.init uni1828.initvar1 uni1828.medi uni1828.medivar1 uni1828.medivar2 uni1828.medivar3 uni1829.init uni1829.medi uni182A.init uni182A.medi uni182B.init uni182B.medi uni182C.init uni182C.medi uni182C.initvar1 uni182C.medivar1 uni182C.medivar2 uni182C.medivar3 uni182C.isolfem uni182C.initfem uni182D.init uni182D.medi uni182D.initvar1 uni182D.initvar2 uni182D.medivar1 uni182D.medivar2 uni182D.medivar3 uni182D.isolfem uni182D.initfem uni182D.medifem uni182E.init uni182E.medi uni182F.init uni182F.medi uni1830.init uni1830.medi uni1831.init uni1831.medi uni1832.init uni1832.medi uni1832.medivar1 uni1832.medivar2 uni1833.init uni1833.medi uni1833.initvar1 uni1833.medivar1 uni1834.init uni1834.medi uni1835.init uni1835.medi uni1835.medivar1 uni1836.init uni1836.medi uni1836.initvar1 uni1836.initvar2 uni1836.medivar1 uni1836.medivar2 uni1836.medivar3 uni1837.init uni1837.medi uni1838.init uni1838.medi uni1839.init uni1839.medi uni183A.init uni183A.medi uni183A.initvar1 uni183A.medivar1 uni183B.init uni183B.medi uni183C.init uni183C.medi uni183D.init uni183D.medi uni183E.init uni183E.medi uni183F.init uni183F.medi uni1840.init uni1840.medi uni1841.init uni1841.medi uni1842.init uni1842.medi uni1854.init uni1854.medi uni185B.init uni185B.medi uni185C.init uni185C.medi uni1889.init uni1889.medi uni188A.init uni188A.initvar1 uni188A.medi uni188A.medivar1 uni188B.init uni188B.medi uni188C.init uni188C.medi uni188D.init uni188D.medi uni188E.init uni188E.medi uni188F.init uni188F.medi uni1890.init uni1890.medi uni1891.init uni1891.medi uni1892.init uni1892.medi uni1893.init uni1893.medi uni1894.init uni1894.medi uni1895.init uni1895.medi uni1896.init uni1896.medi uni1897.init uni1897.medi uni18A6.init uni18A6.medi uni18A7.init uni18A7.medi uni18A9.init uni18A9.medi
+U1822C                  uni1822.medi uni1822.medivar1 uni1822.medivar2 uni1822.medivar3
+CALT27                  uni1828.medi uni1828.medivar1 uni1828.medivar2 uni1828.medivar3 uni1829.medi uni182A.medi uni182B.medi uni182C.medi uni182C.medivar1 uni182C.medivar2 uni182C.medivar3 uni182D.medi uni182D.medivar1 uni182D.medivar2 uni182D.medivar3 uni182D.medifem uni182E.medi uni182F.medi uni1830.medi uni1831.medi uni1832.medi uni1832.medivar1 uni1832.medivar2 uni1833.medi uni1833.medivar1 uni1834.medi uni1835.medi uni1835.medivar1 uni1836.medi uni1836.medivar1 uni1836.medivar2 uni1836.medivar3 uni1837.medi uni1838.medi uni1839.medi uni183A.medi uni183A.medivar1 uni183B.medi uni183C.medi uni183D.medi uni183E.medi uni183F.medi uni1840.medi uni1841.medi uni1842.medi uni1854.medi uni185B.medi uni185C.medi uni1889.medi uni188A.medi uni188A.medivar1 uni188B.medi uni188C.medi uni188D.medi uni188E.medi uni188F.medi uni1890.medi uni1891.medi uni1892.medi uni1893.medi uni1894.medi uni1895.medi uni1896.medi uni1897.medi uni18A6.medi uni18A7.medi uni18A9.medi
+U182DF                  uni182D.fina
+CALT00                  space uni202F
+
+                        EOT    OOB    DEL    EOL    CALT38    U1822C    CALT27    U182DF    CALT00
+StartText                1      1      1      1         2         1        1        1        1
+StartLine                1      1      1      1         2         1        1        1        1
+SawCALT38                1      1      1      1         2         3        1        1        1
+Saw1U1822C               1      1      1      1         2         1        4        1        1
+SawCALT27                1      1      1      1         2         1        1        5        1
+Saw2U1822C               1      1      1      1         2         1        6        1        1
+SawU182DF                1      1      1      1         2         1        1        1        7
+SawCALT00                1      1      1      1         2         1        1        1        1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawCALT38                no      yes       none         none
+3                       Saw1U1822C               no      yes       none         none
+4                       SawCALT27                no      yes       none         none
+5                       Saw2U1822C               no      yes       none         none
+6                       SawU182DF                yes     yes       none         none
+7                       SawCALT00                no      yes       change       none
+
+change
+                        uni182D.fina              uni182D.finafem
+
+
+// calt78
+Type                    Contextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+CALT18                  uni1821.init uni1821.initvar1 uni1821.medi uni1825.init uni1825.medi uni1825.medivar1 uni1825.medivar2 uni1826.var1 uni1826.init uni1826.medi uni1826.medivar1 uni1826.medivar2 uni1827.init uni1827.medi uni182D.init uni182D.medi uni182D.initvar1 uni182D.initvar2 uni182D.medivar1 uni182D.medivar2 uni182D.medivar3 uni182D1821.init uni182D1821.medi uni182D1826.medi uni182D1826.var1 uni182D1826.medivar1 uni182D1826.medivar2 uni182D1826.medivar3
+U182DF                  uni182D.fina
+CALT00                  space uni202F
+
+                        EOT    OOB    DEL    EOL    CALT18    U182DF    CALT00
+StartText                1      1      1      1         2         1        1
+StartLine                1      1      1      1         2         1        1
+SawCALT18                1      1      1      1         2         3        1
+SawU182DF                1      1      1      1         2         1        4
+SawCALT00                1      1      1      1         2         1        1
+
+                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
+1                       StartText                no      yes       none         none
+2                       SawCALT18                no      yes       none         none
+3                       SawU182DF                yes     yes       none         none
+4                       SawCALT00                no      yes       change       none
+
+change
+                        uni182D.fina              uni182D.finafem
+
+
+
