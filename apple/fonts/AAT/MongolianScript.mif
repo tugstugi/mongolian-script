@@ -1,5 +1,4 @@
 // isol3
-// Isolated Forms Ignored
 Type                    LigatureList
 Name                    NULL
 Namecode                16000
@@ -80,7 +79,6 @@ toIsol
 
 
 // fina5
-// Final Forms Ignored
 Type                    LigatureList
 Name                    NULL
 Namecode                16000
@@ -283,7 +281,6 @@ toFina
 
 
 // medi7
-// Medial Forms Ignored
 Type                    LigatureList
 Name                    NULL
 Namecode                16000
@@ -509,7 +506,6 @@ toMedi
 
 
 // init9
-// Initial Forms Ignored
 Type                    LigatureList
 Name                    NULL
 Namecode                16000
@@ -694,6 +690,22 @@ toInit
                         uni18A7    uni18A7.init
                         uni18A8    uni18A8.init
                         
+      
+
+// rlig1
+Type                    Noncontextual
+Name                    NULL
+Namecode                16000
+Setting                 NULL
+SettingCode             0
+Default                 yes
+Orientation             HV
+Forward                 yes
+Exclusive               no
+
+uni180A                  uni180A.mark
+
+
                         
 // rlig11
 // Required Ligatures 11              
@@ -2860,7 +2872,7 @@ change
 
 
 // calt71
-Type                    Contextual
+Type                    Noncontextual
 Name                    NULL
 Namecode                16000
 Setting                 NULL
@@ -2870,23 +2882,10 @@ Orientation             HV
 Forward                 yes
 Exclusive               no
 
-U180AM                  uni180A.mark
-
-                        EOT    OOB    DEL    EOL    U180AM
-StartText                1      1      1      1         2
-StartLine                1      1      1      1         2
-SawU180AM                1      1      1      1         2
-
-                        GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
-1                       StartText                no      yes       none         none
-2                       SawU180AM                no      yes       none         change
-
-change
-                        uni180A.mark              uni180A
+uni180A.mark              uni180A
 
 
 // calt73
-// Ignored Marks
 Type                    Contextual
 Name                    NULL
 Namecode                16000
