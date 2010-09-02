@@ -10,15 +10,15 @@ Orientation             HV
 Forward                 yes
 Exclusive               no
 
+Ignore                  uni180B uni180C uni180D
 Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
-FVS                     uni180B uni180C uni180D
 
-                        EOT    OOB    DEL    FVS    EOL    Letter
+                        EOT    OOB    DEL    EOL  Ignore    Letter
 StartText                1      2      1      1      1         5
 StartLine                1      2      1      1      1         5
-SawOOB                   1      2      2      2      1         5
-SawFirstLetter           8      8      3      3      8         6
-SawLetters               1      7      4      4      1         4
+SawOOB                   1      2      2      1      2         5
+SawFirstLetter           8      8      3      8      3         6
+SawLetters               1      7      4      2      4         4
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
@@ -355,14 +355,14 @@ Orientation             HV
 Forward                 yes
 Exclusive               no
 
+Ignore                  uni180B uni180C uni180D
 Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
-FVS                     uni180B uni180C uni180D
 
 
-                        EOT    OOB    DEL    FVS    EOL    Letter
+                        EOT    OOB    DEL    EOL  Ignore    Letter
 StartText                1      1      1      1      1         3
 StartLine                1      1      1      1      1         3
-SawLetter                4      4      2      2      4         3
+SawLetter                4      4      2      4      2         3
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
@@ -713,15 +713,15 @@ Orientation             HV
 Forward                 yes
 Exclusive               no
 
+Ignore                  uni180B uni180C uni180D
 Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
-FVS                     uni180B uni180C uni180D
 
 
-                        EOT    OOB    DEL    FVS    EOL    Letter
+                        EOT    OOB    DEL    EOL  Ignore    Letter
 StartText                1      1      1      1      1         4
 StartLine                1      1      1      1      1         4
-SawFirstLetter           1      1      2      2      1         5
-SawLetter                5      5      3      3      5         5
+SawFirstLetter           1      1      2      1      2         5
+SawLetter                5      5      3      5      3         5
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
