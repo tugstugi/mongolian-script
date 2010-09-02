@@ -721,7 +721,7 @@ Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 
 StartText                1      1      1      1      1         4
 StartLine                1      1      1      1      1         4
 SawFirstLetter           1      1      2      1      2         5
-SawLetter                5      5      3      5      3         5
+SawLetter                1      1      3      1      3         5
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
