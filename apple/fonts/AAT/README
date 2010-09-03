@@ -1,0 +1,11 @@
+How to convert Mongolian Baiti font into MacOS AAT font?
+
+* Install "Apple Font Tool Suite" from http://developer.apple.com/fonts/
+* Install Fontforge and Perl with MacPorts.
+* Grab the monbaiti.ttf from a Windows installation.
+* Open monbaiti.ttf with Fontforge and generate as MongolianBaiti.dfont (select as TrueType (Mac dfont)).
+* Call "replaceMarks.pl > ReplacedMongolianScript.mif"
+* Call "ftxenhancer -m ReplacedMongolianScript.mif MongolianBaiti.dfont"
+* Call "cp MongolianBaiti.dfont ~/Library/Fonts"
+* Call "fc-cache -v -f"
+* Now you can test your font install with http://www.babelstone.co.uk/Test/Mongolian.html
