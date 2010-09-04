@@ -362,13 +362,15 @@ Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 
                         EOT    OOB    DEL    EOL  Ignore    Letter
 StartText                1      1      1      1      1         3
 StartLine                1      1      1      1      1         3
-SawLetter                4      4      2      4      2         3
+SawFirstLetter           1      1      2      1      2         4
+SawLetter                5      5      3      5      3         4
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
-2                       SawLetter                no      yes       none         none
-3                       SawLetter                yes     yes       none         none
-4                       StartText                no      yes       toMark       none
+2                       SawFirstLetter           no      yes       none         none
+3                       SawLetter                no      yes       none         none
+4                       SawLetter                yes     yes       none         none
+5                       StartText                no      yes       toMark       none
 
 toMark
                         uni1820    uni1820.marked
@@ -1096,17 +1098,21 @@ Orientation             HV
 Forward                 yes
 Exclusive               no
 
+Ignore                  uni180B uni180C uni180D
 Letter                  uni1820 uni1821 uni1822 uni1823 uni1824 uni1825 uni1826 uni1827 uni1828 uni1829 uni182A uni182B uni182C uni182D uni182E uni182F uni1830 uni1831 uni1832 uni1833 uni1834 uni1835 uni1836 uni1837 uni1838 uni1839 uni183A uni183B uni183C uni183D uni183E uni183F uni1840 uni1841 uni1842 uni1843 uni1844 uni1845 uni1846 uni1847 uni1848 uni1849 uni184A uni184B uni184C uni184D uni184E uni184F uni1850 uni1851 uni1852 uni1853 uni1854 uni1855 uni1856 uni1857 uni1858 uni1859 uni185A uni185B uni185C uni185D uni185E uni185F uni1860 uni1861 uni1862 uni1863 uni1864 uni1865 uni1866 uni1867 uni1868 uni1869 uni186A uni186B uni186C uni186D uni186E uni186F uni1870 uni1871 uni1872 uni1873 uni1874 uni1875 uni1876 uni1877 uni1880 uni1881 uni1882 uni1883 uni1884 uni1885 uni1886 uni1887 uni1888 uni1889 uni188A uni188B uni188C uni188D uni188E uni188F uni1890 uni1891 uni1892 uni1893 uni1894 uni1895 uni1896 uni1897 uni1898 uni1899 uni189A uni189B uni189C uni189D uni189E uni189F uni18A0 uni18A1 uni18A2 uni18A3 uni18A4 uni18A5 uni18A6 uni18A7 uni18A8 uni18A9
+Medial                  uni1820.medivar1 uni1820.medivar2 uni1822.medivar1 uni1822.medivar2 uni1822.medivar3 uni1823.medivar1 uni1824.medivar1 uni1825.medi uni1825.medivar2 uni1826.medi uni1826.medivar2 uni1828.medivar1 uni1828.medivar2 uni182C.medivar1 uni182C.medivar2 uni182C.medivar3 uni182D.medivar1 uni182D.medivar2 uni182D.medifem uni1832.medivar1 uni1832.medivar2 uni1833.medivar1 uni1835.medivar1 uni1836.medivar1 uni1836.medivar2 uni1836.medivar3 uni183A.medivar1 maaglha.medi uni1844.medivar1 uni1845.medivar1 uni1846.medivar1 uni1847.medivar1 uni1847.medivar2 uni1848.medivar1 uni1849.medivar1 uni184D.medifem uni184E.medivar1 uni185D.medivar1 uni185E.medivar1 uni185E.medivar2 uni1860.medivar1 uni1860.medivar2 uni1863.medivar1 uni1865.medivar1 uni1868.medivar1 uni1868.medivar2 uni1869.medivar1 uni186F.medivar1 uni1873.medivar1 uni1873.medivar2 uni1873.medivar3 uni1874.medivar1 uni1874.medifem uni1874.medifemvar1 uni1876.medivar1 uni1888.medivar1 uni188A.medivar1 uni18A1.medivar1 uni1807.medi uni1820.medi uni1821.medi uni1822.medi uni1823.medi uni1824.medi uni1825.medivar1 uni1826.medivar1 uni1827.medi uni1828.medi uni1829.medi uni182A.medi uni182B.medi uni182C.medi uni182D.medi uni182E.medi uni182F.medi uni1830.medi uni1831.medi uni1832.medi uni1833.medi uni1834.medi uni1835.medi uni1836.medi uni1837.medi uni1838.medi uni1839.medi uni183A.medi uni183B.medi uni183C.medi uni183D.medi uni183E.medi uni183F.medi uni1840.medi uni1841.medi uni1842.medi uni1843.medi uni1844.medi uni1845.medi uni1846.medi uni1847.medi uni1848.medi uni1849.medi uni184A.medi uni184B.medi uni184C.medi uni184D.medi uni184E.medi uni184F.medi uni1850.medi uni1851.medi uni1852.medi uni1853.medi uni1854.medi uni1855.medi uni1856.medi uni1857.medi uni1858.medi uni1859.medi uni185A.medi uni185B.medi uni185C.medi uni185D.medi uni185E.medi uni185F.medi uni1860.medi uni1861.medi uni1862.medi uni1863.medi uni1864.medi uni1865.medi uni1866.medi uni1867.medi uni1868.medi uni1869.medi uni186A.medi uni186B.medi uni186C.medi uni186D.medi uni186E.medi uni186F.medi uni1870.medi uni1871.medi uni1872.medi uni1873.medi uni1874.medi uni1875.medi uni1876.medi uni1877.medi uni1888.medi uni1889.medi uni188A.medi uni188B.medi uni188C.medi uni188D.medi uni188E.medi uni188F.medi uni1890.medi uni1891.medi uni1892.medi uni1893.medi uni1894.medi uni1895.medi uni1896.medi uni1897.medi uni1898.medi uni1899.medi uni189A.medi uni189B.medi uni189C.medi uni189D.medi uni189E.medi uni189F.medi uni18A0.medi uni18A1.medi uni18A2.medi uni18A3.medi uni18A4.medi uni18A5.medi uni18A6.medi uni18A7.medi uni18A8.medi
+Final                   uni1820.finavar1 uni1821.finavar1 uni1823.finavar1 uni1824.finavar1 uni1825.finavar1 uni1826.finavar1 uni1828.finavar1 uni182A.finavar1 uni182C.finavar1 uni182D.finavar1 uni182D.finafem uni1830.finavar1 uni1830.finavar2 uni1833.finavar1 uni1836.finavar1 uni1838.finavar1 uni1843.finavar1 uni1847.finavar1 uni185D.finavar1 uni185D.finavar2 uni185D.finavar3 uni185E.finavar1 uni185E.finavar2 uni185E.finavar3 uni1860.finavar1 uni1860.finavar2 uni1860.finavar3 uni1873.finavar1 uni1873.finavar2 uni1873.finavar3 uni1874.finafem uni1874.finafemvar1 uni1887.finavar1 uni1887.finavar2 uni1887.finavar3 uni1888.finavar1 uni1888.finavar2 uni1820.fina uni1821.fina uni1822.fina uni1823.fina uni1824.fina uni1825.fina uni1826.fina uni1827.fina uni1828.fina uni1829.fina uni182A.fina uni182B.fina uni182C.fina uni182D.fina uni182E.fina uni182F.fina uni1830.fina uni1831.fina uni1832.fina uni1833.fina uni1834.fina uni1835.fina uni1836.fina uni1837.fina uni1838.fina uni1839.fina uni183A.fina uni183B.fina uni183C.fina uni183D.fina uni183E.fina uni183F.fina uni1840.fina uni1841.fina uni1842.fina uni1843.fina uni1844.fina uni1845.fina uni1846.fina uni1847.fina uni1848.fina uni1849.fina uni184A.fina uni184B.fina uni184C.fina uni184D.finafem uni184E.fina uni184F.fina uni1850.fina uni1851.fina uni1852.fina uni1853.fina uni1854.fina uni1855.fina uni1856.fina uni1857.fina uni1858.fina uni1859.fina uni185A.fina uni185B.fina uni185C.fina uni185D.fina uni185E.fina uni185F.fina uni1860.fina uni1861.fina uni1862.fina uni1863.fina uni1864.fina uni1865.fina uni1866.fina uni1867.fina uni1868.fina uni1869.fina uni186A.fina uni186B.fina uni186C.fina uni186D.fina uni186E.fina uni186F.fina uni1870.fina uni1871.fina uni1872.fina uni1873.fina uni1874.fina uni1875.fina uni1876.fina uni1877.fina uni1887.fina uni1888.fina uni1889.fina uni188A.fina uni188B.fina uni188C.fina uni188D.fina uni188E.fina uni188F.fina uni1890.fina uni1891.fina uni1892.fina uni1893.fina uni1894.fina uni1895.fina uni1896.fina uni1897.fina uni1898.fina uni1899.fina uni189A.fina uni189B.fina uni189C.fina uni189D.fina uni189E.fina uni189F.fina uni18A0.fina uni18A1.fina uni18A2.fina uni18A3.fina uni18A4.fina uni18A5.fina uni18A6.fina uni18A7.fina uni18A8.fina
 
-
-                        EOT    OOB    DEL    EOL    Letter
-StartText                1      1      1      1         2
-StartLine                1      1      1      1         2
-SawFirstLetter           1      1      1      1         1
+                        EOT    OOB    DEL    EOL    Ignore    Letter    Medial     Final
+StartText                1      1      1      1         1         3         1         1
+StartLine                1      1      1      1         1         3         1         1
+SawFirstLetter           1      1      2      1         2         4         4         4
 
                         GoTo                    Mark?  Advance?  SubstMark  SubstCurrent
 1                       StartText                no      yes       none         none
-2                       SawFirstLetter           no      yes       none         toMark
+2                       SawFirstLetter           no      yes       none         none
+3                       SawFirstLetter           yes     yes       none         none
+4                       StartText                no      yes       toMark       none
 
 toMark
                         uni1820    uni1820.marked
