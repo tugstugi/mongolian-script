@@ -104,12 +104,14 @@ static mongolian_character_class  Get_Character_Class (gunichar* string, int pos
 			;
 		else if (string[pos] == 0x180A && direction != 0) // mongolian niragu
 			;
-		else if (string[pos] == 0x200D && direction != 0) // zero with joining
+		else if (string[pos] == 0x200D && direction != 0) // zero width joining
 			;
 		else if (string[pos] == 0x180E) // mongolian vowel seperator
 			return other;
 		else if (string[pos] == 0x202F) // no break narrow space
 			return other;
+		else if (string[pos] == 0x1807) // sibe syllable boundary marker
+			return letter;
 		else if (string[pos] >= 0x1800 && string[pos] < 0x1820)
 			return other;
 		else if (string[pos] >= 0x1820 && string[pos] < 0x1878)
