@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>OTF Feature</title>
+		
+		<link type="text/css" href="../../css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="../../js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="../../js/jquery-ui-1.8.4.custom.min.js"></script>
+		
+		<script type="text/javascript">
+			$(function(){
+
+				$("#byunicode").accordion({ collapsible: true, header: "h2", active: false, autoHeight: false});
+				$("#byglyph").accordion({ collapsible: true, header: "h2", active: false, autoHeight: false});
+				$("#byclass").accordion({ collapsible: true, header: "h2", active: false, autoHeight: false});
+			});
+		</script>
+		<style type="text/css">
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+
+			.byglyphtable {
+				width: 95%
+			}
+			.byglyphcolumn {
+				min-width: 20%;
+				vertical-align: top;
+				text-align: center
+			}
+			.glyphtable {
+				width: 70%
+			}
+			.glyph {
+				width: 50%
+			}
+			.unicode{
+				width: 50%;
+				text-align: left
+			}
+		</style>	
+	</head>
+	<body>
+	
+	<h1>Glyphs</h1>
+	
+	<div id='byunicode'>
+		<h2><a href="#">By Unicode</a></h2>
+		<center>
+			<table class='byglyphtable'>
+				<tr><th>Unicode</th><th>Variants</th><th>Ligatures</th><th>Classes</th><th>Lookups</th></tr>
+				${BY_UNICODE}
+			</table>
+		</center>
+	</div>
+	<div id='byglyph'>
+		<h2><a href="#">By Glyph</a></h2>
+		<center>
+			<table class='byglyphtable'>
+				<tr><th>Unicode</th><th>Classes</th><th>Lookups</th></tr>
+				${BY_GLYPH}
+			</table>
+		</center>
+	</div>
+	<div id='byclass'>
+		<h2><a href="#">By Class</a></h2>
+		<center>
+			<table class='byglyphtable'>
+				<tr><th>Class</th><th>Glyphs</th></tr>
+				${BY_CLASS}
+			</table>
+		</center>
+	</div>
+	
+	</body>
+</html>
