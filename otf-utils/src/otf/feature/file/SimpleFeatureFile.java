@@ -87,6 +87,18 @@ public class SimpleFeatureFile {
 				}
 			}
 		}
+		boolean allReplaceable = true;
+		for (Group group : substitution.groups) {
+			if (group.shouldReplaced) {
+				allReplaceable = false;
+				break;
+			}
+		}
+		if (allReplaceable) {
+			for (Group group : substitution.groups) {
+				group.shouldReplaced = true;
+			}
+		}
 		return substitution;
 	}
 	
@@ -114,10 +126,16 @@ public class SimpleFeatureFile {
 		String line = null;		
 		while ((line = reader.readLine()) != null && !line.contains("}")) {
 			line = line.trim();
-			if (line.startsWith("lookup") && line.length() > "lookup".length() && line.contains("{")) {
-				String lookupName = line.substring("lookup".length(), line.indexOf("{")).trim();
-				Lookup lookup = parseLookup(lookupName, reader);
+			if  ("ccmp".equals(featureName) || "vert".equals(featureName)) {
+				Lookup lookup = parseLookup(featureName, reader);
 				feature.lookups.add(lookup);
+				break;
+			} else {
+				if (line.startsWith("lookup") && line.length() > "lookup".length() && line.contains("{")) {
+					String lookupName = line.substring("lookup".length(), line.indexOf("{")).trim();
+					Lookup lookup = parseLookup(lookupName, reader);
+					feature.lookups.add(lookup);
+				}
 			}
 		}
 		return feature;
@@ -134,7 +152,7 @@ public class SimpleFeatureFile {
 			} else if (line.startsWith("feature") && line.length() > "feature".length()) {
 				String featureName = null;
 				line = line.substring("feature".length() + 1).trim();
-				if (line.startsWith("ccmp") || line.startsWith("isol") || line.startsWith("fina") || line.startsWith("medi") || line.startsWith("init") || line.startsWith("rlig") || line.startsWith("calt")) {
+				if (line.startsWith("ccmp") || line.startsWith("isol") || line.startsWith("fina") || line.startsWith("medi") || line.startsWith("init") || line.startsWith("rlig") || line.startsWith("calt") || line.startsWith("vert")) {
 					featureName = line.substring(0, "ccmp".length());
 				}
 				line = line.substring("ccmp".length()).trim();

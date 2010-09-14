@@ -11,9 +11,11 @@
 		<script type="text/javascript">
 			$(function(){
 
-				$("#byunicode").accordion({ collapsible: true, header: "h2", active: false, autoHeight: false});
-				$("#byglyph").accordion({ collapsible: true, header: "h2", active: false, autoHeight: false});
-				$("#byclass").accordion({ collapsible: true, header: "h2", active: false, autoHeight: false});
+				$("#byunicode").accordion({ collapsible: true, header: "h3", active: false, autoHeight: false});
+				$("#byglyph").accordion({ collapsible: true, header: "h3", active: false, autoHeight: false});
+				$("#byclass").accordion({ collapsible: true, header: "h3", active: false, autoHeight: false});
+								
+${LOOKUPS}
 			});
 		</script>
 		<style type="text/css">
@@ -37,39 +39,85 @@
 				width: 50%;
 				text-align: left
 			}
+			.substitutiontable {
+				width: 95%
+			}
+			.nonreplaceable{
+				width: 10%;
+				vertical-align: top;
+				text-align: center
+			}
+			.replaceable{
+				background-color:#CCFFCC;
+				width: 10%;
+				vertical-align: top;
+				text-align: center
+			}
+			.replacedby{
+				background-color:#CCCCFF;
+				width: 10%;
+				vertical-align: top;
+				text-align: center
+			}
 		</style>	
 	</head>
-	<body>
+<body>
 	
 	<h1>Glyphs</h1>
 	
 	<div id='byunicode'>
-		<h2><a href="#">By Unicode</a></h2>
+		<h3><a href="#">By Unicode</a></h3>
 		<center>
 			<table class='byglyphtable'>
 				<tr><th>Unicode</th><th>Variants</th><th>Ligatures</th><th>Classes</th><th>Lookups</th></tr>
-				${BY_UNICODE}
+${BY_UNICODE}
 			</table>
 		</center>
 	</div>
 	<div id='byglyph'>
-		<h2><a href="#">By Glyph</a></h2>
+		<h3><a href="#">By Glyph</a></h3>
 		<center>
 			<table class='byglyphtable'>
 				<tr><th>Unicode</th><th>Classes</th><th>Lookups</th></tr>
-				${BY_GLYPH}
+${BY_GLYPH}
 			</table>
 		</center>
 	</div>
 	<div id='byclass'>
-		<h2><a href="#">By Class</a></h2>
+		<h3><a href="#">By Class</a></h3>
 		<center>
 			<table class='byglyphtable'>
 				<tr><th>Class</th><th>Glyphs</th></tr>
-				${BY_CLASS}
+${BY_CLASS}
 			</table>
 		</center>
 	</div>
+	
+	<h1>Features</h1>
+	
+	<h2>Glyph Composition/Decomposition</h2>
+${CCMP_FEATURE}	
+		
+	<h2>Isolated Forms</h2>
+${ISOL_FEATURE}
+	
+	<h2>Final Forms</h2>
+${FINA_FEATURE}
+	
+	<h2>Medial Forms</h2>
+${MEDI_FEATURE}
+	
+	<h2>Initial Forms</h2>
+${INIT_FEATURE}
+
+	<h2>Required Ligatures</h2>
+${RLIG_FEATURE}
+	
+	<h2>Contextual Alternatives</h2>
+${CALT_FEATURE}
+	
+	<h2>Vertical Writing</h2>
+${VERT_FEATURE}
 	
 	</body>
 </html>

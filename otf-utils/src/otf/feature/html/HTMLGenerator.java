@@ -57,10 +57,81 @@ public class HTMLGenerator {
 	
 	public void generate() throws IOException {
 		String content = readResource("template.html");
+		content = content.replace("${LOOKUPS}", generateCollapsibleLookups());
 		content = content.replace("${BY_UNICODE}", generateByUnicodeTable());
 		content = content.replace("${BY_GLYPH}", generateByGlyphTable());
 		content = content.replace("${BY_CLASS}", generateByClassTable());
+		content = content.replace("${CCMP_FEATURE}", generateFeature("ccmp"));
+		content = content.replace("${ISOL_FEATURE}", generateFeature("isol"));
+		content = content.replace("${FINA_FEATURE}", generateFeature("fina"));
+		content = content.replace("${MEDI_FEATURE}", generateFeature("medi"));
+		content = content.replace("${INIT_FEATURE}", generateFeature("init"));
+		content = content.replace("${RLIG_FEATURE}", generateFeature("rlig"));
+		content = content.replace("${CALT_FEATURE}", generateFeature("calt"));
+		content = content.replace("${VERT_FEATURE}", generateFeature("vert"));
 		System.out.println(content);
+	}
+	
+	private String generateCollapsibleLookups() {
+		String lookups = "";
+		for (Feature feature: file.features) {
+			for (Lookup lookup : feature.lookups) {
+				lookups += "\t\t\t\t$(\"#lookup-" + lookup.name + "\").accordion({ collapsible: true, header: \"h3\", active: false, autoHeight: false});\n";
+			}
+		}
+		return lookups;
+	}
+	
+	private String generateFeature(String name)  throws IOException {
+		StringWriter out = new StringWriter();
+		for (Feature feature: file.features) {
+			if (feature.name.equals(name)) {
+				for (Lookup lookup : feature.lookups) {
+					out.write("\t<div id='lookup-" + lookup.name + "'>\n");
+					out.write("\t\t<h3><a href='#'>" + lookup.name +"</a></h3>\n");
+					out.write("\t\t<center>\n");
+					out.write("\t\t\t<table class='substitutiontable'>\n");
+					int maxCount = getMaxGroupCount(lookup) - 1;
+					for (Substitution s :  lookup.substitutions) {
+						out.write("\t\t\t\t<tr>\n");
+						for (int i = 0; i < s.groups.size() - 1; i++) {
+							Group group = s.groups.get(i);
+							out.write("\t\t\t\t<td class=' " + (group.shouldReplaced?"replaceable":"nonreplaceable") + "'>\n");
+							generateGroup("\t\t\t\t\t", out, group);
+							out.write("\t\t\t\t</td>\n");
+						}
+						for (int i = s.groups.size(); i < maxCount; i++) {
+							out.write("\t\t\t\t<td>\n");							
+							out.write("\t\t\t\t</td>\n");
+						}
+						out.write("\t\t\t\t<td class='replacedby'>\n");
+						generateGroup("\t\t\t\t\t", out, s.groups.get(s.groups.size()-1));
+						out.write("\t\t\t\t</td>\n");
+						out.write("\t\t\t\t</tr>\n");
+					}
+					out.write("\t\t\t</table>\n");
+					out.write("\t\t</center>\n");
+					out.write("\t</div>\n");
+				}
+			}
+		}
+		return out.toString();
+	}
+	
+	private void generateGroup(String intend, Writer out, Group group) throws IOException {
+		if (group.elements.size() == 1 && group.elements.get(0).startsWith("@")) {
+			out.write(intend + group.elements.get(0) + "\n");
+		} else {
+			generateGlyphtable(intend, out, group.elements);
+		}
+	}
+	
+	private int getMaxGroupCount(Lookup lookup) {
+		int count = 0;
+		for (Substitution s :  lookup.substitutions) {
+			count = Math.max(count, s.groups.size());
+		}
+		return count;
 	}
 	
 	private String generateByUnicodeTable() throws IOException {
