@@ -113,7 +113,7 @@ public class HTMLGenerator {
 			out.write("\t\t\t\t\t<td class='classtable_lookups'>\n");
 			out.write("\t\t\t\t\t\t");
 			for (String lookup : getUsedLookupsForClass(className)) {
-				out.write(lookup + "<br/>\n");
+				out.write("<a href='#lookup-" + lookup + "'>" + lookup + "</a><br/>\n");
 			}
 			out.write("\t\t\t\t\t</td>\n");
 			out.write("\t\t\t\t</tr>\n");			
@@ -130,7 +130,7 @@ public class HTMLGenerator {
 			if (feature.name.equals(name)) {
 				for (Lookup lookup : feature.lookups) {
 					out.write("\t<div id='lookup-" + lookup.name + "'>\n");
-					out.write("\t\t<h3><a href='#'>" + lookup.name +"</a></h3>\n");
+					out.write("\t\t<h3><a name='lookup-" + lookup.name + "'>" + lookup.name +"</a></h3>\n");
 					out.write("\t\t<center>\n");
 					out.write("\t\t\t<table class='substitutiontable'>\n");
 					int maxCount = getMaxGroupCount(lookup) - 1;
@@ -162,7 +162,7 @@ public class HTMLGenerator {
 	
 	private void generateGroup(String intend, Writer out, Group group) throws IOException {
 		if (group.elements.size() == 1 && group.elements.get(0).startsWith("@")) {
-			out.write(intend + group.elements.get(0) + "\n");
+			out.write(intend + "<a href='#class-" + group.elements.get(0).substring(1) + "'>" + group.elements.get(0) + "</a>\n");
 		} else {
 			generateGlyphtable(intend, out, group.elements);
 		}
@@ -209,7 +209,7 @@ public class HTMLGenerator {
 				out.write(intend + "\t<td class='byglyphcolumn'>\n");
 				out.write(intend + "\t\t</center>\n");
 				for (String className : getUsedClasses(unicodeHex, false)) {
-					out.write(intend + "\t\t" + className + "<br/>\n");
+					out.write(intend + "\t\t<a href='#class-" + className.substring(1) + "'>" + className + "</a><br/>\n");
 				}
 				out.write(intend + "\t\t</center>\n");
 				out.write(intend + "\t</td>\n");
@@ -217,7 +217,7 @@ public class HTMLGenerator {
 				out.write(intend + "\t<td class='byglyphcolumn'>\n");
 				out.write(intend + "\t\t</center>\n");
 				for (String lookupName : getUsedLookups(unicodeHex, false)) {
-					out.write(intend + "\t\t" + lookupName + "<br/>\n");
+					out.write(intend + "\t\t<a href='#lookup-" + lookupName + "'>" + lookupName + "</a><br/>\n");
 				}
 				out.write(intend + "\t\t</center>\n");
 				out.write(intend + "\t</td>\n");
@@ -245,7 +245,7 @@ public class HTMLGenerator {
 			out.write(intend + "\t<td class='byglyphcolumn'>\n");
 			out.write(intend + "\t\t</center>\n");
 			for (String className : getUsedClasses(glyphName, true)) {
-				out.write(className + " ");
+				out.write("<a href='#class-" + className.substring(1) + "'>" + className + "</a>" + " ");
 			}
 			out.write(intend + "\t\t</center>\n");
 			out.write(intend + "\t</td>\n");
@@ -253,7 +253,7 @@ public class HTMLGenerator {
 			out.write(intend + "\t<td class='byglyphcolumn'>\n");
 			out.write(intend + "\t\t</center>\n");
 			for (String lookupName : getUsedLookups(glyphName, true)) {
-				out.write(lookupName + " ");
+				out.write("<a href='#lookup-" + lookupName + "'>" + lookupName + "</a>" + " ");
 			}
 			out.write(intend + "\t\t</center>\n");
 			out.write(intend + "\t</td>\n");
