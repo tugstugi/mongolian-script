@@ -98,7 +98,7 @@ public class HTMLGenerator {
 		Collections.sort(classNames);
 		for (String className: classNames) {
 			out.write("\t<div id='class-" + className.substring(1) + "'>\n");
-			out.write("\t\t<h3><a href='#'>" + className +"</a></h3>\n");
+			out.write("\t\t<h3><a name='class-" + className.substring(1)+ "'>" + className +"</a></h3>\n");
 			out.write("\t\t<center>\n");
 			out.write("\t\t\t<table class='classtable'>\n");
 			out.write("\t\t\t\t<tr>\n");
