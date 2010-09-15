@@ -13,9 +13,10 @@
 
 				$("#byunicode").accordion({ collapsible: true, header: "h3", active: false, autoHeight: false});
 				$("#byglyph").accordion({ collapsible: true, header: "h3", active: false, autoHeight: false});
-				$("#byclass").accordion({ collapsible: true, header: "h3", active: false, autoHeight: false});
-								
-${LOOKUPS}
+
+${COLLAPSIBLE_LOOKUPS}
+${COLLAPSIBLE_CLASSES}								
+
 			});
 		</script>
 		<style type="text/css">
@@ -38,6 +39,17 @@ ${LOOKUPS}
 			.unicode{
 				width: 50%;
 				text-align: left
+			}
+			.classestable {
+				width: 90%
+			}
+			.classtable_glyphs {
+				width: 50%				
+			}
+			.classtable_lookups {
+				width: 30%;
+				vertical-align: top;
+				text-align: center
 			}
 			.substitutiontable {
 				width: 95%
@@ -83,15 +95,9 @@ ${BY_GLYPH}
 			</table>
 		</center>
 	</div>
-	<div id='byclass'>
-		<h3><a href="#">By Class</a></h3>
-		<center>
-			<table class='byglyphtable'>
-				<tr><th>Class</th><th>Glyphs</th></tr>
-${BY_CLASS}
-			</table>
-		</center>
-	</div>
+	
+	<h1>Classes</h1>
+${CLASSES}
 	
 	<h1>Features</h1>
 	

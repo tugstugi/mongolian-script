@@ -57,10 +57,11 @@ public class HTMLGenerator {
 	
 	public void generate() throws IOException {
 		String content = readResource("template.html");
-		content = content.replace("${LOOKUPS}", generateCollapsibleLookups());
+		content = content.replace("${COLLAPSIBLE_CLASSES}", generateCollapsibleClasses());
+		content = content.replace("${COLLAPSIBLE_LOOKUPS}", generateCollapsibleLookups());
 		content = content.replace("${BY_UNICODE}", generateByUnicodeTable());
 		content = content.replace("${BY_GLYPH}", generateByGlyphTable());
-		content = content.replace("${BY_CLASS}", generateByClassTable());
+		content = content.replace("${CLASSES}", generateByClassTable());
 		content = content.replace("${CCMP_FEATURE}", generateFeature("ccmp"));
 		content = content.replace("${ISOL_FEATURE}", generateFeature("isol"));
 		content = content.replace("${FINA_FEATURE}", generateFeature("fina"));
@@ -72,6 +73,14 @@ public class HTMLGenerator {
 		System.out.println(content);
 	}
 	
+	private String generateCollapsibleClasses() {
+		String classes = "";
+		for (String className: file.classes.keySet()) {
+			classes += "\t\t\t\t$(\"#class-" +className.substring(1) + "\").accordion({ collapsible: true, header: \"h3\", active: false, autoHeight: false});\n";
+		}
+		return classes;
+	}
+	
 	private String generateCollapsibleLookups() {
 		String lookups = "";
 		for (Feature feature: file.features) {
@@ -80,6 +89,39 @@ public class HTMLGenerator {
 			}
 		}
 		return lookups;
+	}
+	
+	private String generateByClassTable()  throws IOException {
+		StringWriter out = new StringWriter();
+		Vector<String> classNames = new Vector<String>();
+		classNames.addAll(file.classes.keySet());
+		Collections.sort(classNames);
+		for (String className: classNames) {
+			out.write("\t<div id='class-" + className.substring(1) + "'>\n");
+			out.write("\t\t<h3><a href='#'>" + className +"</a></h3>\n");
+			out.write("\t\t<center>\n");
+			out.write("\t\t\t<table class='classtable'>\n");
+			out.write("\t\t\t\t<tr>\n");
+			out.write("\t\t\t\t\t<th>Glyphs</th><th>Lookups</th>\n");
+			out.write("\t\t\t\t</tr>\n");
+			out.write("\t\t\t\t<tr>\n");			
+			out.write("\t\t\t\t\t<td class='classtable_glyphs'>\n");
+			out.write("\t\t\t\t\t\t<center>\n");
+			generateGlyphtable("\t\t\t\t\t\t\t", out, file.classes.get(className));
+			out.write("\t\t\t\t\t\t</center>\n");
+			out.write("\t\t\t\t\t</td>\n");
+			out.write("\t\t\t\t\t<td class='classtable_lookups'>\n");
+			out.write("\t\t\t\t\t\t");
+			for (String lookup : getUsedLookupsForClass(className)) {
+				out.write(lookup + "<br/>\n");
+			}
+			out.write("\t\t\t\t\t</td>\n");
+			out.write("\t\t\t\t</tr>\n");			
+			out.write("\t\t\t</table>\n");
+			out.write("\t\t</center>\n");
+			out.write("\t</div>\n");				
+		}
+		return out.toString();
 	}
 	
 	private String generateFeature(String name)  throws IOException {
@@ -96,17 +138,17 @@ public class HTMLGenerator {
 						out.write("\t\t\t\t<tr>\n");
 						for (int i = 0; i < s.groups.size() - 1; i++) {
 							Group group = s.groups.get(i);
-							out.write("\t\t\t\t<td class=' " + (group.shouldReplaced?"replaceable":"nonreplaceable") + "'>\n");
+							out.write("\t\t\t\t\t<td class=' " + (group.shouldReplaced?"replaceable":"nonreplaceable") + "'>\n");
 							generateGroup("\t\t\t\t\t", out, group);
-							out.write("\t\t\t\t</td>\n");
+							out.write("\t\t\t\t\t</td>\n");
 						}
 						for (int i = s.groups.size(); i < maxCount; i++) {
-							out.write("\t\t\t\t<td>\n");							
-							out.write("\t\t\t\t</td>\n");
+							out.write("\t\t\t\t\t<td>\n");							
+							out.write("\t\t\t\t\t</td>\n");
 						}
-						out.write("\t\t\t\t<td class='replacedby'>\n");
+						out.write("\t\t\t\t\t<td class='replacedby'>\n");
 						generateGroup("\t\t\t\t\t", out, s.groups.get(s.groups.size()-1));
-						out.write("\t\t\t\t</td>\n");
+						out.write("\t\t\t\t\t</td>\n");
 						out.write("\t\t\t\t</tr>\n");
 					}
 					out.write("\t\t\t</table>\n");
@@ -221,29 +263,6 @@ public class HTMLGenerator {
 		return out.toString();
 	}
 	
-	private String generateByClassTable() throws IOException {
-		StringWriter out = new StringWriter();
-		String intend = "\t\t\t\t";
-		for (String className : file.classes.keySet()) {
-			out.write(intend + "<tr>\n");
-			
-			out.write(intend + "\t<td class='byglyphcolumn'>\n");
-			out.write(intend + "\t\t</center>\n");
-			out.write(intend + "\t\t\t" + className + "\n");
-			out.write(intend + "\t\t</center>\n");
-			out.write(intend + "\t</td>\n");
-			
-			out.write(intend + "\t<td class='byglyphcolumn'>\n");
-			out.write(intend + "\t\t</center>\n");
-			generateGlyphtable(intend + "\t\t\t", out, file.classes.get(className));
-			out.write(intend + "\t\t</center>\n");
-			out.write(intend + "\t</td>\n");
-			
-			out.write(intend + "</tr>\n");
-		}
-		return out.toString();
-	}
-	
 	private void generateGlyphtable(String intend, Writer out, List<String> unicodeNames) throws IOException {
 		out.write(intend + "<table class='glyphtable'>\n");
 		for (String unicodeName : unicodeNames) {
@@ -316,6 +335,26 @@ public class HTMLGenerator {
 								usedLookups.add(lookup.name);
 								continue lookup;
 							}
+						}
+					}
+				}
+			}
+		}
+		
+		Collections.sort(usedLookups);
+		return usedLookups;
+	}
+	
+	private List<String> getUsedLookupsForClass(String className) {
+		Vector<String> usedLookups = new Vector<String>();
+		
+		for (Feature feature : file.features) {
+			lookup: for (Lookup lookup : feature.lookups) {
+				for (Substitution substitution : lookup.substitutions) {
+					for (Group group : substitution.groups) {
+						if (group.elements.size() == 1 && group.elements.get(0).equals(className)) {
+							usedLookups.add(lookup.name);
+							continue lookup;
 						}
 					}
 				}
