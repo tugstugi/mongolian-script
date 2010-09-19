@@ -56,8 +56,7 @@ class Feature
     @name = name
     @script = nil
     @lookups = Array.new
-    
-    # to be ignored
+    @languages = Hash.new
     @inner_features = Array.new
   end
   
@@ -77,7 +76,10 @@ class Feature
     @lookups
   end
   
-  # to be ignored
+  def languages
+    @languages
+  end
+  
   def inner_features
     @inner_features
   end
@@ -88,7 +90,6 @@ class Lookup
     @feature = feature
     @name = name
     @subtables = Array.new
-    @languages = Array.new
   end
   
   def name
@@ -105,10 +106,6 @@ class Lookup
   
   def subtables
     @subtables
-  end
-  
-  def languages
-    @languages
   end
 end
 
@@ -216,7 +213,7 @@ class OTFFeatureFileParser
               lookup = Lookup.new(feature, feature_body_element[:lookup])
               feature.lookups.push(lookup)
               if language
-                lookup.languages.push(language)
+                feature.languages[language].push(lookup)
               end
               
               feature_body_element[:lookup_body][0].each do |lookup_body_element|
@@ -233,9 +230,10 @@ class OTFFeatureFileParser
             
             if feature_body_element[:language]
               language = feature_body_element[:language]
+              feature.languages[language] = Array.new
               if !feature_body_element[:exclude_default]
                 feature.lookups.each do |lookup|
-                  lookup.languages.push(language)
+                  feature.languages[language].push(lookup)
                 end
               end
             end
@@ -243,7 +241,7 @@ class OTFFeatureFileParser
             if feature_body_element[:empty_lookup] && language
               lookup = get_lookup(feature, feature_body_element[:empty_lookup])
               if lookup
-                lookup.languages.push(language)
+                feature.languages[language].push(lookup)
               end
             end
           end

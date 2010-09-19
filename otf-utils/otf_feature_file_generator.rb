@@ -28,7 +28,7 @@ end
 
 def generate_subtable(subtable)
   output = ""
-  output += "\t\t\tsub "
+  output += "\t\tsub "
   subtable.groups.each do |group|
     output += generate_group(group) + " "
   end
@@ -73,21 +73,32 @@ if file
       # inner subtables
       
       if feature.lookups[0].lookupflag
-        output += "\t\tlookupflag #{feature.lookups[0].lookupflag};\n"
+        output += "\tlookupflag #{feature.lookups[0].lookupflag};\n"
       end
       feature.lookups[0].subtables.each do |subtable|
         output += generate_subtable(subtable)
       end
+      
+      feature.languages.each_key do |language|
+        output += "\tlanguage #{language};\n";
+      end
     else
       feature.lookups.each do |lookup|
-        output += "\t\tlookup #{lookup.name} {\n"
+        output += "\tlookup #{lookup.name} {\n"
         if lookup.lookupflag
-          output += "\t\t\tlookupflag #{lookup.lookupflag};\n"
+          output += "\t\tlookupflag #{lookup.lookupflag};\n"
         end
         lookup.subtables.each do |subtable|
           output += generate_subtable(subtable)
         end
-        output += "\t\t} #{lookup.name};\n"
+        output += "\t} #{lookup.name};\n"
+      end
+      
+      feature.languages.each_key do |language|
+        output += "\tlanguage #{language} exclude_dflt;\n";
+        feature.languages[language].each do |lookup|
+          output += "\t\tlookup #{lookup.name};\n"
+        end
       end
     end
     
