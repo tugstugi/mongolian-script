@@ -51,7 +51,7 @@ if file
   output = ''
   
   file.classes.each do |klass|
-    output = "#{klass.name}=["
+    output += "#{klass.name}=["
     klass.glyphs.each do |glyph|
       output += "#{glyph.name} "
     end
