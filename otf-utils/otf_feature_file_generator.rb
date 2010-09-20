@@ -1,24 +1,9 @@
 require 'otf_feature_file_parser'
 
-def get_file_content(filename)
-  content = '';
-  f = File.open(filename, "r")
-  f.each_line do |line|
-    content += line
-  end
-  return content
-end
-
 def generate_group(group)
-  output = ""
-  if group.elements.size == 1
-    output = group.elements[0].name
-  else
-    output = "["
-    group.elements.each do |element|
-      output += element.name + " "
-    end
-    output += "]"
+  output = group.elements.map{|e| e.name}.join(" ");
+  if group.elements.size > 1
+    output = "[#{output}]"
   end
   if group.replaceable?
     output += "'"
@@ -27,14 +12,7 @@ def generate_group(group)
 end
 
 def generate_subtable(subtable)
-  output = ""
-  output += "\t\tsub "
-  subtable.groups.each do |group|
-    output += generate_group(group) + " "
-  end
-  output += "by "
-  output += generate_group(subtable.replacedby)
-  output += ";\n"
+  output = "\t\tsub #{subtable.groups.map{|group| generate_group(group)}.join(" ")} by #{generate_group(subtable.replacedby)};\n"
   return output
 end
 
@@ -43,19 +21,13 @@ if ARGV.size == 0
   exit
 end
 
-content = get_file_content(ARGV[0])
-
 parser = OTFFeatureFileParser.new
-file = parser.parse(content)
+file = parser.parse_file(ARGV[0])
 if file
   output = ''
   
   file.classes.each do |klass|
-    output += "#{klass.name}=["
-    klass.glyphs.each do |glyph|
-      output += "#{glyph.name} "
-    end
-    output += "];\n"
+    output += "#{klass.name}=[#{klass.glyphs.map{|glyph| glyph.name}.join(" ")}];\n"
   end
   
   file.features.each do |feature|
@@ -69,13 +41,13 @@ if file
       output += "\tfeature #{inner_feature};\n"
     end
     
-    if feature.lookups.size == 1 && (feature.lookups[0]).name.eql?(feature.name)
+    if feature.lookups.size == 1 && (feature.lookups.first).name.eql?(feature.name)
       # inner subtables
       
-      if feature.lookups[0].lookupflag
-        output += "\tlookupflag #{feature.lookups[0].lookupflag};\n"
+      if feature.lookups.first.lookupflag
+        output += "\tlookupflag #{feature.lookups.first.lookupflag};\n"
       end
-      feature.lookups[0].subtables.each do |subtable|
+      feature.lookups.first.subtables.each do |subtable|
         output += generate_subtable(subtable)
       end
       

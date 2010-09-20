@@ -4,53 +4,186 @@ require "polyglot"
 require 'otf_feature_file'
 
 class OTFFeatureFile
+  attr_reader :glyphs, :unicodes, :classes, :features
+  
   def initialize
     @glyphs = Array.new
+    @unicodes = Array.new
     @classes = Array.new
     @features = Array.new
   end
   
-  def glyphs
-    @glyphs
+  def get_glyph(glyphname)
+    @glyphs.select{|glyph| glyph.name.eql?glyphname}.first
   end
   
-  def classes
-    @classes
+  def get_unicode(hex_unicode)
+    @unicodes.select{|unicode| unicode.hex_unicode.eql?hex_unicode}.first
   end
   
-  def features
-    @features
+  def get_class(classname)
+    @classes.select{|klass| klass.name.eql?classname}.first
+  end
+  
+  def get_feature(featurename)
+    @features.select{|feature| feature.name.eql?featurename}.first
   end
 end
 
-class Class
+class OTFClass
+  attr_reader :name, :glyphs
+  
   def initialize(file, name)
     @file = file
     @name = name
     @glyphs = Array.new
   end
   
-  def name
-    @name
-  end
-  
-  def glyphs
-    @glyphs
+  def get_lookups
+    lookups = Array.new
+    @file.features.each do |feature|
+      feature.lookups.each do |lookup|
+        lookup.subtables.each do |subtable|
+          subtable.groups.each do |group|
+            if subtable.replacedby.elements.include?self
+              lookups.push(lookup)
+            end       
+            if group.elements.include?self
+              lookups.push(lookup)
+            end
+          end
+        end
+      end
+    end
+    return lookups.uniq
   end
 end
 
-class Glyph
+class OTFGlyph
+  attr_reader :name
+  
   def initialize(file, name)
     @file = file
     @name = name
   end
   
-  def name
-    @name
+  def base?
+    return !name.match(/^[^.]+$/).nil?
+  end
+  
+  def isol?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*isol[a-zA-Z0-9]*/).nil?
+  end
+  
+  def fina?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*fina[a-zA-Z0-9]*/).nil?
+  end
+  
+  def medi?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*medi[a-zA-Z0-9]*/).nil?
+  end
+  
+  def init?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*init[a-zA-Z0-9]*/).nil?
+  end
+  
+  def var?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*var[a-zA-Z0-9]*/).nil?
+  end
+  
+  def mvs?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*mvs[a-zA-Z0-9]*/).nil?
+  end
+  
+  def fem?
+    return !name.match(/^[a-zA-Z0-9]+[.][a-zA-Z0-9]*fem[a-zA-Z0-9]*/).nil?
+  end
+  
+  def ligature?
+    return !name.match(/^[a-zA-Z]+(18[A-F0-9][A-F0-9]){2,}/).nil?
+  end
+  
+  def get_classes
+    return @file.classes.select{|klass| klass.glyphs.include?self}
+  end
+  
+  def get_lookups
+    lookups = Array.new
+    @file.features.each do |feature|
+      feature.lookups.each do |lookup|
+        lookup.subtables.each do |subtable|
+          subtable.groups.each do |group|
+            if group.elements.include?(self)
+              lookups.push(lookup)
+            end
+          end
+          if subtable.replacedby.elements.include?(self)
+            lookups.push(lookup)
+          end
+        end
+      end
+    end
+    get_classes.each do |klass|
+      lookups.concat(klass.get_lookups)
+    end
+    return lookups.uniq
+  end
+  
+  def get_composed_unicodes
+    unicodes = Array.new
+    name.scan(/(18[A-F0-9][A-F0-9])+?/).flatten.each do |hex_unicode|
+      unicode = @file.get_unicode(hex_unicode)
+      if !unicode.nil?
+        unicodes.push(unicode)
+      end
+    end
+    return unicodes.uniq
   end
 end
 
-class Feature
+class OTFUnicode
+  attr_reader :unicode, :name
+  attr_writer :name
+    
+  def initialize(file, unicode)
+    @file = file
+    @unicode = unicode
+    @name = "uni#{hex_unicode}"
+  end
+  
+  def hex_unicode
+    return @unicode.to_s(16).upcase
+  end
+  
+  def base_glyph
+    return @file.get_glyph("uni#{hex_unicode}")
+  end
+  
+  def get_all_glyphs
+    return @file.glyphs.select{|glyph| glyph.get_composed_unicodes.include?self}.uniq
+  end
+  
+  def get_ligature_glyphs
+    return get_all_glyphs.select{|glyph| glyph.ligature?}
+  end
+  
+  def get_nonligature_glyphs
+    return get_all_glyphs.select{|glyph| !glyph.ligature?}
+  end
+  
+  def get_classes
+    return get_all_glyphs.map{|glyph| glyph.get_classes}.flatten.uniq
+  end
+  
+  def get_lookups
+    return get_all_glyphs.map{|glyph| glyph.get_lookups}.flatten.uniq
+  end
+end
+
+class OTFFeature
+  attr_reader :name, :script, :lookups, :languages, :inner_features
+  attr_writer :script
+  
   def initialize(file, name)
     @file = file
     @name = name
@@ -60,84 +193,41 @@ class Feature
     @inner_features = Array.new
   end
   
-  def name
-    @name
-  end
-  
-  def script
-    @script
-  end
-  
-  def script=(script)
-     @script = script
-  end
-  
-  def lookups
-    @lookups
-  end
-  
-  def languages
-    @languages
-  end
-  
-  def inner_features
-    @inner_features
+  def get_lookup(lookupname)
+    @lookups.select{|lookup| lookup.name.eql?lookupname}.first
   end
 end
 
-class Lookup
+class OTFLookup
+  attr_reader :name, :lookupflag, :subtables
+  attr_writer :lookupflag
+  
   def initialize(feature, name)
     @feature = feature
     @name = name
+    @lookupflag = nil
     @subtables = Array.new
-  end
-  
-  def name
-    @name
-  end
-  
-  def lookupflag
-    @lookupflag
-  end
-  
-  def lookupflag=(lookupflag)
-    @lookupflag = lookupflag
-  end
-  
-  def subtables
-    @subtables
   end
 end
 
-class SubTable
+class OTFSubTable
+  attr_reader :groups, :replacedby
+  attr_writer :replacedby
+  
   def initialize(lookup)
     @lookup = lookup
     @groups = Array.new
     @replacedby = nil
   end
-  
-  def groups
-    @groups
-  end
-  
-  def replacedby
-    @replacedby
-  end
-  
-  def replacedby=(replacedby)
-    @replacedby = replacedby
-  end
 end
 
-class Group
+class OTFGroup
+  attr_reader :elements
+  
   def initialize(subtable, replaceable)
     @subtable = subtable
     @replaceable = replaceable
     @elements = Array.new
-  end
-  
-  def elements
-    @elements
   end
   
   def replaceable?
@@ -145,16 +235,13 @@ class Group
   end
 end
 
-class InnerFeature
-  def initialize(feature, name)
-    @feature = feature
-    @name = name
-  end
-end
-
 class OTFFeatureFileParser
   
-  def parse(source)
+  def parse_file(filename)
+    parse_string(get_file_content(filename))
+  end
+  
+  def parse_string(source)
     syntaxParser = OTFFeatureFileSyntaxParser.new
     content = syntaxParser.parse(source)
     if (content)
@@ -162,28 +249,32 @@ class OTFFeatureFileParser
       
       file = OTFFeatureFile.new()
       
-      content.each do |element|
-        name = element[:name]
+      content.each do |file_content|
+        name = file_content[:name]
           
         if /^@/.match(name)
           # otf class definition
-          klass = Class.new(file, name)
+          klass = OTFClass.new(file, name)
           file.classes.push(klass)
           
-          element[:glyphs].each do |glyphname|
-            glyph = add_and_get_glyph(file, glyphname)
+          file_content[:glyphs].each do |glyphname|
+            glyph = file.get_glyph(glyphname)
+            if glyph.nil?
+              glyph = OTFGlyph.new(file, glyphname)
+              file.glyphs.push(glyph)
+            end
             klass.glyphs.push(glyph)
           end
         else
           # otf feature definition
-          feature = Feature.new(file, name)
+          feature = OTFFeature.new(file, name)
           file.features.push(feature)
           
           # some features have no lookup but subtables. i.e. see vert feature of Baiti.
           dummy_lookup = nil;
           language = nil;
           
-          element[:feature_body][0].each do |feature_body_element|
+          file_content[:feature_body][0].each do |feature_body_element|
             if feature_body_element[:script]
               feature.script = feature_body_element[:script]
             end
@@ -192,16 +283,16 @@ class OTFFeatureFileParser
             end
             
             if feature_body_element[:lookup_flag]
-              if dummy_lookup == nil
-                dummy_lookup = Lookup.new(feature, feature.name)
+              if dummy_lookup.nil?
+                dummy_lookup = OTFLookup.new(feature, feature.name)
                 feature.lookups.push(dummy_lookup)
               end
               dummy_lookup.lookupflag = feature_body_element[:lookup_flag]
             end
             
             if feature_body_element[:subtable]
-              if dummy_lookup == nil
-                dummy_lookup = Lookup.new(feature, feature.name)
+              if dummy_lookup.nil?
+                dummy_lookup = OTFLookup.new(feature, feature.name)
                 feature.lookups.push(dummy_lookup)
               end
               
@@ -210,7 +301,7 @@ class OTFFeatureFileParser
             end
             
             if feature_body_element[:lookup]
-              lookup = Lookup.new(feature, feature_body_element[:lookup])
+              lookup = OTFLookup.new(feature, feature_body_element[:lookup])
               feature.lookups.push(lookup)
               if language
                 feature.languages[language].push(lookup)
@@ -239,12 +330,26 @@ class OTFFeatureFileParser
             end
             
             if feature_body_element[:empty_lookup] && language
-              lookup = get_lookup(feature, feature_body_element[:empty_lookup])
+              lookup = feature.get_lookup(feature_body_element[:empty_lookup])
               if lookup
                 feature.languages[language].push(lookup)
               end
             end
           end
+        end
+      end
+      
+      unicode_range = (0x1800..0x180E).to_a
+      unicode_range = unicode_range.concat((0x1810..0x1819).to_a)
+      unicode_range = unicode_range.concat((0x1820..0x1877).to_a)
+      unicode_range = unicode_range.concat((0x1880..0x18AA).to_a)
+      
+      unicode_range.each do |i|
+        unicode = OTFUnicode.new(file, i)
+        file.unicodes.push(unicode)
+        if unicode.base_glyph.nil?
+          glyph = OTFGlyph.new(file, "uni#{unicode.hex_unicode}")
+          file.glyphs.push(glyph)
         end
       end
       
@@ -255,15 +360,13 @@ class OTFFeatureFileParser
   end
   
   def create_subtable(file, feature, lookup, subtable_body)
-    subtable = SubTable.new(lookup)
+    subtable = OTFSubTable.new(lookup)
     
-    for i in 0..subtable_body[0].size-1
-      group = create_group(file, feature, lookup, subtable, subtable_body[0][i].flatten[0])
-      subtable.groups.push(group)
+    subtable_body[0].each do |group_element|
+      subtable.groups.push(create_group(file, feature, lookup, subtable, group_element.flatten[0]))
     end
     
-    group = create_group(file, feature, lookup, subtable, subtable_body[1])
-    subtable.replacedby = group
+    subtable.replacedby = create_group(file, feature, lookup, subtable, subtable_body[1])
     
     return subtable
   end
@@ -271,22 +374,25 @@ class OTFFeatureFileParser
   def create_group(file, feature, lookup, subtable, group_body)
     group = nil;
     if group_body[:replaceable_glyphs]
-      group = Group.new(subtable, true)
+      group = OTFGroup.new(subtable, true)
       group_elements = group_body[:replaceable_glyphs][0]
     else
-      group = Group.new(subtable, false)
+      group = OTFGroup.new(subtable, false)
       group_elements = group_body[:glyphs][0]
     end
     
     group_elements.each do |e|
-      #puts e
       if /^@/.match(e)
-        klass = get_class(file, e)
+        klass = file.get_class(e)
         if klass
           group.elements.push(klass)
         end
       else
-        glyph = add_and_get_glyph(file, e)
+        glyph = file.get_glyph(e)
+        if glyph.nil?
+          glyph = OTFGlyph.new(file, e)
+          file.glyphs.push(glyph)
+        end
         group.elements.push(glyph)
       end
     end
@@ -294,32 +400,27 @@ class OTFFeatureFileParser
     return group
   end
   
-  def get_class(file, classname)
-    file.classes.each do |klass|
-      if klass.name.eql?classname
-        return klass
-      end
+  def get_file_content(filename)
+    content = '';
+    f = File.open(filename, "r")
+    f.each_line do |line|
+      content += line
     end
-    return nil
+    return content
+  end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  if ARGV.size == 0
+    puts "Usage: ruby otf_feature_file_parser.rb monbaiti.fea"
+    exit!
   end
   
-  def get_lookup(feature, lookupname) 
-    feature.lookups.each do |lookup|
-      if lookup.name.eql?lookupname
-        return lookup
-      end
-    end
-    return nil
-  end
-  
-  def add_and_get_glyph(file, glyphname)
-    file.glyphs.each do |glyph|
-      if glyph.name().eql?glyphname
-        return glyph
-      end
-    end
-    glyph = Glyph.new(file, glyphname)
-    file.glyphs.push(glyph)
-    return glyph
+  parser = OTFFeatureFileParser.new
+  file = parser.parse_file(ARGV[0])
+  if file
+    puts "success"
+  else
+    puts "syntax error!"
   end
 end
