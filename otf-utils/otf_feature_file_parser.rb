@@ -31,7 +31,7 @@ class OTFFeatureFile
 end
 
 class OTFClass
-  attr_reader :name, :glyphs
+  attr_reader :file, :name, :glyphs
   
   def initialize(file, name)
     @file = file
@@ -40,7 +40,7 @@ class OTFClass
   end
   
   def get_lookups
-    return @file.features.map{|feature| feature.lookups}.flatten.select{|lookup| lookup.include?self}
+    return file.features.map{|feature| feature.lookups}.flatten.select{|lookup| lookup.include?self}
   end
   
   def include?(glyph)
@@ -49,7 +49,7 @@ class OTFClass
 end
 
 class OTFGlyph
-  attr_reader :name
+  attr_reader :file, :name
   
   def initialize(file, name)
     @file = file
@@ -93,11 +93,11 @@ class OTFGlyph
   end
   
   def get_classes
-    return @file.classes.select{|klass| klass.include?self}
+    return file.classes.select{|klass| klass.include?self}
   end
   
   def get_lookups
-    return @file.features.map{|feature| feature.lookups}.flatten.select{|lookup| lookup.include?self}
+    return file.features.map{|feature| feature.lookups}.flatten.select{|lookup| lookup.include?self}
   end
   
   def get_composed_unicodes
@@ -113,7 +113,7 @@ class OTFGlyph
 end
 
 class OTFUnicode
-  attr_reader :unicode, :name, :hex_unicode
+  attr_reader :file, :unicode, :name, :hex_unicode
     
   def initialize(file, unicode)
     @file = file
@@ -123,11 +123,11 @@ class OTFUnicode
   end
   
   def base_glyph
-    return @file.get_glyph("uni#{hex_unicode}")
+    return file.get_glyph("uni#{hex_unicode}")
   end
   
   def get_all_glyphs
-    return @file.glyphs.select{|glyph| glyph.name.include?@hex_unicode}
+    return file.glyphs.select{|glyph| glyph.name.include?hex_unicode}
   end
   
   def get_ligature_glyphs
@@ -148,7 +148,7 @@ class OTFUnicode
 end
 
 class OTFFeature
-  attr_reader :name, :script, :lookups, :languages, :inner_features
+  attr_reader :file, :name, :script, :lookups, :languages, :inner_features
   attr_writer :script
   
   def initialize(file, name)
@@ -161,12 +161,12 @@ class OTFFeature
   end
   
   def get_lookup(lookupname)
-    @lookups.select{|lookup| lookup.name.eql?lookupname}.first
+    lookups.select{|lookup| lookup.name.eql?lookupname}.first
   end
 end
 
 class OTFLookup
-  attr_reader :name, :lookupflag, :subtables
+  attr_reader :feature, :name, :lookupflag, :subtables
   attr_writer :lookupflag
   
   def initialize(feature, name)
@@ -187,7 +187,7 @@ class OTFLookup
 end
 
 class OTFSubTable
-  attr_reader :groups, :replacedby
+  attr_reader :lookup, :groups, :replacedby
   attr_writer :replacedby
   
   def initialize(lookup)
@@ -210,7 +210,7 @@ class OTFSubTable
 end
 
 class OTFGroup
-  attr_reader :elements
+  attr_reader :subtable, :elements
   
   def initialize(subtable, replaceable)
     @subtable = subtable
