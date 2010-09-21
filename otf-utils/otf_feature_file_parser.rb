@@ -40,22 +40,11 @@ class OTFClass
   end
   
   def get_lookups
-    lookups = Array.new
-    @file.features.each do |feature|
-      feature.lookups.each do |lookup|
-        lookup.subtables.each do |subtable|
-          subtable.groups.each do |group|
-            if subtable.replacedby.elements.include?self
-              lookups.push(lookup)
-            end       
-            if group.elements.include?self
-              lookups.push(lookup)
-            end
-          end
-        end
-      end
-    end
-    return lookups.uniq
+    return @file.features.map{|feature| feature.lookups}.flatten.select{|lookup| lookup.include?self}
+  end
+  
+  def include?(glyph)
+    return glyphs.include?glyph
   end
 end
 
@@ -104,29 +93,11 @@ class OTFGlyph
   end
   
   def get_classes
-    return @file.classes.select{|klass| klass.glyphs.include?self}
+    return @file.classes.select{|klass| klass.include?self}
   end
   
   def get_lookups
-    lookups = Array.new
-    @file.features.each do |feature|
-      feature.lookups.each do |lookup|
-        lookup.subtables.each do |subtable|
-          subtable.groups.each do |group|
-            if group.elements.include?(self)
-              lookups.push(lookup)
-            end
-          end
-          if subtable.replacedby.elements.include?(self)
-            lookups.push(lookup)
-          end
-        end
-      end
-    end
-    get_classes.each do |klass|
-      lookups.concat(klass.get_lookups)
-    end
-    return lookups.uniq
+    return @file.features.map{|feature| feature.lookups}.flatten.select{|lookup| lookup.include?self}
   end
   
   def get_composed_unicodes
@@ -142,17 +113,13 @@ class OTFGlyph
 end
 
 class OTFUnicode
-  attr_reader :unicode, :name
-  attr_writer :name
+  attr_reader :unicode, :name, :hex_unicode
     
   def initialize(file, unicode)
     @file = file
     @unicode = unicode
+    @hex_unicode = unicode.to_s(16).upcase
     @name = "uni#{hex_unicode}"
-  end
-  
-  def hex_unicode
-    return @unicode.to_s(16).upcase
   end
   
   def base_glyph
@@ -160,7 +127,7 @@ class OTFUnicode
   end
   
   def get_all_glyphs
-    return @file.glyphs.select{|glyph| glyph.get_composed_unicodes.include?self}.uniq
+    return @file.glyphs.select{|glyph| glyph.name.include?@hex_unicode}
   end
   
   def get_ligature_glyphs
@@ -208,6 +175,15 @@ class OTFLookup
     @lookupflag = nil
     @subtables = Array.new
   end
+  
+  def include?(glyph_or_class)
+    subtables.each do |subtable|
+      if subtable.include?glyph_or_class
+        return true
+      end
+    end
+    return false
+  end
 end
 
 class OTFSubTable
@@ -218,6 +194,18 @@ class OTFSubTable
     @lookup = lookup
     @groups = Array.new
     @replacedby = nil
+  end
+  
+  def include?(glyph_or_class)
+    if replacedby.include?glyph_or_class
+      return true
+    end
+    groups.each do |group|
+      if group.include?glyph_or_class
+        return true
+      end
+    end
+    return false
   end
 end
 
@@ -232,6 +220,16 @@ class OTFGroup
   
   def replaceable?
     @replaceable
+  end
+  
+  def include?(glyph_or_class)
+    if elements.include?glyph_or_class
+      return true
+    end
+    if glyph_or_class.instance_of?OTFGlyph
+      return elements.select{|e| e.instance_of?OTFClass}.map{|klass| klass.glyphs}.flatten.include?glyph_or_class
+    end
+    return false
   end
 end
 
