@@ -21,6 +21,10 @@ class OTFFeatureFile
     @unicodes.select{|unicode| unicode.hex_unicode.eql?hex_unicode}.first
   end
   
+  def get_unicode_by_name(name)
+    @unicodes.select{|unicode| unicode.name.eql?name}.first
+  end
+  
   def get_class(classname)
     @classes.select{|klass| klass.name.eql?classname}.first
   end
@@ -50,6 +54,7 @@ end
 
 class OTFGlyph
   attr_reader :file, :name
+  attr_writer :name
   
   def initialize(file, name)
     @file = file
@@ -114,6 +119,7 @@ end
 
 class OTFUnicode
   attr_reader :file, :unicode, :name, :hex_unicode
+  attr_writer :name
     
   def initialize(file, unicode)
     @file = file
@@ -122,8 +128,16 @@ class OTFUnicode
     @name = "uni#{hex_unicode}"
   end
   
+  def transparent?
+    return [0x180A, 0x180B, 0x180C, 0x180D].include?(unicode)
+  end
+  
+  def mongolian_letter?
+    return unicode == 0x1807 || (0x1820..0x18AA).include?(unicode)
+  end
+  
   def base_glyph
-    return file.get_glyph("uni#{hex_unicode}")
+    return file.get_glyph(name)
   end
   
   def get_all_glyphs
@@ -341,12 +355,18 @@ class OTFFeatureFileParser
       unicode_range = unicode_range.concat((0x1810..0x1819).to_a)
       unicode_range = unicode_range.concat((0x1820..0x1877).to_a)
       unicode_range = unicode_range.concat((0x1880..0x18AA).to_a)
+      unicode_range = unicode_range.concat([0x20, 0x202F])
       
       unicode_range.each do |i|
         unicode = OTFUnicode.new(file, i)
         file.unicodes.push(unicode)
         if unicode.base_glyph.nil?
           glyph = OTFGlyph.new(file, "uni#{unicode.hex_unicode}")
+          # for space       
+          if i == 0x20
+            unicode.name = "space"
+            glyph = OTFGlyph.new(file, "space")
+          end
           file.glyphs.push(glyph)
         end
       end
