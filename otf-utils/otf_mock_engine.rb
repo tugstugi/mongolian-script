@@ -50,20 +50,40 @@ class OTFSubTable
     return true
   end
   
+  def replace_one_group(glyphs, pos, group)
+    glyph = glyphs[pos]
+    if group.elements.index(glyph)
+      glyphs[pos] = replacedby.elements[group.elements.index(glyph)]
+    else
+      # class
+      glyphs[pos] = replacedby.elements.first.glyphs[group.elements.first.glyphs.index(glyph)]
+    end
+  end
+  
+  def get_replaceable_group_indexes
+    indexes = []
+    for i in 0...groups.size
+      if groups[i].replaceable?
+        indexes.push(i)
+      end
+    end
+    return indexes
+  end
+  
   def replace_by_pos(glyphs, pos)
     return unless match?(glyphs, pos)
     if groups.select{|g| g.replaceable?}.size > 0
-      # calt
-      # TODO
+      indexes = get_replaceable_group_indexes
+      replace_one_group(glyphs, pos+indexes.first, groups[indexes.first])
+      # remove all other replaceable group elements
+      indexes.map!{|i| pos+i}
+      for i in 1...indexes.size
+        glyphs[indexes[i]] = nil
+      end
+      glyphs.compact!
     elsif groups.size == 1
       group = groups.first
-      glyph = glyphs[pos]
-      if group.elements.index(glyph)
-        glyphs[pos] = replacedby.elements[group.elements.index(glyph)]
-      else
-        # class
-        glyphs[pos] = replacedby.elements.first.glyphs[group.elements.first.glyphs.index(glyph)]
-      end
+      replace_one_group(glyphs, pos, group)
     elsif
       glyphs[pos...pos+groups.length] = replacedby.elements.first
     end
