@@ -160,8 +160,8 @@ class OTFMockEngine
 end
 
 if __FILE__ == $PROGRAM_NAME
-  if ARGV.size == 0
-    puts "Usage: ruby otf_mock_engine.rb monbaiti.fea mongolian_unicode_string"
+  if ARGV.size != 3
+    puts "Usage: ruby otf_mock_engine.rb monbaiti.fea glyphs_directory mongolian_unicode_string"
     exit!
   end
   
@@ -170,9 +170,7 @@ if __FILE__ == $PROGRAM_NAME
   if file
     engine = OTFMockEngine.new(file)
     
-    engine.convert("ᠮᠣᠩᠭᠣᠯ ᠮᠣᠩᠭᠣᠯ").each do |glyph|
-      puts glyph.name
-    end
+    puts "convert " + engine.convert(ARGV[2]).map{|g| "#{ARGV[1]}/#{g.name}.png"}.join(" ") + " -append output.png"
   else
     puts "syntax error!"
   end
