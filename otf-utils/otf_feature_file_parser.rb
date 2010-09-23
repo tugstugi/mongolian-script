@@ -17,12 +17,12 @@ class OTFFeatureFile
     @glyphs.select{|glyph| glyph.name.eql?glyphname}.first
   end
   
-  def get_unicode(hex_unicode)
+  def get_unicode_by_hex(hex_unicode)
     @unicodes.select{|unicode| unicode.hex_unicode.eql?hex_unicode}.first
   end
   
-  def get_unicode_by_name(name)
-    @unicodes.select{|unicode| unicode.name.eql?name}.first
+  def get_unicode(unicodename)
+    @unicodes.select{|unicode| unicode.name.eql?unicodename}.first
   end
   
   def get_class(classname)
@@ -108,7 +108,7 @@ class OTFGlyph
   def get_composed_unicodes
     unicodes = Array.new
     name.scan(/(18[A-F0-9][A-F0-9])+?/).flatten.each do |hex_unicode|
-      unicode = @file.get_unicode(hex_unicode)
+      unicode = @file.get_unicode_by_hex(hex_unicode)
       if !unicode.nil?
         unicodes.push(unicode)
       end

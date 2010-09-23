@@ -20,6 +20,64 @@ class OTFGlyph
   end
 end
 
+class OTFFeature
+  def replace(glyphs)
+    lookups.each do |lookup|
+      lookup.replace(glyph)
+    end
+  end
+end
+
+class OTFLookup
+  def replace(glyphs)
+    subtables.each do |subtable|
+      subtable.replace(glyphs)
+    end
+  end
+end
+
+class OTFSubTable
+  def match?(glyphs, pos)
+    if pos + groups.length > glyphs.length
+      return false
+    end
+    if glyphs[pos].respond_to?("#{lookup.feature.name}?")
+      return false unless glyphs[pos].send("#{lookup.feature.name}?")
+    end
+    for i in 0...groups.length
+      return false unless groups[i].include?(glyphs[pos+i])
+    end
+    return true
+  end
+  
+  def replace_by_pos(glyphs, pos)
+    return unless match?(glyphs, pos)
+    if groups.select{|g| g.replaceable?}.size > 0
+      # calt
+      # TODO
+    elsif groups.size == 1
+      group = groups.first
+      glyph = glyphs[pos]
+      if group.elements.index(glyph)
+        glyphs[pos] = replacedby.elements[group.elements.index(glyph)]
+      else
+        # class
+        glyphs[pos] = replacedby.elements.first.glyphs[group.elements.first.glyphs.index(glyph)]
+      end
+    elsif
+      glyphs[pos...pos+groups.length] = replacedby.elements.first
+    end
+  end
+  
+  def replace(glyphs)
+    i = 0
+    while i < glyphs.length
+      replace_by_pos(glyphs, i)
+      i = i + 1
+    end
+  end
+end
+
 class OTFMockEngine
   attr_reader :file
   
@@ -27,8 +85,9 @@ class OTFMockEngine
     @file = file
   end
   
-  def convert(unicode_string)
-    unicodes = to_glyph_names(unicode_string).map{|name| file.get_unicode_by_name(name)}
+  def convert(unicode_string, language="MNG")
+    unicodes = to_glyph_names(unicode_string).map{|name| file.get_unicode(name)}
+    
     glyphs = Array.new
     for i in 0..unicodes.length-1
       glyph = unicodes[i].base_glyph
@@ -40,9 +99,7 @@ class OTFMockEngine
       
       is_prev_letter = is_letter?(unicodes, i, -1)
       is_current_letter = is_letter?(unicodes, i, 0)
-      is_next_letter = is_letter?(unicodes, i, -1)
-      
-      puts is_prev_letter.to_s + " " + is_current_letter.to_s + " " + is_next_letter.to_s
+      is_next_letter = is_letter?(unicodes, i, 1)
       
       if is_current_letter       
         if !is_prev_letter && is_next_letter
@@ -55,13 +112,20 @@ class OTFMockEngine
           glyph.isol = true
         end
       end
-      puts glyph.fina?
+      
       glyphs.push(glyph)
     end
+    
+    ["isol", "fina", "medi", "init", "rlig", "calt"].each do |featurename|
+      feature = file.get_feature(featurename)
+      lookups = feature.languages[language]
+      lookups.each do |lookup|
+        lookup.replace(glyphs)
+      end
+    end
+    
     return glyphs
   end
-  
-  private
   
   def is_letter?(unicodes, pos, direction)
     while(true)
@@ -106,8 +170,8 @@ if __FILE__ == $PROGRAM_NAME
   if file
     engine = OTFMockEngine.new(file)
     
-    engine.convert("ᠮᠣᠩᠭᠣᠯ ").each do |unicode|
-      puts unicode.name
+    engine.convert("ᠮᠣᠩᠭᠣᠯ ᠮᠣᠩᠭᠣᠯ").each do |glyph|
+      puts glyph.name
     end
   else
     puts "syntax error!"
