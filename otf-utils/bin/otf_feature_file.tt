@@ -1,0 +1,207 @@
+grammar OTFFeatureFileSyntax
+  
+  rule file
+    (class / feature / comment_line)* {
+      def content
+        elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }
+      end
+    }
+  end
+
+  rule class
+    [\s\n]* "@" [a-zA-Z0-9]+ [\s]* "=" [\s]* glyph_list [\s]* ";" [\s\n]* {
+      def content
+        {:name => "@" + elements[2].text_value, :glyphs => elements[6].content}
+      end
+    }
+  end
+  
+  rule glyph_list
+  	"[" [\s]* glyph glyph_list_tail [\s]* "]" {
+  		def content
+	  		[elements[2].content].concat(elements[3].content)
+  		end
+  	}
+  end
+  
+  rule glyph_list_tail
+  	glyph_list_tail_element* {
+  		def content
+  			elements.map{ |e| e.content }
+  		end
+  	}
+  end
+  
+  rule glyph_list_tail_element
+  	[\s]+ glyph {
+  		def content
+  			elements[1].content
+  		end
+  	}
+  end
+  
+  rule glyph
+  	[a-zA-Z0-9.]+ {
+  		def content
+  			text_value
+  		end
+  	}
+  end
+  
+  rule classid
+  	"@" [a-zA-Z0-9]+ {
+  		def content
+  			text_value
+  		end
+  	}
+  end
+
+  rule feature
+    [\s\n]* "feature" [\s]+ [a-zA-Z0-9]+ [\s]* "{" [\s\n]* feature_body [\s\n]* "}" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s\n]* {
+      def content
+      	{:name => elements[3].text_value, :feature_body => elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }}
+      end
+    }
+  end
+  
+  rule feature_body
+  	(comment_line / inner_feature / script / language_exclude_default / language / empty_lookup / lookup_flag / subtable / lookup)* {
+	  	def content
+	    	elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }
+	  	end
+  	}
+  end
+  
+  rule inner_feature
+  	[\s\n]* "feature" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s]* [\s\n]* {
+  		def content
+	    	{:inner_feature => elements[3].text_value}
+	  	end
+      }
+  end
+  
+  rule script
+  	[\s\n]* "script" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s]* [\s\n]* {
+      def content
+        {:script => elements[3].text_value}
+      end
+    }
+  end
+  
+  rule language_exclude_default
+  	[\s\n]* "language" [\s]* [a-zA-Z0-9]+ [\s]* "exclude_dflt" [\s]* ";" [\s\n]* {
+      def content
+        {:language => elements[3].text_value, :exclude_default => true}
+      end
+    }
+  end
+  
+  rule language
+  	[\s\n]* "language" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s\n]* {
+      def content
+        {:language => elements[3].text_value, :exclude_default => false}
+      end
+    }
+  end
+  
+  rule empty_lookup
+  	[\s\n]* "lookup" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s\n]* {
+      def content
+        {:empty_lookup => elements[3].text_value}
+      end
+    }
+  end
+  
+  rule lookup
+    [\s\n]* "lookup" [\s]+ [a-zA-Z0-9]+ [\s]* "{" [\s\n]* lookup_body [\s\n]* "}" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s\n]* {
+      def content
+      	{:lookup => elements[3].text_value, :lookup_body => elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }}
+      end
+    }
+  end
+  
+  rule lookup_body
+    (lookup_flag / subtable / comment_line)* {
+      def content
+        elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }
+      end
+    }
+  end
+  
+  rule lookup_flag
+  	[\s\n]* "lookupflag" [\s]* [a-zA-Z0-9]+ [\s]* ";" [\s\n]* {
+      def content
+        {:lookup_flag => elements[3].text_value}
+      end
+    }
+  end
+  
+  rule subtable
+  	[\s\n]* "sub" [\s]+ subtable_element_list [\s]+ "by" [\s]+ subtable_nonreplaceable_element [\s]* ";" [\s\n]* {
+  		def content
+	  		{:subtable => elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }}
+  		end
+  	}
+  end
+  
+  rule subtable_element_list
+  	subtable_element_head subtable_element_last {
+  		def content
+	  		elements[0].content.concat([elements[1].content])
+  		end
+  	}
+  end
+  
+  rule subtable_element_head
+  	subtable_element_notlast* {
+  		def content
+  			elements.map{ |e| e.content }
+  		end
+  	}
+  end
+  
+  rule subtable_element_last
+  	subtable_element &([\s]+ "by") {
+  		def content
+  			elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }
+  		end
+  	}
+  end
+  
+  rule subtable_element_notlast
+  	subtable_element [\s]+ !"by"  {
+  		def content
+  			elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }
+  		end
+  	}
+  end
+  
+  rule subtable_element
+  	(subtable_replaceable_element / subtable_nonreplaceable_element) !subtable_element {
+  		def content
+  			elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }
+  		end
+  	}
+  end
+  
+  rule subtable_replaceable_element
+  	(glyph_list / glyph / classid) "'" !subtable_element {
+  		def content
+  			{:replaceable_glyphs => elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }}
+  		end
+  	}
+  end
+  
+  rule subtable_nonreplaceable_element
+  	(glyph_list / glyph / classid) !subtable_element {
+  		def content
+  			{:glyphs => elements.select{|e| e.respond_to?(:content)}.map{ |e| e.content }}
+  		end
+  	}
+  end
+  
+  rule comment_line
+  	[\s\n]* "#" [^\n]* "\n" [\s\n]*
+  end
+  
+end
