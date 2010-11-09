@@ -106,7 +106,7 @@ class OTFMockEngine
   end
   
   def convert(unicode_string, language="MNG")
-    unicodes = to_glyph_names(unicode_string).map{|name| file.get_unicode(name)}
+    unicodes = to_glyph_names(unicode_string).map{|name| file.get_unicode_by_name(name)}
     
     glyphs = Array.new
     for i in 0..unicodes.length-1
