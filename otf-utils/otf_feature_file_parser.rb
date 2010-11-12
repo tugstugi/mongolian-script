@@ -80,46 +80,49 @@ class OTFGlyph
   end
   
   def isol?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*isol[a-zA-Z0-9]*/).nil?
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*isol[a-zA-Z0-9]*/).nil?
   end
   
   def fina?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*fina[a-zA-Z0-9]*/).nil?
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*fina[a-zA-Z0-9]*/).nil?
   end
   
   def medi?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*medi[a-zA-Z0-9]*/).nil?
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*medi[a-zA-Z0-9]*/).nil?
   end
   
   def init?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*init[a-zA-Z0-9]*/).nil?
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*init[a-zA-Z0-9]*/).nil?
   end
   
   def var?
-    # Baiti uses "var" i.e. uni1820.finavar1
-    is_var = !(name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*var[a-zA-Z0-9]*/).nil?)
-    # Sudar uses "fvs" i.e. ML-A.finafvs1
-    is_var = (is_var or !(name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*fvs[a-zA-Z0-9]*/).nil?))
+    # Baiti uses "var+digit" i.e. uni1820.finavar1
+    is_var = !(name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*var[a-zA-Z0-9]*/).nil?)
+    # Sudar uses only "digit" i.e. ML_A.fina1
+    is_var = (is_var or !(name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*[0-9]/).nil?))
     return is_var
   end
   
   def mvs?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*mvs[a-zA-Z0-9]*/).nil?
+    # only in Baiti
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*mvs[a-zA-Z0-9]*/).nil?
   end
   
   def zwj?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*zwj[a-zA-Z0-9]*/).nil?
+    # only in Sudar
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*zwj[a-zA-Z0-9]*/).nil?
   end
   
   def fem?
-    return !name.match(/^[a-zA-Z0-9\-_+]+[.][a-zA-Z0-9]*fem[a-zA-Z0-9]*/).nil?
+    # only in Baiti
+    return !name.match(/^[a-zA-Z0-9_]+[.][a-zA-Z0-9]*fem[a-zA-Z0-9]*/).nil?
   end
   
   def ligature?    
     # Baiti ligature? (i.e. uni182A1820)
     is_ligature = !(name.match(/^[a-zA-Z]+(18[A-F0-9][A-F0-9]){2,}/).nil?)
     # Sudar ligature? (i.e. ML-BA+ML-A)
-    is_ligature = (is_ligature or !(name.match(/[+]/).nil?))
+    is_ligature = (is_ligature or !(name.match(/__/).nil?))
     return is_ligature
   end
   
@@ -143,7 +146,7 @@ class OTFGlyph
       end
     else
       # Sudar -> split ligatures if there is any
-      name.split(".").first.split("+").each do |unicodename|
+      name.split(".").first.split("__").each do |unicodename|
         unicode = @file.get_unicode_by_name(unicodename)
         if !unicode.nil?
           unicodes.push(unicode)
@@ -476,10 +479,25 @@ if __FILE__ == $PROGRAM_NAME
   parser = OTFFeatureFileParser.new
   file = parser.parse_file(ARGV[0])
   if file
-    glyph = OTFGlyph.new(file, "ML-BA+ML-A.fina")
-    puts "#{glyph.ligature?}"
-    glyph.get_composed_unicodes().each do |u|
-      puts u.name
+    baiti_ending = ["", ".isol", ".var1", ".init", ".initvar1", ".initvar2", ".initvar3", ".medi", ".medivar1", ".medivar2", ".medivar3", ".fina", ".finavar1", ".finavar2", ".finavar3"] 
+    sudar_ending = ["", ".isol", ".isol1", ".init", ".init1", ".init2", ".init3", ".medi", ".medi1", ".medi2", ".medi3", ".fina", ".fina1", ".fina2", ".fina3"]
+    
+    unicode_range = []
+    unicode_range = unicode_range.concat((0x1820..0x1877).to_a)
+    unicode_range = unicode_range.concat((0x1880..0x18AA).to_a)
+    unicode_range.each do |u|
+      hex = u.to_s(16).upcase
+      baiti_name = "uni#{hex}"
+      sudar_name = $sudar_unicode_names[hex]
+      (0...baiti_ending.size).each do |i|
+        glyph = file.get_glyph("#{baiti_name}#{baiti_ending[i]}")
+        if !glyph.nil?
+          puts "#{sudar_name}#{sudar_ending[i]}\t\t\t\t\t#{baiti_name}#{baiti_ending[i]}"
+        end
+        if glyph.nil? and i == 1
+          puts "#{sudar_name}#{sudar_ending[i]}\t\t\t\t\t#{baiti_name}"
+        end
+      end
     end
     puts "success"
   else
