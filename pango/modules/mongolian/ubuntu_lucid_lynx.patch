@@ -1,6 +1,6 @@
 diff -rupN pango1.0-1.28.0/configure.in ../pango1.0-1.28.0/configure.in
---- pango1.0-1.28.0/configure.in	2010-03-30 21:12:04.000000000 +0200
-+++ ../pango1.0-1.28.0/configure.in	2010-09-07 16:41:34.063811789 +0200
+--- pango1.0-1.28.0/configure.in	2010-11-15 14:39:17.404967172 +0100
++++ ../pango1.0-1.28.0/configure.in	2010-11-15 14:33:33.114891558 +0100
 @@ -479,6 +479,7 @@ hangul_modules="hangul-fc"
  hebrew_modules="hebrew-fc"
  indic_modules="indic-fc,indic-lang"
@@ -43,8 +43,8 @@ diff -rupN pango1.0-1.28.0/configure.in ../pango1.0-1.28.0/configure.in
  modules/thai/Makefile
  modules/tibetan/Makefile
 diff -rupN pango1.0-1.28.0/modules/Makefile.am ../pango1.0-1.28.0/modules/Makefile.am
---- pango1.0-1.28.0/modules/Makefile.am	2010-01-26 18:11:19.000000000 +0100
-+++ ../pango1.0-1.28.0/modules/Makefile.am	2010-09-07 16:42:09.013814843 +0200
+--- pango1.0-1.28.0/modules/Makefile.am	2010-11-15 14:39:17.404967172 +0100
++++ ../pango1.0-1.28.0/modules/Makefile.am	2010-11-15 14:33:33.114891558 +0100
 @@ -7,6 +7,7 @@ SUBDIRS = 		\
  	hebrew		\
  	indic           \
@@ -55,7 +55,7 @@ diff -rupN pango1.0-1.28.0/modules/Makefile.am ../pango1.0-1.28.0/modules/Makefi
  	tibetan
 diff -rupN pango1.0-1.28.0/modules/mongolian/Makefile.am ../pango1.0-1.28.0/modules/mongolian/Makefile.am
 --- pango1.0-1.28.0/modules/mongolian/Makefile.am	1970-01-01 01:00:00.000000000 +0100
-+++ ../pango1.0-1.28.0/modules/mongolian/Makefile.am	2010-09-07 16:42:31.073813798 +0200
++++ ../pango1.0-1.28.0/modules/mongolian/Makefile.am	2010-11-15 14:33:33.114891558 +0100
 @@ -0,0 +1,22 @@
 +include $(top_srcdir)/modules/Module.mk
 +
@@ -81,7 +81,7 @@ diff -rupN pango1.0-1.28.0/modules/mongolian/Makefile.am ../pango1.0-1.28.0/modu
 +-include $(top_srcdir)/git.mk
 diff -rupN pango1.0-1.28.0/modules/mongolian/mongolian-fc.c ../pango1.0-1.28.0/modules/mongolian/mongolian-fc.c
 --- pango1.0-1.28.0/modules/mongolian/mongolian-fc.c	1970-01-01 01:00:00.000000000 +0100
-+++ ../pango1.0-1.28.0/modules/mongolian/mongolian-fc.c	2010-09-07 16:42:36.795064693 +0200
++++ ../pango1.0-1.28.0/modules/mongolian/mongolian-fc.c	2010-11-15 14:33:33.114891558 +0100
 @@ -0,0 +1,328 @@
 +/* Pango
 + * Shaper for Mongolian script
@@ -411,3 +411,15 @@ diff -rupN pango1.0-1.28.0/modules/mongolian/mongolian-fc.c ../pango1.0-1.28.0/m
 +	else
 +		return NULL;
 +}
+diff -rupN pango1.0-1.28.0/pango/pango-context.c ../pango1.0-1.28.0/pango/pango-context.c
+--- pango1.0-1.28.0/pango/pango-context.c	2010-11-15 14:39:17.427343241 +0100
++++ ../pango1.0-1.28.0/pango/pango-context.c	2010-11-15 14:33:33.135282151 +0100
+@@ -1409,7 +1409,7 @@ itemize_state_process_run (ItemizeState 
+        * to be able to render any of them. (for private or being encoded
+        * scripts, etc.) (Recent glib returns true in isprint for PrivateUse.)
+        */
+-      if (wc == 0x0020 ||
++      if (wc == 0x0020 || wc == 0x202F ||
+ 	  G_UNLIKELY (!g_unichar_isprint (wc) &&
+ 		      g_unichar_type (wc) != G_UNICODE_PRIVATE_USE &&
+ 		      g_unichar_type (wc) != G_UNICODE_UNASSIGNED))
