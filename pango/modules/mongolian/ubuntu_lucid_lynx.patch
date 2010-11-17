@@ -1,6 +1,6 @@
-diff -rupN pango1.0-1.28.0/configure.in ../pango1.0-1.28.0/configure.in
---- pango1.0-1.28.0/configure.in	2010-11-15 14:39:17.404967172 +0100
-+++ ../pango1.0-1.28.0/configure.in	2010-11-15 14:33:33.114891558 +0100
+diff -rupN pango1.0-1.28.0_orig/configure.in pango1.0-1.28.0_modified/configure.in
+--- pango1.0-1.28.0_orig/configure.in	2010-03-30 21:12:04.000000000 +0200
++++ pango1.0-1.28.0_modified/configure.in	2010-11-17 17:30:48.131129539 +0100
 @@ -479,6 +479,7 @@ hangul_modules="hangul-fc"
  hebrew_modules="hebrew-fc"
  indic_modules="indic-fc,indic-lang"
@@ -42,9 +42,9 @@ diff -rupN pango1.0-1.28.0/configure.in ../pango1.0-1.28.0/configure.in
  modules/syriac/Makefile
  modules/thai/Makefile
  modules/tibetan/Makefile
-diff -rupN pango1.0-1.28.0/modules/Makefile.am ../pango1.0-1.28.0/modules/Makefile.am
---- pango1.0-1.28.0/modules/Makefile.am	2010-11-15 14:39:17.404967172 +0100
-+++ ../pango1.0-1.28.0/modules/Makefile.am	2010-11-15 14:33:33.114891558 +0100
+diff -rupN pango1.0-1.28.0_orig/modules/Makefile.am pango1.0-1.28.0_modified/modules/Makefile.am
+--- pango1.0-1.28.0_orig/modules/Makefile.am	2010-01-26 18:11:19.000000000 +0100
++++ pango1.0-1.28.0_modified/modules/Makefile.am	2010-11-17 17:30:48.131129539 +0100
 @@ -7,6 +7,7 @@ SUBDIRS = 		\
  	hebrew		\
  	indic           \
@@ -53,9 +53,9 @@ diff -rupN pango1.0-1.28.0/modules/Makefile.am ../pango1.0-1.28.0/modules/Makefi
  	syriac		\
  	thai		\
  	tibetan
-diff -rupN pango1.0-1.28.0/modules/mongolian/Makefile.am ../pango1.0-1.28.0/modules/mongolian/Makefile.am
---- pango1.0-1.28.0/modules/mongolian/Makefile.am	1970-01-01 01:00:00.000000000 +0100
-+++ ../pango1.0-1.28.0/modules/mongolian/Makefile.am	2010-11-15 14:33:33.114891558 +0100
+diff -rupN pango1.0-1.28.0_orig/modules/mongolian/Makefile.am pango1.0-1.28.0_modified/modules/mongolian/Makefile.am
+--- pango1.0-1.28.0_orig/modules/mongolian/Makefile.am	1970-01-01 01:00:00.000000000 +0100
++++ pango1.0-1.28.0_modified/modules/mongolian/Makefile.am	2010-11-17 17:30:48.131129539 +0100
 @@ -0,0 +1,22 @@
 +include $(top_srcdir)/modules/Module.mk
 +
@@ -79,9 +79,9 @@ diff -rupN pango1.0-1.28.0/modules/mongolian/Makefile.am ../pango1.0-1.28.0/modu
 +libpango_mongolian_fc_la_CFLAGS = -DPANGO_MODULE_PREFIX=_pango_mongolian_fc
 +
 +-include $(top_srcdir)/git.mk
-diff -rupN pango1.0-1.28.0/modules/mongolian/mongolian-fc.c ../pango1.0-1.28.0/modules/mongolian/mongolian-fc.c
---- pango1.0-1.28.0/modules/mongolian/mongolian-fc.c	1970-01-01 01:00:00.000000000 +0100
-+++ ../pango1.0-1.28.0/modules/mongolian/mongolian-fc.c	2010-11-15 14:33:33.114891558 +0100
+diff -rupN pango1.0-1.28.0_orig/modules/mongolian/mongolian-fc.c pango1.0-1.28.0_modified/modules/mongolian/mongolian-fc.c
+--- pango1.0-1.28.0_orig/modules/mongolian/mongolian-fc.c	1970-01-01 01:00:00.000000000 +0100
++++ pango1.0-1.28.0_modified/modules/mongolian/mongolian-fc.c	2010-11-17 17:30:48.131129539 +0100
 @@ -0,0 +1,328 @@
 +/* Pango
 + * Shaper for Mongolian script
@@ -411,9 +411,9 @@ diff -rupN pango1.0-1.28.0/modules/mongolian/mongolian-fc.c ../pango1.0-1.28.0/m
 +	else
 +		return NULL;
 +}
-diff -rupN pango1.0-1.28.0/pango/pango-context.c ../pango1.0-1.28.0/pango/pango-context.c
---- pango1.0-1.28.0/pango/pango-context.c	2010-11-15 14:39:17.427343241 +0100
-+++ ../pango1.0-1.28.0/pango/pango-context.c	2010-11-15 14:33:33.135282151 +0100
+diff -rupN pango1.0-1.28.0_orig/pango/pango-context.c pango1.0-1.28.0_modified/pango/pango-context.c
+--- pango1.0-1.28.0_orig/pango/pango-context.c	2010-01-26 18:11:19.000000000 +0100
++++ pango1.0-1.28.0_modified/pango/pango-context.c	2010-11-17 17:30:48.131129539 +0100
 @@ -1409,7 +1409,7 @@ itemize_state_process_run (ItemizeState 
         * to be able to render any of them. (for private or being encoded
         * scripts, etc.) (Recent glib returns true in isprint for PrivateUse.)
