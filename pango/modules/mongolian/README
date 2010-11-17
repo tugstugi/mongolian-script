@@ -2,9 +2,9 @@ How to install the mongolian pango module unter Ubuntu 10.4 TLS (Lucid Lynx)?
 * sudo apt-get install build-essential devscripts ubuntu-dev-tools debhelper dh-make diff patch cdbs quilt gnupg fakeroot lintian pbuilder piuparts
 * sudo apt-get install gnome-pkg-tools gir1.0-gtk-2.0 libthai-dev chrpath gobject-introspection libgirepository1.0-dev libglib2.0-doc libfreetype6-dev libx11-dev libxrender-dev libxt-dev libxft-dev libfontconfig1-dev libcairo2-dev
 * apt-get source pango1.0
+* cd pango1.0-1.28.0
 * wget --no-check-certificate https://github.com/tugstugi/mongolian-script/raw/master/pango/modules/mongolian/ubuntu_lucid_lynx.patch
 * patch -p1 < ubuntu_lucid_lynx.patch
-* cd pango1.0-1.28.0
 * debuild
 * cd ..
 * sudo dpkg --install *.deb
