@@ -1,6 +1,6 @@
-diff -rupN pango1.0-1.28.1/configure.in ../pango1.0-1.28.1/configure.in
---- pango1.0-1.28.1/configure.in	2010-10-29 11:04:47.404583883 +0200
-+++ ../pango1.0-1.28.1/configure.in	2010-10-29 11:08:52.845823166 +0200
+diff -rupN pango1.0-1.28.1_orig//configure.in pango1.0-1.28.1_modified//configure.in
+--- pango1.0-1.28.1_orig//configure.in	2010-06-15 07:55:27.000000000 -0700
++++ pango1.0-1.28.1_modified//configure.in	2010-11-17 10:06:54.838757568 -0800
 @@ -482,12 +482,13 @@ khmer_modules="khmer-fc"
  syriac_modules="syriac-fc"
  thai_modules="thai-fc"
@@ -20,7 +20,7 @@ diff -rupN pango1.0-1.28.1/configure.in ../pango1.0-1.28.1/configure.in
  AM_CONDITIONAL(INCLUDE_THAI_FC,		echo $included_modules | egrep '(^|,)thai-fc($|,)' 	> /dev/null)
  AM_CONDITIONAL(INCLUDE_THAI_LANG,	echo $included_modules | egrep '(^|,)thai-lang($|,)' 	> /dev/null)
  AM_CONDITIONAL(INCLUDE_TIBETAN_FC,	echo $included_modules | egrep '(^|,)tibetan-fc($|,)' 	> /dev/null)
-+AM_CONDITIONAL(INCLUDE_MONGOLIAN_FC,	echo $included_modules | egrep '(^|,)mongolianan-fc($|,)' 	> /dev/null)
++AM_CONDITIONAL(INCLUDE_MONGOLIAN_FC,	echo $included_modules | egrep '(^|,)mongolian-fc($|,)' 	> /dev/null)
  
  AM_CONDITIONAL(DYNAMIC_ARABIC_FC,	echo $dynamic_modules | egrep '(^|,)arabic-fc($|,)' 	> /dev/null)
  AM_CONDITIONAL(DYNAMIC_ARABIC_LANG,	echo $dynamic_modules | egrep '(^|,)arabic-lang($|,)' 	> /dev/null)
@@ -40,20 +40,35 @@ diff -rupN pango1.0-1.28.1/configure.in ../pango1.0-1.28.1/configure.in
  examples/Makefile
  docs/Makefile
  docs/version.xml
-diff -rupN pango1.0-1.28.1/modules/Makefile.am ../pango1.0-1.28.1/modules/Makefile.am
---- pango1.0-1.28.1/modules/Makefile.am	2010-10-29 11:04:47.394626350 +0200
-+++ ../pango1.0-1.28.1/modules/Makefile.am	2010-10-29 11:06:56.435821541 +0200
-@@ -9,6 +9,7 @@ SUBDIRS = 		\
+diff -rupN pango1.0-1.28.1_orig//modules/Makefile.am pango1.0-1.28.1_modified//modules/Makefile.am
+--- pango1.0-1.28.1_orig//modules/Makefile.am	2010-01-26 09:11:19.000000000 -0800
++++ pango1.0-1.28.1_modified//modules/Makefile.am	2010-11-17 10:06:54.830753140 -0800
+@@ -9,7 +9,8 @@ SUBDIRS = 		\
  	khmer		\
  	syriac		\
  	thai		\
-+	mongolian	\
- 	tibetan
+-	tibetan
++	tibetan		\
++	mongolian
  
  EXTRA_DIST =		\
-diff -rupN pango1.0-1.28.1/modules/mongolian/Makefile.am ../pango1.0-1.28.1/modules/mongolian/Makefile.am
---- pango1.0-1.28.1/modules/mongolian/Makefile.am	1970-01-01 01:00:00.000000000 +0100
-+++ ../pango1.0-1.28.1/modules/mongolian/Makefile.am	2010-10-29 11:06:56.435821541 +0200
+ 	Module.mk	\
+diff -rupN pango1.0-1.28.1_orig//modules/Makefile.in pango1.0-1.28.1_modified//modules/Makefile.in
+--- pango1.0-1.28.1_orig//modules/Makefile.in	2010-06-15 07:55:48.000000000 -0700
++++ pango1.0-1.28.1_modified//modules/Makefile.in	2010-11-17 10:06:54.830753140 -0800
+@@ -280,7 +280,8 @@ SUBDIRS = \
+ 	khmer		\
+ 	syriac		\
+ 	thai		\
+-	tibetan
++	tibetan		\
++	mongolian
+ 
+ EXTRA_DIST = \
+ 	Module.mk	\
+diff -rupN pango1.0-1.28.1_orig//modules/mongolian/Makefile.am pango1.0-1.28.1_modified//modules/mongolian/Makefile.am
+--- pango1.0-1.28.1_orig//modules/mongolian/Makefile.am	1969-12-31 16:00:00.000000000 -0800
++++ pango1.0-1.28.1_modified//modules/mongolian/Makefile.am	2010-11-17 10:06:54.830753140 -0800
 @@ -0,0 +1,22 @@
 +include $(top_srcdir)/modules/Module.mk
 +
@@ -77,9 +92,9 @@ diff -rupN pango1.0-1.28.1/modules/mongolian/Makefile.am ../pango1.0-1.28.1/modu
 +libpango_mongolian_fc_la_CFLAGS = -DPANGO_MODULE_PREFIX=_pango_mongolian_fc
 +
 +-include $(top_srcdir)/git.mk
-diff -rupN pango1.0-1.28.1/modules/mongolian/mongolian-fc.c ../pango1.0-1.28.1/modules/mongolian/mongolian-fc.c
---- pango1.0-1.28.1/modules/mongolian/mongolian-fc.c	1970-01-01 01:00:00.000000000 +0100
-+++ ../pango1.0-1.28.1/modules/mongolian/mongolian-fc.c	2010-10-29 11:06:56.435821541 +0200
+diff -rupN pango1.0-1.28.1_orig//modules/mongolian/mongolian-fc.c pango1.0-1.28.1_modified//modules/mongolian/mongolian-fc.c
+--- pango1.0-1.28.1_orig//modules/mongolian/mongolian-fc.c	1969-12-31 16:00:00.000000000 -0800
++++ pango1.0-1.28.1_modified//modules/mongolian/mongolian-fc.c	2010-11-17 10:06:54.830753140 -0800
 @@ -0,0 +1,328 @@
 +/* Pango
 + * Shaper for Mongolian script
@@ -409,3 +424,15 @@ diff -rupN pango1.0-1.28.1/modules/mongolian/mongolian-fc.c ../pango1.0-1.28.1/m
 +	else
 +		return NULL;
 +}
+diff -rupN pango1.0-1.28.1_orig//pango/pango-context.c pango1.0-1.28.1_modified//pango/pango-context.c
+--- pango1.0-1.28.1_orig//pango/pango-context.c	2010-05-04 08:50:40.000000000 -0700
++++ pango1.0-1.28.1_modified//pango/pango-context.c	2010-11-17 10:06:54.846761996 -0800
+@@ -1409,7 +1409,7 @@ itemize_state_process_run (ItemizeState
+        * to be able to render any of them. (for private or being encoded
+        * scripts, etc.) (Recent glib returns true in isprint for PrivateUse.)
+        */
+-      if (wc == 0x0020 ||
++      if (wc == 0x0020 || wc == 0x202F ||
+ 	  G_UNLIKELY (!g_unichar_isprint (wc) &&
+ 		      g_unichar_type (wc) != G_UNICODE_PRIVATE_USE &&
+ 		      g_unichar_type (wc) != G_UNICODE_UNASSIGNED))
