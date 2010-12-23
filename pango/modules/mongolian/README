@@ -4,7 +4,7 @@ How to install the mongolian pango module under Ubuntu 10.4 TLS (Lucid Lynx)?
 * cd pango1.0-1.28.0
 * wget --no-check-certificate https://github.com/tugstugi/mongolian-script/raw/master/pango/modules/mongolian/ubuntu_lucid_lynx.patch
 * patch -p1 < ubuntu_lucid_lynx.patch
-* debuild
+* debuild -us -uc
 * cd ..
 * sudo dpkg --install *.deb
 
@@ -14,7 +14,7 @@ How to install the mongolian pango module under Ubuntu 10.10 (Maverick Meerkat)?
 * cd pango1.0-1.28.1
 * wget --no-check-certificate https://github.com/tugstugi/mongolian-script/raw/master/pango/modules/mongolian/ubuntu_maverick_meerkat.patch
 * patch -p1 < ubuntu_maverick_meerkat.patch
-* debuild
+* debuild -us -uc
 * cd ..
 * sudo dpkg --install *.deb
 
