@@ -11,7 +11,7 @@ endif
 endif
 endif
 
-mongolian_fc_sources = $(common_sources) mongolian-fc.c
+fc_sources = $(common_sources) mongolian-fc.c
 
 pango_mongolian_fc_la_LDFLAGS = -module $(MODULE_LIBTOOL_OPTIONS)
 pango_mongolian_fc_la_LIBADD = $(pangoft2libs)
